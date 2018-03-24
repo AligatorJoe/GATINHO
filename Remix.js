@@ -2,9 +2,9 @@
 // @name		JoeMan
 // @namespace   DIO
 // @version		3.17
-// @author		Diony
-// @updateURL   https://diotools.de/downloads/DIO-TOOLS.user.js
-// @downloadURL	https://diotools.de/downloads/DIO-TOOLS.user.js
+// @author		JoeMan
+// @updateURL   https://raw.githubusercontent.com/AligatorJoe/DioToolRemix/3ba7bb702cf821934904b77e3feec2090691d5e5/Remix.js
+// @downloadURL	https://drive.google.com/file/d/1IHP-ArdZyTYAPg_xiwflGFH1n7mjSz4Y/view?usp=sharing
 // @description DIO-Tools is a small extension for the browser game Grepolis. (counter, displays, smilies, trade options, changes to the layout)
 // @include		http://de.grepolis.com/game*
 // @include		/http[s]{0,1}://[a-z]{2}[0-9]{1,2}\.grepolis\.com/game*/
@@ -1500,7 +1500,7 @@ function DIO_GAME(version, gm, DATA, time_a) {
 
                     if (current_version < latest_version) {
                         version_text = "<div class='version_icon red'></div><div class='version_text'>" + getText('settings', 'version_old') + "</div><div class='version_icon red'></div>" +
-                            '<a class="version_text" href="https://diotools.de/downloads/DIO-TOOLS.user.js" target="_blank">--> Update</a>';
+                            '<a class="version_text" href="https://raw.githubusercontent.com/AligatorJoe/DioToolRemix/3ba7bb702cf821934904b77e3feec2090691d5e5/Remix.js" target="_blank">--> Update</a>';
                         version_color = 'crimson';
                     } else if (current_version == latest_version) {
                         version_text = "<div class='version_icon green'></div><div class='version_text'>" + getText('settings', 'version_new') + "</div><div class='version_icon green'></div>";
@@ -1892,7 +1892,7 @@ function DIO_GAME(version, gm, DATA, time_a) {
                     '<img src="/images/game/ally/founder.png" alt="" style="float:left;height:19px;margin:0px 5px -3px;"><span>Hall of DIO-Tools</span></a>' +
 
                     '<span class="bbcodes_player bold" style="font-weight:bold; float:right; margin-left:20px;">' + getText("settings", "author") + ': ' +
-                    '<a id="link_contact" href=' + getText("settings", "link_contact") + ' target="_blank">Diony</a></span>' +
+                    '<a id="link_contact" href=' + getText("settings", "link_contact") + ' target="_blank">JoeMan</a></span>' +
 
                     '<a id="link_forum" href=' + getText("settings", "link_forum") + ' target="_blank" style="font-weight:bold; float:right">' +
                     '<img src="http://forum.de.grepolis.com/grepolis/statusicon/forum_new-16.png" alt="" style="margin: 0px 5px -3px 5px;" /><span>' + getText("settings", "forum") + '</span></a>' +
@@ -9548,3 +9548,4 @@ function DIO_GAME(version, gm, DATA, time_a) {
     };
 
 }
+
