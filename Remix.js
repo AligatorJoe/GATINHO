@@ -1,11 +1,9 @@
 // ==UserScript==
-// @name		Dio-Gatao Revision image
-// @namespace           DIO_Tool
+// @name		DIO-TOOLS
+// @namespace	DIO
 // @version		3.30
 // @author		Diony
-// @updateURL   https://raw.githubusercontent.com/AligatorJoe/DioToolRemix/3ba7bb702cf821934904b77e3feec2090691d5e5/Remix.js
-// @downloadURL	https://drive.google.com/file/d/1IHP-ArdZyTYAPg_xiwflGFH1n7mjSz4Y/view?usp=sharing
-// @description DIO-Gatao é uma pequena extençao para o jogo browser Grepolis. (counter, displays, smilies, trade options, changes to the layout)
+// @description DIO-Tools é uma pequena extençao para o jogo browser Grepolis. (counter, displays, smilies, trade options, changes to the layout)
 // @include		http://de.grepolis.com/game*
 // @include		/http[s]{0,1}://[a-z]{2}[0-9]{1,2}\.grepolis\.com/game*/
 // @include		https://*.forum.grepolis.com/*
@@ -13,7 +11,7 @@
 // @require		http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js
 // @icon		https://i.imgur.com/bW8lxNz.gif
 // @icon64		http://diotools.de/images/icon_dio_64x64.png
-// @copyright	2013+, Diony
+// @copyright	2013+, DIONY
 // @grant		GM_info
 // @grant		GM_setValue
 // @grant		GM_getValue
