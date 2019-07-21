@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name		Dio-Gatao Revision image
-// @namespace   DIO
-// @version		3.25
-// @author		JoeMan
+// @namespace           DIO_Tool
+// @version		3.30
+// @author		Diony
 // @updateURL   https://raw.githubusercontent.com/AligatorJoe/DioToolRemix/3ba7bb702cf821934904b77e3feec2090691d5e5/Remix.js
 // @downloadURL	https://drive.google.com/file/d/1IHP-ArdZyTYAPg_xiwflGFH1n7mjSz4Y/view?usp=sharing
 // @description DIO-Gatao é uma pequena extençao para o jogo browser Grepolis. (counter, displays, smilies, trade options, changes to the layout)
