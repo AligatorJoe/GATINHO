@@ -11,14 +11,15 @@
 // @require		http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js
 // @icon		https://i.imgur.com/1S9gut4.png
 // @icon64		https://i.imgur.com/1S9gut4.png
-// @copyright	2013+, Diony
+// @copyright	2013+ Diony, 2017+ AligatorJoe
 // @grant		GM_info
 // @grant		GM_setValue
 // @grant		GM_getValue
 // @grant		GM_deleteValue
 // @grant		GM_xmlhttpRequest
 // @grant		GM_getResourceURL
-// @downloadURL none
+// @downloadURL https://github.com/AligatorJoe/Dio-Tools-2019/raw/master/Gatinho.user.js
+// @license     GPL-3.0
 // ==/UserScript==
 
 var version = '4.57.12';
