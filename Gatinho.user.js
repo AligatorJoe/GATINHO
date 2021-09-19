@@ -1,15 +1,15 @@
 // ==UserScript==
-// @name		Gatinho Github
-// @namespace   Gatinho Github
+// @name		Gatinho
+// @namespace   Gatinho
 // @version		4.57.12
-// @author		Gatinho
+// @author		JoeMan
 // @description Gatinho é uma pequena extençao para o jogo browser Grepolis. (counter, displays, smilies, trade options, changes to the layout)
 // @include     http://*.grepolis.com/*
 // @include     https://*.grepolis.com/*
 // @exclude 	https://*.forum.grepolis.com/*
 // @require		http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js
 // @icon		https://i.imgur.com/1S9gut4.png
-// @icon64		https://i.imgur.com/1S9gut4.png
+// @icon64URL		https://i.imgur.com/1S9gut4.png
 // @license     GPL-3.0
 // @grant		GM_info
 // @grant		GM_setValue
@@ -17,6 +17,7 @@
 // @grant		GM_deleteValue
 // @grant		GM_xmlhttpRequest
 // @grant		GM_getResourceURL
+// @source  a derivative of the old Dio Tools abandoned since 2016
 // @downloadURL https://github.com/AligatorJoe/Dio-Tools-2019/raw/master/Gatinho.user.js
 // ==/UserScript==
 var version = '4.57.12';
