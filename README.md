@@ -3,8 +3,10 @@
 
 <html>
    <head>
+        <link rel="mask-icon" href="https://github.githubassets.com/pinned-octocat.svg" color="#000000">
+  <link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://github.githubassets.com/favicons/favicon.png">
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon.svg">
 <center>
-   <link rel="shortcut icon" type="image/x-icon" href="https://img1.freepng.fr/20180716/byz/kisspng-github-computer-icons-clip-art-gits-5b4d20aae2b773.8173791415317812909286.jpg">
 <a>Version 4.57.12</a>
 </center>
    </head>
