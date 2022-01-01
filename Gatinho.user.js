@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name		Gatinho
 // @namespace   Gatinho
-// @version		4.57.12
+// @version		4.57.13
 // @author		JoeMan
 // @description Gatinho é uma pequena extençao para o jogo browser Grepolis. (counter, displays, smilies, trade options, changes to the layout)
 // @include     http://*.grepolis.com/*
@@ -20,7 +20,7 @@
 // @source  a derivative of the old Dio Tools abandoned since 2016
 // @downloadURL https://github.com/AligatorJoe/Dio-Tools-2019/raw/master/Gatinho.user.js
 // ==/UserScript==
-var version = '4.57.12';
+var version = '4.57.13';
                    /////////////////////////////////////////////////////////////////////////////////////////
                   //  * @license  GPL-3.0                                                                //
                  //                                                                                     //
@@ -42,6 +42,10 @@ style.type = 'text/css';
 style.innerHTML =
     '.attack_support_window .game_border {  border-left: none; border-bottom: 1px solid #575; box-shadow: -10px 2px 3px black; } ' +
     'div.game_border { background-color: #0000;} ' +
+    '#iframe1 { border: 5px ridge #5a9558; -moz-border-radius: 15px; border-radius: 15px; -moz-box-shadow: 4px 4px 14px #000; -webkit-box-shadow: 4px 4px 14px #000; box-shadow: 4px 4px 14px #000;}' +
+    '#pisca {text-shadow: 0px 0px 16px rgba(0, 218, 0, 1);}' +
+    //'#toolbar_activity_commands_list { visibility: visible !important; display: block ! important }' +  //block liste ataque def
+    //'.item.command.unit_movements { visibility: visible !important; display: block ! important }' +  //block liste ataque def
     document.getElementsByTagName('head')[0].appendChild(style);
 var uw = unsafeWindow || window,
     $ = uw.jQuery || jQuery,
@@ -2256,6 +2260,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 theater: "Peças de Teatro"
             },
             labels: {
+                coucou: "testeee",
                 stt: "Estáticas Grepodata",
                 uni: "Visão Geral das unidades",
                 total: "Global",
@@ -2668,7 +2673,6 @@ function JOE_GAME(version, gm, DATA, time_a) {
             });
         }
     }
-
     /////////////////////////////////////////
    //  * Add Gatinho to grepo settings *  //
   /////////////////////////////////////////
@@ -2753,14 +2757,14 @@ function JOE_GAME(version, gm, DATA, time_a) {
                     '</ul>' +
                     '<DIV class="content">' +
                     '<table id="joe_test_table" class="content_category"><tr>' +
-                    '<div class="fond">' +
-                    '<p><thead><th colspan="2"><h2 style="text-align:center;color: #FFFFFF;text-shadow: 3px 5px 2px #474747;z-index: 5000;position: absolute; margin: -30px;margin-left: 120px;">Themes the Grepotemas.com</h2></th></thead></p>' +
-                    '<td><a style="  position: absolute;z-index: inherit;background: url(https://www.paintball65.fr/images/photos/taches.png) ;display: inline-block;padding: 350px 510px 0px 0px;background-repeat: no-repeat;margin-left: 0px;opacity: 0.50;background-size: 110%;margin-top: -120px;"></a></td>' +
-                    '</div>' +
-                    '<td><div id="joe_them" class="checkbox_new"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("options", "test")[0] + '</div></div>' +
-                    '<p>' + getText("options", "test")[1] + '</p>' +
                     '</tr>' +
                     ((Browser !== "Firefox", "MSIE", "Trident", "Edge", "Chrome", "Safari", "Android", "Opera") ? ('<tr>' +
+                        '<div class="fond">' +
+                        '<p><thead><th colspan="2"><h2 style="text-align:center;color: #FFFFFF;text-shadow: 3px 5px 2px #474747;z-index: 5000;position: absolute; margin: -30px;margin-left: 120px;">Themes the Grepotemas.com</h2></th></thead></p>' +
+                        '<td><a style="  position: absolute;z-index: inherit;background: url(https://www.paintball65.fr/images/photos/taches.png) ;display: inline-block;padding: 350px 510px 0px 0px;background-repeat: no-repeat;margin-left: 0px;opacity: 0.50;background-size: 110%;margin-top: -120px;"></a></td>' +
+                        '</div>' +
+                        '<td><div id="joe_them" class="checkbox_new"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("options", "test")[0] + '</div></div>' +
+                        '<p>' + getText("options", "test")[1] + '</p>' +
                         '<table width="580px" cellpadding="0" cellspacing="0" id="scrollbar" width="90%" class="radiobutton horizontal rbtn_visibility" style="display:none;"><tr>' +
                         '</tr></td>' +
                         '<td><img src="https://grmh.pl/i/240.gif";/></td>' +
@@ -3006,120 +3010,23 @@ function JOE_GAME(version, gm, DATA, time_a) {
                     '</tr><tr>' +
                     '</tr><tr>' +
                     '</tr></table>' +
-                    '<div id="joe_hall" class="content_category">' +
-                    "<p>I like to thank all of you who helped the development of Gatinho by donating or translating!</p>" +
-                    '<table style="float:left;margin-right: 75px;">' +
-                    '<tr><th colspan="3">Donations</th></tr>' +
-                    (function() {
-                        var donations = [
-                            ["Eduard R", 50],
-                            ["Gregoire L", 25],
-                            ["Renee A", 20],
-                            ["Dirk R", 20],
-                            ["Patti T", 20],
-                            ["Klaus N", 15],
-                            ["Marco S", 10],
-                            ["Richard L", 10],
-                            ["Carsten K", 10],
-                            ["Tatiana H", 10],
-                            ["Ursula S", 10],
-                            ["Susanne S", 10],
-                            ["Falk T", 10],
-                            ["Belinda M", 8],
-                            ["Wolfgang R", 8],
-                            ["Miguel B", 7],
-                            ["Antje S", 5],
-                            ["Hans-Jörg S", 5],
-                            ["Deanna P", 5],
-                            ["ForexTraction", 5],
-                            ["Rene F", 5],
-                            ["Rüdiger D", 5],
-                            ["Hans Hermann S", 5],
-                            ["Siegbert M", 5],
-                            ["Wilhelm B", 5],
-                            ["Peter P", 5],
-                            ["Helga W", 5],
-                            ["Lydia R", 5],
-                            ["Michael S", 3],
-                            ["Mario P", 2],
-                            ["Artur G", 2],
-                            ["Heiko K", 2],
-                            ["Alexander B", 2],
-                            ["Dick N", 2],
-                            ["Marcel G", 1],
-                            ["Ramona L", 1],
-                            ["Dennis S", 1],
-                            ["Konstandinos K", 1],
-                            ["Sarl T", 1],
-                            ["Jagadics I", 1],
-                            ["Andreas R", 1],
-                            ["Peter F", 1],
-                            ["Vinicio G", 1],
-                            ["Marielle M", 1],
-                            ["Christian B", 1],
-                            ["Bernd W", 1],
-                            ["Maria N", 1],
-                            ["Thomas W", 1],
-                            ["Domenik F", 1],
-                            ["Oliver H", 1],
-                            ["Jens R", 1],
-                            ["Nicole S", 1],
-                            ["Hartmut S", 1],
-                            ["Alex L", 1],
-                            ["Andreas S", 1]
-                        ];
-                        var donation_table = "";
-                        for (var d = 0; d < donations.length; d++) {
-                            var donation_class = "";
-                            switch (donations[d][1]) {
-                                case 50:
-                                    donation_class = "gold";
-                                    break;
-                                case 25:
-                                    donation_class = "silver";
-                                    break;
-                                case 20:
-                                    donation_class = "bronze";
-                                    break;
-                                default:
-                                    donation_class = "green";
-                                    break;
-                            }
-                            donation_table += '<tr class="donation"><td class="laurel ' + donation_class + '"></td><td>' + donations[d][0] + '</td><td class="value">' + donations[d][1] + '€</td></tr>';
-                        }
-                        return donation_table;
-                    })() +
-                    '</table>' +
+                    '<div id="joe_hall" class="content_category" style="font-weight: bold;">' +
+                    "<p>Information of the day</p>" +
                     '<table>' +
-                    '<tr><th colspan="3">Translations</th></tr>' +
-                    (function() {
-                        var translations = [
-                            ["eclat49", "FR"],
-                            ["MrBobr", "RU"],
-                            ["anpu", "PL"],
-                            ["Juana de Castilla", "ES"],
-                            ["HELL", "BR"],
-                            ["Piwus", "CZ"],
-                            ["JoeMan", "PT"]
-                        ];
-                        var translation_table = "";
-                        for (var d = 0; d < translations.length; d++) {
-                            translation_table += '<tr class="translation"><td class="laurel blue"></td><td >' + translations[d][0] + '</td><td class="value">' + translations[d][1] + '</td></tr>';
-                        }
-                        return translation_table;
-                    })() +
+                    '<iframe name="iframe1" id="iframe1" allowtransparency="true" style="margin-left: -5px;" src="https://mycitygre.000webhostapp.com/Dio-Tools/info.html" width="100%" height="280px" ></iframe>' +
                     '</table>' +
                     '</div>' +
                     '</DIV>' +
                     '<div style="bottom: -50px;font-weight: bold;position: absolute;width: 99%;">' +
                     '<a id="hall_of_felix" href="#" style="font-weight:bold; float:left">' +
-                    '<img src="/images/game/ally/founder.png" alt="" style="float:left;height:19px;margin:0px 5px -3px;"><span>Hall of Gatinho</span></a>' +
+                    '<img src="https://i.giphy.com/media/Trf2JHQIrEXYs/200.gif" alt="" style="float:left;height:19px;margin:0px 5px -3px;"><span id="pisca" class="pisca">The newspaper of Gatinho</span></a>' + // /images/game/ally/founder.png
                     '<span class="bbcodes_player bold" style="font-weight:bold; float:right; margin-left:20px;">' + getText("settings", "author") + ': ' +
                     '<a id="link_contact" href=' + getText("settings", "link_contact") + ' target="_blank">Joe@Man</a></span>' +
                     '<a id="link_forum" href=' + getText("settings", "link_forum") + ' target="_blank" style="font-weight:bold; float:right">' +
                     '<img src="https://i.imgur.com/1Ua4WhT.png" alt="" style="margin: -5px 5px -3px 5px;" /><span>' + getText("settings", "forum") + '</span></a>' +
                     '</div>' +
                     '</div></div>');
+               // var blink_speed = 400; var t = setInterval(function () { var ele = document.getElementById('pisca'); ele.style.visibility = (ele.style.visibility == 'hidden' ? '' : 'hidden'); }, blink_speed);
                 getLatestVersion();
                 $('#joe_settings .joe_settings_tabs .submenu_link').click(function() {
                     if (!$(this).hasClass("active")) {
@@ -3382,7 +3289,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
     var autoTownTypes, manuTownTypes, population, sentUnitsArray, biriArray, spellbox, commandbox, tradebox, wonder, wonderTypes;
     function setStyle() {
         $('<style id="joe_settings_style" type="text/css">' +
-            '#joe_bg_medusa { background:url(https://i.imgur.com/WXiZqxa.png) no-repeat; height: 510px; width: 380px; right: -10px; top:6px; z-index: -1; position: absolute; opacity: 50%;} ' +
+            '#joe_bg_medusa { background:url(https://i.imgur.com/05e32RS.png) no-repeat; height: 510px; width: 380px; right: -10px; top:6px; z-index: -1; position: absolute; opacity: 50%;} ' +
             '.joe_overflow  { overflow: hidden; } ' +
             '#joe_icon  { width:15px; vertical-align:middle; margin-top:-2px; } ' +
             '#quackicon { width:15px !important; vertical-align:middle !important; margin-top:-2px; height:12px !important; } ' +
@@ -4011,8 +3918,8 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 '#NotifText .green { color: green; } ' +
                 '</style>').appendTo('head');
             var notif = DATA.notification;
-            if (notif <= 20) {
-                Notification.create(20, 'New messages');
+            if (notif <= 18) {
+                Notification.create(18, 'New messages');
                 var NotifText = '<div id="NotifText">' +
                     '<div style="overflow-x: hidden; padding-left: 5px; position: relative;"></div>' +
                     '<p><span style="font-size:21px;">&nbsp;➫ New Blog Gatinho</span><br/>' +
@@ -4041,7 +3948,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                     BBwnd.setContent(NotifText);
                     $(this).parent().find(".close").click();
                 });
-                saveValue('notif', '20');
+                saveValue('notif', '19');
             }
         },
         create: function(nid, feature) {
@@ -4153,7 +4060,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
 
                 '#joe_statistic_button .ico_statistics.checked { margin-top:8px; } ' +
                 '</style>').appendTo('head');
-            $('#joe_statistic_button').tooltip(getText("labels", "uni")); // TODO
+            $('#joe_statistic_button').tooltip(getText("labels", "uni"));
             $('#joe_statistic_button').on('mousedown', function() {
                 $('#joe_statistic_button, .ico_statistics').addClass("checked");
             }).on('mouseup', function() {
@@ -4601,7 +4508,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 '#joe_town_popup .god_content { width:25px; } ' +
                 '#joe_town_popup .hero_content { width:25px; } ' +
                 '#joe_town_popup .god_mini { transform:scale(0.4); margin: -19px; } ' +
-                '#joe_town_popup .god_mini.null { background: url(https://gppt.innogamescdn.com/images/game/autogenerated/layout/layout_596941d.png) no-repeat -488px -212px; width: 80px; height: 88px; z-index: 8; position: absolute; top: 136px; right: 7px; cursor: pointer; transform: scale(0.35);} ' +
+                '#joe_town_popup .god_mini.null { background: url(https://gppt.innogamescdn.com/images/game/autogenerated/layout/layout_596941d.png) no-repeat -488px -212px; width: 80px; height: 88px; z-index: 8; position: absolute !important; top: 166px; right: 7px; cursor: pointer; transform: scale(0.35);} ' +
                 '#joe_town_popup .count { position: absolute; bottom: -2px; right: 2px; font-size: 10px; font-family: Verdana,Arial,Helvetica,sans-serif; } ' +
                 '#joe_town_popup .four_digit_number .count { font-size:8px !important; } ' +
                 '#joe_town_popup .unit_icon25x25 { border: 1px solid #6e4b0b; margin: 1px; } ' +
@@ -4937,9 +4844,9 @@ function JOE_GAME(version, gm, DATA, time_a) {
                                 var popBuilding = 0,
                                     buildVal = uw.GameData.buildings,
                                     levelArray = townArray[town].buildings().getLevels(),
-                                    popMax = Math.floor(buildVal.farm.farm_factor * Math.pow(townArray[town].buildings().getBuildingLevel("farm"), buildVal.farm.farm_pow)), // Population from farm level
+                                    popMax = Math.floor(buildVal.farm.farm_factor * Math.pow(townArray[town].buildings().getBuildingLevel("farm"), buildVal.farm.farm_pow)),
                                     popPlow = townArray[town].getResearches().attributes.plow ? 200 : 0,
-                                    popFactor = townArray[town].getBuildings().getBuildingLevel("thermal") ? 1.1 : 1.0, // Thermal
+                                    popFactor = townArray[town].getBuildings().getBuildingLevel("thermal") ? 1.1 : 1.0,
                                     popExtra = townArray[town].getPopulationExtra();
                                 for (var b in levelArray) {
                                     if (levelArray.hasOwnProperty(b)) {
@@ -5330,7 +5237,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                     land_units_str += '<div id="JOE' + unit + '" class="unit index_unit bold unit_icon40x40 ' + unit + '"></div>';
                     if (Game.gods_active.aphrodite) {
                         if (unit == "siren") {
-                            land_units_str += '<div style="clear:left;"></div>'; // break
+                            land_units_str += '<div style="clear:left;"></div>';
                         }
                     } else if (Game.gods_active.ares) {
                         if (unit == "ladon") {
@@ -5952,6 +5859,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 '.wonder_controls .indicator3.green { background-position:right -355px; height:10px; width:242px; } ' +
                 '.wonder_controls .all_res { background:url(https://gpall.innogamescdn.com/images/game/layout/resources_2.32.png) no-repeat 0 -90px; width:30px; height:30px; margin:0 auto; margin-left:5px; } ' +
                 '.wonder_controls .town-capacity-indicator { margin-top:0px; } ' +
+                'center { margin-top: 100px; } ' + //novo bottao 2021
                 '</style>').appendTo('head');
         },
         deactivate: function() {
@@ -8280,7 +8188,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
             if (SmileyBox.isXmas) {
                 smileyArray.xmas = [
                     "sEE7HDE", "peRt6rM", "AwDYw0i", "R8tIvWC", "WBmN73c", "TX3d7hg", "9TYlWvy",
-                    "x5mkY7V", "3Ff8qi4", "Z4No2MO", "4NAvKYo", "AkUQnlL", "4iGLcQv", "kDeIIKr", "5ecbWoq", "2qynpev", "xr2CrOA", "JAyCMUi"
+                    "x5mkY7V", "3Ff8qi4", "Z4No2MO", "4NAvKYo", "AkUQnlL", "4iGLcQv", "kDeIIKr", "yxTx2P0", "2qynpev", "xr2CrOA", "JAyCMUi"
                 ];
             }
             if (SmileyBox.isForum) {
@@ -8721,7 +8629,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
         },
         deactivate: function() {
             $('.minimized_windows_area').get(0).style.width = "1550%";
-            $('.minimized_windows_area').get(0).style.left = "912%"; //cote gauche 10px=62.5%
+            $('.minimized_windows_area').get(0).style.left = "912%"; //cote gauche 10px=62.5% -- 912%
         }
     };
     function hideNavElements() {
@@ -10228,79 +10136,6 @@ function JOE_GAME(version, gm, DATA, time_a) {
         deactivate: function() {},
     };
     ///////////////////////////////////
-   //   * player/alliance/BBCode *  //
-  ///////////////////////////////////
-    var BBTownPlayer = {
-        activate: function() {
-            var wnds = GPWindowMgr.getOpen(Layout.wnd.TYPE_TOWN);
-            for (var e in wnds) {
-                if (wnds.hasOwnProperty(e)) {
-                    var wndid = wnds[e].getID();
-                    $('<style id="joe_BBtowninfo_style"> ' +
-                        '#joe_' + wndid + 'BBplayer { background: url(https://gpfr.innogamescdn.com/images/game/autogenerated/common/bbcodes/bbcodes_6e4f630.png) no-repeat -207px -28px; position:absolute; height: 22px; width: 21px; top:1px ;left: 0px; } ' +
-                        '#joe_' + wndid + 'BBalliance { background: url(https://gpfr.innogamescdn.com/images/game/autogenerated/common/bbcodes/bbcodes_6e4f630.png) no-repeat -207px -5px; position:absolute; height: 22px; width: 21px; top:1px ;left: 0px;z-index: 555; } ' +
-                        '#joe_' + wndid + 'clipboard-player { background: rgba(0, 0, 0, 0) url("https://gppt.innogamescdn.com/images/game/autogenerated/layout/layout_596941d.png") no-repeat scroll -482px -647px; position:absolute; height: 18px; width: 18px; z-index: 555; top:4px ;left: 229px; } ' +
-                        '#joe_' + wndid + 'clipboard-alliance { background: rgba(0, 0, 0, 0) url("https://gppt.innogamescdn.com/images/game/autogenerated/layout/layout_596941d.png") no-repeat scroll -482px -647px; position:absolute; height: 18px; width: 18px; z-index: 555; top:4px ;left: 229px; } ' +
-                        '#joe_' + wndid + 'clipboard-player:hover { filter: drop-shadow(0 0mm 2mm rgb(0, 210, 53)); } ' +
-                        '#joe_' + wndid + 'clipboard-alliance:hover { filter: drop-shadow(0 0mm 2mm rgb(0, 210, 53)); } ' +
-                        '#input_' + wndid + 'BBplayer { display: none; position: absolute; left: 40px; top: 4px; width: 200px; height: 12px; text-align: center; z-index: 555; background-image: url(https://gppt.innogamescdn.com/images/game/layout/gpwindow_bg.jpg); color: #0070ff; font-weight: bold; font-size: 10px;} ' +
-                        '#input_' + wndid + 'BBalliance { display: none; position: absolute; left: 40px; top: 4px; width: 200px; height: 12px; text-align: center; z-index: 555; background-image: url(https://gppt.innogamescdn.com/images/game/layout/gpwindow_bg.jpg); color: #0070ff; font-weight: bold; font-size: 10px;} ' +
-                        '</style>').appendTo("head");
-                    if ($("div#gpwnd_" + wndid + " div#info_tab_content div#towninfo_towninfo div.game_border ul.game_list li.even div.list_item_left a.gp_player_link").is(':visible')) {
-                        $('<style id="joe_BBplayer_style"> ' +
-                            'div#gpwnd_' + wndid + ' div#info_tab_content div#towninfo_towninfo div.game_border ul.game_list li.even img { padding-left: 21px; } ' +
-                            'div#gpwnd_' + wndid + ' div#info_tab_content div#towninfo_towninfo div.game_border ul.game_list li.odd.clearfix { padding-left: 25px; } ' +
-                            '</style>').appendTo("head");
-                    } else {
-                        $('<style id="joe_BBplayer_style"> ' +
-                            'div#gpwnd_' + wndid + ' div#info_tab_content div#towninfo_towninfo div.game_border ul.game_list li.even img { padding-left: 0px; } ' +
-                            '</style>').appendTo("head");
-                    }
-                    if (!$('#joe_' + wndid + 'BBplayer').get(0)) {
-                        if ($("div#gpwnd_" + wndid + " div#info_tab_content div#towninfo_towninfo div.game_border ul.game_list li.even div.list_item_left a.gp_player_link").is(':visible')) {
-                            $('<a id="joe_' + wndid + 'BBplayer"></a><input id="input_' + wndid + 'BBplayer" type="text" onfocus="this.select();" onclick="this.select();"></div>').appendTo('div#gpwnd_' + wndid + ' div#info_tab_content div#towninfo_towninfo div.game_border ul.game_list li.even div.list_item_left');
-                            $("#joe_" + wndid + "BBplayer").click(function() {
-                                if ($('#joe_' + wndid + 'clipboard-player').is(':visible')) {
-                                    $('#joe_' + wndid + 'clipboard-player').remove();
-                                } else {
-                                    $('<a id="joe_' + wndid + 'clipboard-player" data-clipboard-text="[player]' + $("div#gpwnd_" + wndid + " div#info_tab_content div#towninfo_towninfo div.game_border ul.game_list li.even div.list_item_left a.gp_player_link").text().trim() + '[/player]"></a>').appendTo('div#gpwnd_' + wndid + ' div#info_tab_content div#towninfo_towninfo div.game_border ul.game_list li.even div.list_item_left').tooltip(getText("messages", "copy"));
-                                }
-                                $("#input_" + wndid + "BBplayer").toggle();
-                                $("#input_" + wndid + "BBplayer").val("[player]" + $("div#gpwnd_" + wndid + " div#info_tab_content div#towninfo_towninfo div.game_border ul.game_list li.even div.list_item_left a.gp_player_link").text().trim() + "[/player]");
-                            });
-                        }
-                        $('<a id="joe_' + wndid + 'BBalliance"></a><input id="input_' + wndid + 'BBalliance" type="text" onfocus="this.select();" onclick="this.select();"></div>').appendTo('div#gpwnd_' + wndid + ' div#info_tab_content div#towninfo_towninfo div.game_border ul.game_list li.odd.clearfix');
-                        $("#joe_" + wndid + "BBalliance").click(function() {
-                            if ($('#joe_' + wndid + 'clipboard-alliance').is(':visible')) {
-                                $('#joe_' + wndid + 'clipboard-alliance').remove();
-                            } else {
-                                $('<a id="joe_' + wndid + 'clipboard-alliance" data-clipboard-text="[ally]' + $("div#gpwnd_" + wndid + " div#info_tab_content div#towninfo_towninfo div.game_border ul.game_list li.odd.clearfix a").text().trim() + '[/ally]"></a>').appendTo('div#gpwnd_' + wndid + ' div#info_tab_content div#towninfo_towninfo div.game_border ul.game_list li.odd.clearfix').tooltip(getText("messages", "copy"));
-                            }
-                            $("#input_" + wndid + "BBalliance").toggle();
-                            $("#input_" + wndid + "BBalliance").val("[ally]" + $("div#gpwnd_" + wndid + " div#info_tab_content div#towninfo_towninfo div.game_border ul.game_list li.odd.clearfix a").text().trim() + "[/ally]");
-                        });
-                        new ClipboardJS("#joe_" + wndid + "clipboard-player").on("success", function() {
-                            setTimeout(function() {
-                                HumanMessage.success(getText("messages", "copybb"))
-                            }, 50)
-                        })
-                        new ClipboardJS("#joe_" + wndid + "clipboard-alliance").on("success", function() {
-                            setTimeout(function() {
-                                HumanMessage.success(getText("messages", "copybb"))
-                            }, 50)
-                        })
-                    }
-                }
-            }
-            $('#joe_' + wndid + 'BBplayer').tooltip(joe_icon + 'BBCode ' + DM.getl10n("bbcodes").player.name);
-            $('#joe_' + wndid + 'BBalliance').tooltip(joe_icon + 'BBCode ' + DM.getl10n("bbcodes").ally.name);
-        },
-        deactivate: function() {
-            $('#joe_BBTownPlayer_style').remove();
-            $('#joe_BBplayer_style').remove();
-        },
-    };
-    ///////////////////////////////////
    //      * Activity boxes *       //
   ///////////////////////////////////
     var ActivityBoxes = {
@@ -10385,9 +10220,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                         $('<style id="joe_plusmenuTemple_commandsSTYLE" type="text/css">#toolbar_activity_temple_commands_list {left: ' + joe_position.left + 'px !important;top: ' + joe_position.top + 'px !important}</style>').appendTo('head');
                     }
                 });
-
                 function joe_plus_destroy(joeJQselector) {
-
                     $("#" + joeJQselector).parent().removeClass("displayImp");
                     $("#" + joeJQselector + "STYLE").remove();
                 }
@@ -10412,7 +10245,6 @@ function JOE_GAME(version, gm, DATA, time_a) {
             $('#toolbar_activity_temple_commands_list').click(function() {
                 joe_plus_destroy("joe_plusmenuTemple_commands");
             });
-
             function joe_plus_destroy(joeJQselector) {
                 $("#" + joeJQselector).parent().removeClass("displayImp");
                 $("#" + joeJQselector + "STYLE").remove();
@@ -11245,7 +11077,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 $('<a href="http://www.greensmilies.com/smilie-album/weihnachten-smilies/" target="_blank"><div id="joe_xmas"></div></a>').appendTo('#ui_box');
                 var joeXMAS = $('#joe_xmas');
                 joeXMAS.css({
-                    background: 'url("https://i.imgur.com/nowzVtE.gif") no-repeat',
+                    background: 'url("https://i.imgur.com/yxTx2P0.gif") no-repeat',
                     height: '51px',
                     width: '61px',
                     position: 'absolute',
@@ -11259,10 +11091,11 @@ function JOE_GAME(version, gm, DATA, time_a) {
         NewYear: {
             add: function() {
                 $('<a href="http://www.greensmilies.com/smilie-album/" target="_blank"><div id="joe_newYear">' +
-                    '<img src="https://i.imgur.com/DWMmjF7.gif">' + //(2) ano 2021
-                    '<img src="https://i.imgur.com/E7spHRq.gif">' + //(0)
-                    '<img src="https://i.imgur.com/DWMmjF7.gif">' + //(2)
-                    '<img src="https://i.imgur.com/XXtaiAg.gif">' + //(1)
+                    '<img src="https://wiki.en.grepolis.com/images/b/bf/New_Years_Forum_Banner.png" style="width:400px; opacity: 0.70;">' +
+                    '<img src="https://i.imgur.com/RJMgQk9.gif" style="position:absolute; top: 10px; left: 280px">' + //(2) ano 2022
+                    '<img src="https://i.imgur.com/VS5DRM3.gif" style="position:absolute; top: 10px; left: 300px">' + //(0)
+                    '<img src="https://i.imgur.com/RJMgQk9.gif" style="position:absolute; top: 10px; left: 320px">' + //(2)
+                    '<img src="https://i.imgur.com/RJMgQk9.gif" style="position:absolute; top: 10px; left: 340px">' + //(2)
                     '</div></a>').appendTo('#ui_box');
                 var joeNewYear = $('#joe_newYear');
                 joeNewYear.css({
@@ -11576,3 +11409,145 @@ var JoeManCalculator = w.JoeManCalculator = {
     }
 };
 JoeManCalculator.Starten();
+
+//////////////////////////////////////////////////////////////////////////////novo
+
+(function() {
+    'use strict';
+    // Configuration des liens de raccourcis
+    // `label` (qui peut être du html) correspond à ce qui est affiché à l'écran
+    // `fn` correspond à la fonction appelée lors du clique sur le lien
+    // Les fonctions ont été récupéré depuis https://wiki.en.grepolis.com/wiki/The_Game_Interface#Quick_Bar
+    let configLinks = {
+        senate: {
+            label: 'Senat',
+            fn: () => MainWindowFactory.openMainWindow(),
+            //label: () => "senado",
+        },
+        cave: {
+            label: 'Grotte',
+            fn: () => HideWindowFactory.openHideWindow(),
+        },
+        warehouse: {
+            label: 'Entrepôt',
+            fn: () => BuildingWindowFactory.open('storage'),
+        },
+        farm: {
+            label: 'Ferme',
+            fn: () => FarmWindowFactory.openFarmWindow(),
+        },
+        timberCamp: {
+            label: 'Scierie',
+            fn: () => LumberWindowFactory.openLumberWindow(),
+        },
+        quarry: {
+            label: 'Carrière',
+            fn: () => StonerWindowFactory.openStonerWindow(),
+        },
+        silverMine: {
+            label: 'Mine d\'argent',
+            fn: () => IronerWindowFactory.openIronerWindow(),
+        },
+        marketPlace: {
+            label: 'Marché',
+            fn: () => MarketWindowFactory.openMarketWindow(),
+        },
+        harbor: {
+            label: 'Port',
+            fn: () => DocksWindowFactory.openDocksWindow(),
+        },
+        barracks: {
+            label: 'Caserne',
+            fn: () => BarracksWindowFactory.openBarracksWindow(),
+        },
+        cityWall: {
+            label: 'Rempart',
+            fn: () => BuildingWindowFactory.open('wall'),
+        },
+        academy: {
+            label: 'Académi',
+            fn: () => AcademyWindowFactory.openAcademyWindow(),
+        },
+        temple: {
+            label: 'Temple',
+            fn: () => TempleWindowFactory.openTempleWindow(),
+        },
+        agoraDefence: {
+            label: 'Agora (défence)',
+            fn: () => PlaceWindowFactory.openPlaceWindow('index', open),
+        },
+        troopsOutside: {
+            label: 'Troupes en dehors',
+            fn: () => PlaceWindowFactory.openPlaceWindow('units_beyond', open),
+        },
+        simulator: {
+            label: 'Simulateur',
+            fn: () => PlaceWindowFactory.openPlaceWindow('simulator', open),
+        },
+        culture: {
+            label: 'Culture',
+            fn: () => PlaceWindowFactory.openPlaceWindow('culture'),
+        },
+    };
+
+    // La configuration générale de la barre de menu
+    // Elle est divisée en deux. Chaque élément de positionnement
+    // doit contenir un pointeur vers une config présente dans configLinks.
+    let uiBarConfig = {
+        left: [
+            configLinks.senate,
+            configLinks.academy,
+            configLinks.marketPlace,
+            configLinks.culture,
+        ],
+        right: [
+            configLinks.simulator,
+            configLinks.cave,
+            configLinks.harbor,
+            configLinks.barracks,
+        ],
+    };
+    uiBarConfig.right.reverse();
+
+    // On vérifie si la barre de raccourcis existent et si elle ne contient pas déjà des choses
+    let uiBar = $('.ui_quickbar');
+    if (!uiBar.length) return;
+    if (uiBar.has('*').length) return;
+
+    // On place les raccourcis
+    uiBarConfig.left.forEach(cfg => appendToUiBar(uiBar, 'left', cfg));
+    uiBarConfig.right.forEach(cfg => appendToUiBar(uiBar, 'right', cfg));
+
+
+
+    // Place les raccourcis sur la barre, selon une position 'left' ou 'right'
+    function appendToUiBar(uiBar, position, cfg) {
+        let link = $('<a href="#"></a>');
+        link.html(cfg.label);
+        link.css({
+            'float': position,
+            'margin': '0 3em',
+            'color': 'white',
+            'line-height': '1.6',
+        });
+        link.click(cfg.fn);
+        uiBar.append(link);
+    }
+})();
+
+//$("a:contains('Senat')").text("Senado");
+//$("a:contains('Grotte')").text("uni");
+//$("a:contains('Entrepôt')").text = getText("labels","uni");
+//$("a:contains('Ferme')").text = getText("labels","uni");
+//$("a:contains('Scierie')").text = getText("labels","uni");
+//$("a:contains('Culture')").text = getText("labels","uni");
+//$("a:contains('Culture')").text = getText("labels","uni");
+//$("a:contains('Culture')").text = getText("labels","uni");
+//$("a:contains('Culture')").text = getText("labels","uni");
+//$("a:contains('Culture')").text = getText("labels","uni");
+//$("a:contains('Culture')").text = getText("labels","uni");
+//$("a:contains('Culture')").text = getText("labels","uni");
+//$("a:contains('Culture')").text = getText("labels","uni");
+//$("a:contains('Culture')").text = getText("labels","uni");
+//$("a:contains('Culture')").text = getText("labels","uni");
+//$("a:contains('Culture')").text = getText("labels","uni");
