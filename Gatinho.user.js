@@ -1,15 +1,15 @@
 // ==UserScript==
 // @name		Gatinho
 // @namespace   Gatinho
-// @version		4.57.13
-// @author		JoeMan
+// @version		4.57.14
+// @author		Gatinho
 // @description Gatinho é uma pequena extençao para o jogo browser Grepolis. (counter, displays, smilies, trade options, changes to the layout)
 // @include     http://*.grepolis.com/*
 // @include     https://*.grepolis.com/*
 // @exclude 	https://*.forum.grepolis.com/*
 // @require		http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js
 // @icon		https://i.imgur.com/1S9gut4.png
-// @icon64URL		https://i.imgur.com/1S9gut4.png
+// @icon64		https://i.imgur.com/1S9gut4.png
 // @license     GPL-3.0
 // @grant		GM_info
 // @grant		GM_setValue
@@ -17,10 +17,9 @@
 // @grant		GM_deleteValue
 // @grant		GM_xmlhttpRequest
 // @grant		GM_getResourceURL
-// @source  a derivative of the old Dio Tools abandoned since 2016
 // @downloadURL https://github.com/AligatorJoe/Dio-Tools-2019/raw/master/Gatinho.user.js
 // ==/UserScript==
-var version = '4.57.13';
+var version = '4.57.14';
                    /////////////////////////////////////////////////////////////////////////////////////////
                   //  * @license  GPL-3.0                                                                //
                  //                                                                                     //
@@ -43,7 +42,7 @@ style.innerHTML =
     '.attack_support_window .game_border {  border-left: none; border-bottom: 1px solid #575; box-shadow: -10px 2px 3px black; } ' +
     'div.game_border { background-color: #0000;} ' +
     '#iframe1 { border: 5px ridge #5a9558; -moz-border-radius: 15px; border-radius: 15px; -moz-box-shadow: 4px 4px 14px #000; -webkit-box-shadow: 4px 4px 14px #000; box-shadow: 4px 4px 14px #000;}' +
-    '#pisca {text-shadow: 0px 0px 16px rgba(0, 218, 0, 1);}' +
+    '#pisca {text-shadow: 0px 0px 10px rgba(0, 0, 0, 1); color: #fff;}' +
     //'#toolbar_activity_commands_list { visibility: visible !important; display: block ! important }' +  //block liste ataque def
     //'.item.command.unit_movements { visibility: visible !important; display: block ! important }' +  //block liste ataque def
     document.getElementsByTagName('head')[0].appendChild(style);
@@ -74,7 +73,7 @@ if (GM && (uw.location.pathname.indexOf("game") >= 0)) {
         count: loadValue("joe_count", "[]"),
         notification: loadValue('notif', '0'),
         error: loadValue('error', '{}'),
-        spellbox: loadValue("spellbox", '{ "top":"23%", "left": "-150%", "show": false }'),
+        spellbox: loadValue("spellbox", '{ "top":"23%", "left": "-150% !important", "show": false }'),
         commandbox: loadValue("commandbox", '{ "top":55, "left": 250 }'),
         tradebox: loadValue("tradebox", '{ "top":55, "left": 450 }'),
         townTypes: loadValue(WID + "_townTypes", "{}"),
@@ -272,6 +271,23 @@ function JOE_GAME(version, gm, DATA, time_a) {
         updateversion = version.replace(/\./g, "-");
     joe_sprite = "https://i.imgur.com/HQq4rV1.png"; //"https://i.imgur.com/cILbyDs.png";
     joe_icon = '<img src="https://i.imgur.com/bW8lxNz.gif" style="width: 15px;float:left;margin: 1px 4px 0px -3px">';
+    //.................news atalho................./
+    Serracao_icon = '<img id="Serracao" title="lumber" src="https://i.ibb.co/XCZ7SjZ/Serracao.png" style="margin-top: -14px; float: left; mask: linear-gradient(360deg, #000 75%, transparent 50%);">';
+    Academie_icon = '<img id="Academia" title="Academy" src="https://i.ibb.co/QryCtmn/Academia.png.png" style="margin-top: -14px; float: left; mask: linear-gradient(360deg, #000 75%, transparent 50%);">';
+    Gruta_icon = '<img id="Gruta" title="Cave" src="https://i.ibb.co/PthprsT/Gruta.png" style="margin-top: -14px; float: left; mask: linear-gradient(360deg, #000 75%, transparent 50%);">';
+    Muralha_icon = '<img id="Muralha" title="Wall" src="https://i.ibb.co/DYMnYwB/Muralha.png" style="margin-top: -14px; float: left; mask: linear-gradient(360deg, #000 75%, transparent 50%);">';
+    Senado_icon = '<img id="Senado" title="Senate" src="https://i.ibb.co/hRzW1bz/Senado.png" style="margin-top: -14px; float: left; mask: linear-gradient(360deg, #000 75%, transparent 50%);">';
+    Quartelo_icon = '<img id="Quartelo" title="Quarter" src="https://i.ibb.co/6YXqQ3P/Quartelo.png" style="margin-top: -14px; float: left; mask: linear-gradient(360deg, #000 75%, transparent 50%);">';
+    Porto_icon = '<img id="Porto" title="Harbor" src="https://i.ibb.co/VL7F4Xq/Porto.png" style="margin-top: -14px; float: left; mask: linear-gradient(360deg, #000 75%, transparent 50%);">';
+    Agora_icon = '<img id="Agora" title="Place" src="https://i.ibb.co/ZxGspHS/Agora.png" style="margin-top: -14px; float: left; mask: linear-gradient(360deg, #000 75%, transparent 50%);">';
+    Templo_icon = '<img id="Templo" title="Temple" src="https://i.ibb.co/x58jhDf/Templo.png" style="margin-top: -14px; float: left; mask: linear-gradient(360deg, #000 75%, transparent 50%);">';
+    Mercado_icon = '<img id="Mercado" title="Market" src="https://i.ibb.co/TPMJ7YR/Mercado.png" style="margin-top: -14px; float: left; mask: linear-gradient(360deg, #000 75%, transparent 50%);">';
+    Mina_icon = '<img id="Prata" title="Silver" src="https://i.ibb.co/z717GQW/Mina-Prata.png" style="margin-top: -14px; float: left; mask: linear-gradient(360deg, #000 75%, transparent 50%);">';
+    Pedreira_icon = '<img id="Pedeira" title="Stroner" src="https://i.ibb.co/M96RKrj/Pedreira.png" style="margin-top: -14px; float: left; mask: linear-gradient(360deg, #000 75%, transparent 50%);">';
+    Armazem_icon = '<img id="Armazem" title="Storage" src="https://i.ibb.co/mhjzvwC/Armazim.png" style=" style="margin-top: -14px;  float: left; mask: linear-gradient(360deg, #000 75%, transparent 50%);">';
+    Quinta_icon = '<img id="Quinta" title="Farm" src="https://i.ibb.co/hgXjwJs/Quinta.png" style="margin-top: -14px; float: left; mask: linear-gradient(360deg, #000 75%, transparent 50%);">';
+    Simulator_icon = '<img id="Simulador" title="Simulator" src="https://i.ibb.co/9TBGwR7/Simulator.png" style="margin-top: -14px; float: left; mask: linear-gradient(360deg, #000 75%, transparent 50%);">';
+    Exterior_icon = '<img id="Exterior" title="troops abroad" src="https://i.ibb.co/0cP3DT6/Exterior.png" style="margin-top: -14px; float: left; mask: linear-gradient(360deg, #000 75%, transparent 50%);">';
     if (uw.location.pathname.indexOf("game") >= 0) {
         DATA = JSON.parse(DATA.replace(/##/g, "'"));
         WID = uw.Game.world_id;
@@ -439,6 +455,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 Hid: ["	In den Höhlen", "Fügt Silber in die Höhle, wenn die Lease hat über 15k.	"],
                 Hio: ["	Mit Blick auf die Höhlen (Administrator)", "5 Kategorien vorhanden suchen."],
                 ubv: ["	Kapazität Bevölkerung", "Unterstützung Kapazität - von der Insel	"],
+                Arb: ["Schneller Zugang  ", "Um diese Option zu deaktivieren, deaktivieren Sie sie und klicken Sie auf Aktualisieren"],
                 her: ["	Eroberung thrakischen", "Karte Größenreduzierung thrakischen Leistung."]
             },
             Quack: {
@@ -620,6 +637,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 Hid: ["	Aggiungere alla grotta", "Aggiunge l'argento alla grotta nel magazzino hanno più di 15K."],
                 Hio: ["	Vista delle grotte (Administrator)", "5 categorie disponibili di ricerca."],
                 ubv: ["	popolazione di capacità	", "sostenere la capacità - al largo dell'isola	"],
+                Arb: ["Accesso veloce  ", "Per disabilitare questa opzione, deselezionala e fai clic su Aggiorna"],
                 her: ["conquista della Tracia", "mappa riduzione delle dimensioni raggiungimento della Tracia."]
             },
             Quack: {
@@ -802,6 +820,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 Hid: ["	Προσθήκη στο σπήλαιο", "Προσθέτει ασήμι στο σπήλαιο στην αποθήκη έχουν πάνω από 15K.	"],
                 Hio: ["	Προβολή των σπηλαίων (Διαχειριστής)	", "5 κατηγορίες διαθέσιμη αναζήτησης.	"],
                 ubv: ["	του πληθυσμού της ικανότητας", "υποστηρίξει την ικανότητα - από το νησί	"],
+                Arb: ["γρήγορη πρόσβαση  ", "Για να απενεργοποιήσετε αυτήν την επιλογή, αποεπιλέξτε την και κάντε κλικ στην ανανέωση"],
                 her: ["κατάκτηση Θρακικό", "χάρτης μείωση του μεγέθους Θρακικό επίτευγμα."]
             },
             Quack: {
@@ -980,9 +999,10 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 SUA: ["Voeg (No Overload / Reset)", "Nieuwe instrumenten in de aanval en ondersteuning venster."],
                 Mse: ["BB-code menssagens", "Bekeerlingen menssagens in BB-code"],
                 Cul: ["Overzicht van de cultuur (Administrator)", "Voegt een telling van alle parades"],
-                Hid: ["	Voeg toe aan grot", "Voegt zilver naar de grot in het magazijn hebben meer dan 15K."],
-                Hio: ["	Uitzicht op de grotten (Administrator)", "5 categorieën beschikbaar zoeken."],
-                ubv: ["	capaciteit bevolking", "ondersteunen capaciteit - van het eiland"],
+                Hid: ["Voeg toe aan grot", "Voegt zilver naar de grot in het magazijn hebben meer dan 15K."],
+                Hio: ["Uitzicht op de grotten (Administrator)", "5 categorieën beschikbaar zoeken."],
+                ubv: ["capaciteit bevolking", "ondersteunen capaciteit - van het eiland"],
+                Arb: ["Snelle toegang  ", "Om deze optie uit te schakelen, deselecteert u deze en klikt u op vernieuwen"],
                 her: ["verovering Thracische", "kaart verkleinen Thracische prestatie."]
             },
             Quack: {
@@ -1161,9 +1181,10 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 SUA: ["Add (No Overload / Reset)", "New tools in attack and support window."],
                 Mse: ["BB-Code menssagens", "Converts menssagens in BB-Code"],
                 Cul: ["Overview of culture (Administrator)", "Adds a count of all the parades"],
-                Hid: ["	Add to cave	", "Adds silver to the cave in the warehouse have over 15K."],
-                Hio: ["	View of the caves (Administrator)", "5 categories available search."],
-                ubv: ["	capacity population	", "support capacity - off the island"],
+                Hid: ["Add to cave	", "Adds silver to the cave in the warehouse have over 15K."],
+                Hio: ["View of the caves (Administrator)", "5 categories available search."],
+                ubv: ["capacity population	", "support capacity - off the island"],
+                Arb: ["Quick access  ", "To disable this option, select it and click refresh "],
                 her: ["conquest Thracian", "map size reduction Thracian achievement."]
             },
             Quack: {
@@ -1342,9 +1363,10 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 SUA: ["Ajouter (Pas de surcharge / Reset)", "De nouveaux outils dans l'attaque et la fenêtre de soutien."],
                 Mse: ["BB-code menssagens", "Menssagens en BB convertis-Code"],
                 Cul: ["Vue d'ensemble de la culture (Administrateur)", "Ajoute un compteur de tous les défilés"],
-                Hid: ["	Ajouter à la grotte	", "Adds d'argent à la grotte dans l'entrepôt ont plus de 15K."],
-                Hio: ["	Vue des grottes (Administrateur)", "5 catégories de recherche disponibles."],
-                ubv: ["	population des capacités", "capacité de soutenir - de l'île."],
+                Hid: ["Ajouter à la grotte	", "Adds d'argent à la grotte dans l'entrepôt ont plus de 15K."],
+                Hio: ["Vue des grottes (Administrateur)", "5 catégories de recherche disponibles."],
+                ubv: ["population des capacités", "capacité de soutenir - de l'île."],
+                Arb: ["Accès rapide  ", "Pour désactiver cette option, sélectionnez-la et cliquez sur Actualiser "],
                 her: ["conquête thrace", "carte réduction de la taille réalisation thrace."]
             },
             Quack: {
@@ -1526,6 +1548,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 Hid: ["	Добавить в пещеру", "Добавляет серебро в пещеру на складе имеет более 15K."],
                 Hio: ["	Вид из пещеры (Администратор)", "5 доступных категорий поиска."],
                 ubv: ["	население емкости", "поддерживать емкость - от острова."],
+                Arb: ["быстрый доступ  ", "Чтобы отключить эту опцию, выберите ее и нажмите «Обновить»."],
                 her: ["завоевание фракийского", "карта уменьшение размера фракийского достижения."]
             },
             Quack: {
@@ -1707,6 +1730,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 Hid: ["	Dodaj do jaskini", "Dodaje srebrny do jaskini w magazynie mają ponad 15K."],
                 Hio: ["	Widok jaskiniach (Administrator)", "5 kategoriach dostępne wyszukiwania."],
                 ubv: ["	populacja pojemność	", "wspieranie zdolności - od wyspy	"],
+                Arb: ["Szybki dostęp  ", "Aby wyłączyć tę opcję, wybierz ją i kliknij odśwież."],
                 her: ["podbój tracki", "map rozdrabniania trackiego osiągnięcie."]
             },
             Quack: {
@@ -1888,6 +1912,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 Hid: ["	Adăugați la peșteră	", "Adăugări de argint la pestera din depozit au peste 15K."],
                 Hio: ["	Vezi pesterilor (Administrator)	", "5 categorii de căutare disponibile."],
                 ubv: ["	populaţia capacitate", "capacitatea de a sprijini - în largul insulei."],
+                Arb: ["Acces rapid  ", "Pentru a dezactiva această opțiune, selectați-o și faceți clic pe reîmprospătare"],
                 her: ["cucerirea Traciei", "harta reducerea dimensiunilor realizare tracic."]
             },
             Quack: {
@@ -2069,6 +2094,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 Hid: ["	Añadir a la cueva", "Añade la plata a la cueva en el almacén tiene más de 15K."],
                 Hio: ["	Vista de las cuevas (Administrador)	", "5 categorías disponibles de búsqueda."],
                 ubv: ["	la capacidad de la población", "apoyar la capacidad - fuera de la isla."],
+                Arb: ["Acceso rapido  ", "Para deshabilitar esta opción, selecciónela y haga clic en Actualizar."],
                 her: ["conquista de Tracia", "mapa reducción del tamaño de los logros de Tracia."]
             },
             Quack: {
@@ -2251,6 +2277,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 Hid: ["Adicionar para gruta", "Acrescenta prata para a gruta se no armazém tiver acima dos 15K."],
                 Hio: ["Vista das grutas (Administrador)", "5 categorias disponíveis de procura."],
                 ubv: ["Capacidade população", "Capacidade apoio - fora da ilha."],
+                Arb: ["Acessos rápido", "Para desabilitar essa opcao, desseleciona, e clico em refresh"],
                 her: ["Conquista Thracian", "Redução de tamanho do mapa da conquista Thracian."]
             },
             Quack: {
@@ -2443,6 +2470,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 Hid: ["	Přidat do jeskyně", "Přidá stříbro do jeskyně ve skladu mají více než 15K."],
                 Hio: ["	Pohled z jeskyně (Administrator)", "5 kategorií k dispozici vyhledávání."],
                 ubv: ["	populace kapacita", "podpoří schopnost - mimo ostrov"],
+                Arb: ["rychlý přístup  ", "Chcete-li tuto možnost zakázat, vyberte ji a klikněte na tlačítko Obnovit "],
                 her: ["dobytí Thracian", "Pro zmenšení velikosti thrácké úspěch."]
             },
             Quack: {
@@ -2613,6 +2641,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
         Hid: false,
         ubv: false,
         her: true,
+        Arb: false,
         joe_ta: true,
         joe_tb: false,
         joe_tc: false,
@@ -3009,9 +3038,14 @@ function JOE_GAME(version, gm, DATA, time_a) {
                     '<p>' + getText("options", "Hio")[1] + '</p></td>' +
                     '</tr><tr>' +
                     '</tr><tr>' +
+                    '<td><img src="https://i.ibb.co/3FVjFRS/Axe-Rapide.png" alt="" /></td>' +
+                    '<td><div id="Arb" class="checkbox_new"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("options", "Arb")[0] + '<button id="Refrech" style="width: 65px; height: 15px;" onClick="window.location.reload();">Click refresh</button></div></div>' +
+                    '<p>' + getText("options", "Arb")[1] + '</p></td>' +
+                    '</tr><tr>' +
+                    '</tr><tr>' +
                     '</tr></table>' +
                     '<div id="joe_hall" class="content_category" style="font-weight: bold;">' +
-                    "<p>Information of the day</p>" +
+                    "<p id='Title' >Information of the day</p>" +
                     '<table>' +
                     '<iframe name="iframe1" id="iframe1" allowtransparency="true" style="margin-left: -5px;" src="https://mycitygre.000webhostapp.com/Dio-Tools/info.html" width="100%" height="280px" ></iframe>' +
                     '</table>' +
@@ -3019,14 +3053,18 @@ function JOE_GAME(version, gm, DATA, time_a) {
                     '</DIV>' +
                     '<div style="bottom: -50px;font-weight: bold;position: absolute;width: 99%;">' +
                     '<a id="hall_of_felix" href="#" style="font-weight:bold; float:left">' +
-                    '<img src="https://i.giphy.com/media/Trf2JHQIrEXYs/200.gif" alt="" style="float:left;height:19px;margin:0px 5px -3px;"><span id="pisca" class="pisca">The newspaper of Gatinho</span></a>' + // /images/game/ally/founder.png
+                    '<img src="https://i.giphy.com/media/Trf2JHQIrEXYs/200.gif" alt="" style="float:left;height:19px;margin:0px 5px -3px;"><span id="pisca" class="pisca">Newspaper the Gatinho</span></a>' + // /images/game/ally/founder.png
                     '<span class="bbcodes_player bold" style="font-weight:bold; float:right; margin-left:20px;">' + getText("settings", "author") + ': ' +
                     '<a id="link_contact" href=' + getText("settings", "link_contact") + ' target="_blank">Joe@Man</a></span>' +
                     '<a id="link_forum" href=' + getText("settings", "link_forum") + ' target="_blank" style="font-weight:bold; float:right">' +
                     '<img src="https://i.imgur.com/1Ua4WhT.png" alt="" style="margin: -5px 5px -3px 5px;" /><span>' + getText("settings", "forum") + '</span></a>' +
                     '</div>' +
                     '</div></div>');
-               // var blink_speed = 400; var t = setInterval(function () { var ele = document.getElementById('pisca'); ele.style.visibility = (ele.style.visibility == 'hidden' ? '' : 'hidden'); }, blink_speed);
+                    //......Pisca........//
+                   (function blink() {
+                   $('.pisca').fadeOut(9000).fadeIn(1000, blink);
+                   })();
+                  //......fim Pisca........//
                 getLatestVersion();
                 $('#joe_settings .joe_settings_tabs .submenu_link').click(function() {
                     if (!$(this).hasClass("active")) {
@@ -3094,7 +3132,6 @@ function JOE_GAME(version, gm, DATA, time_a) {
             $('#joe_settings').get(0).style.display = "block";
         });
     }
-
     function toggleActivation(opt) {
         var FEATURE, activation = true;
         switch (opt) {
@@ -3217,6 +3254,9 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 break;
             case "Mse":
                 FEATURE = MessageExport;
+                break;
+            case "Arb":
+                FEATURE = AcceRapide;
                 break;
             case "Hid":
                 FEATURE = hidesIndexIron;
@@ -4508,7 +4548,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 '#joe_town_popup .god_content { width:25px; } ' +
                 '#joe_town_popup .hero_content { width:25px; } ' +
                 '#joe_town_popup .god_mini { transform:scale(0.4); margin: -19px; } ' +
-                '#joe_town_popup .god_mini.null { background: url(https://gppt.innogamescdn.com/images/game/autogenerated/layout/layout_596941d.png) no-repeat -488px -212px; width: 80px; height: 88px; z-index: 8; position: absolute !important; top: 166px; right: 7px; cursor: pointer; transform: scale(0.35);} ' +
+                '#joe_town_popup .god_mini.null { background: url(https://gppt.innogamescdn.com/images/game/autogenerated/layout/layout_095495a.png) no-repeat -488px -212px; width: 80px; height: 88px; z-index: 8; position: absolute !important; top: 166px; right: 7px; cursor: pointer; transform: scale(0.35);} ' +
                 '#joe_town_popup .count { position: absolute; bottom: -2px; right: 2px; font-size: 10px; font-family: Verdana,Arial,Helvetica,sans-serif; } ' +
                 '#joe_town_popup .four_digit_number .count { font-size:8px !important; } ' +
                 '#joe_town_popup .unit_icon25x25 { border: 1px solid #6e4b0b; margin: 1px; } ' +
@@ -7264,6 +7304,28 @@ function JOE_GAME(version, gm, DATA, time_a) {
         }
     };
     ///////////////////////////////////
+   //         * AcceRapide *        //
+  ///////////////////////////////////
+
+    var AcceRapide = {
+        activate: function() {
+            var joeman_s = document.createElement('script');
+            joeman_s.type = 'text/javascript';
+            joeman_s.src = 'https://mycitygre.000webhostapp.com/Gatinho/Modules/AcceRapide.js';
+            joeman_s.id = 'AcceRapide';
+            document.body.appendChild(joeman_s);
+        },
+        deactivate: function() {
+        },
+    };
+
+    //////////////////////////////////////
+   //         * Style_Gatinho *        //
+  //////////////////////////////////////
+
+$('head').append('<link rel="stylesheet" type="text/css" href="https://mycitygre.000webhostapp.com/Gatinho/Style_Gatinho.css">');
+
+    ///////////////////////////////////
    //    * Transporter capacity *   //
   ///////////////////////////////////
     var TransportCapacity = {
@@ -7937,7 +7999,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
             colonize_ship: 'https://wiki.en.grepolis.com/images/d/d1/Colonize_ship_40x40.png',
             move_icon: 'https://gpall.innogamescdn.com/images/game/unit_overview/attack.png',
             bordure: 'https://i.imgur.com/UPAkYNo.jpg',
-            bordure2: 'https://i.imgur.com/ZjSSB4A.png'
+            bordure2: 'https://i.imgur.com/bpu7sa7.png'
         };
         $('<div class="bb_def_chooser">' +
             '<div class="bbcode_box middle_center">' +
@@ -8565,6 +8627,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 '#ui_box .gods_spells_menu { width: 134px; position:absolute ; z-index:5500; padding:30px 0px 0px -4px } ' +
                 '#ui_box .gods_spells_menu .content { background:url(https://gpall.innogamescdn.com/images/game/layout/power_tile.png) 1px 13px; overflow:auto; margin:0 0 0px 0px; border:3px inset rgb(16, 87, 19); border-radius:10px } ' +
                 '#ui_box .nui_units_box { display:block; margin-top:-8px; position:relative} ' +
+                //'.gods_spells_menu.ui-draggable.ui-draggable-handle {left: auto !important;}' +
                 '</style>').appendTo('head');
             $("#ui_box .gods_spells_menu").draggable({
                 containment: "body",
@@ -8624,12 +8687,12 @@ function JOE_GAME(version, gm, DATA, time_a) {
     }
     var Taskbar = {
         activate: function() {
-            $('.minimized_windows_area').get(0).style.width = "200%";
-            $('.minimized_windows_area').get(0).style.left = "-125%";
+            $('.minimized_windows_area').get(0).style.width = "200% !important";
+            $('.minimized_windows_area').get(0).style.left = "-125% !important";
         },
         deactivate: function() {
-            $('.minimized_windows_area').get(0).style.width = "1550%";
-            $('.minimized_windows_area').get(0).style.left = "912%"; //cote gauche 10px=62.5% -- 912%
+            $('.minimized_windows_area').get(0).style.width = "1550% !important";
+            $('.minimized_windows_area').get(0).style.left = "912% !important"; //cote gauche 10px=62.5% -- 912%
         }
     };
     function hideNavElements() {
@@ -9097,7 +9160,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
             $('<style id="joe_Scrollbar_display">' +
                 '#scrollbar { display:block!important; } ' +
                 '</style>').appendTo('head');
-            if (DATA.options.joe_ta || DATA.options.joe_tb || DATA.options.joe_tc || DATA.options.joe_td || DATA.options.joe_te || DATA.options.joe_tf || DATA.options.joe_tg || DATA.options.joe_th || DATA.options.joe_ti || DATA.options.joe_tj) {
+                if (DATA.options.joe_ta || DATA.options.joe_tb || DATA.options.joe_tc || DATA.options.joe_td || DATA.options.joe_te || DATA.options.joe_tf || DATA.options.joe_tg || DATA.options.joe_th || DATA.options.joe_ti || DATA.options.joe_tj) {
                 //Blue
                 if (DATA.options.joe_ta) {
                     $('<style id="joe_Scrollbar">.bbcode_box.bottom_center,.bbcode_box.bottom_left,.bbcode_box.bottom_right,.bbcode_box.middle_left,.bbcode_box.middle_right,.bbcode_box.top_center,.bbcode_box.top_left,.bbcode_box.top_right,.gp_window.classic_sub_window>.border_b,.gp_window.classic_sub_window>.border_l,.gp_window.classic_sub_window>.border_r,.gp_window.classic_sub_window>.border_t,.grepolis_score .summary .card_background,.sandy-box .border_b,.sandy-box .border_l,.sandy-box .border_r,.sandy-box .border_t,.sandy-box .corner_bl,.sandy-box .corner_br,.sandy-box .corner_tl,.sandy-box .corner_tr,.sandy-box .middle,.tooltip_with_arrow .twa_background_fake,.tooltip_with_arrow .twa_border_bottom,.tooltip_with_arrow .twa_border_left,.tooltip_with_arrow .twa_border_right,.tooltip_with_arrow .twa_border_top,.tooltip_with_arrow .twa_corner_bl,.tooltip_with_arrow .twa_corner_br,.tooltip_with_arrow .twa_corner_tl,.tooltip_with_arrow .twa_corner_tr,.tooltip_with_arrow.arrow-right-bottom .twa_arrow,.tooltip_with_arrow.arrow-right-middle .twa_arrow,.tooltip_with_arrow.arrow-right-top .twa_arrow{filter:grayscale(50%) hue-rotate(10deg)}.published_report .espionage_report,.published_report .power_report{background:#ecf2fc}div.game_border{background-color:#869eff}#trade_tab .content{background:url(https://i.imgur.com/BCUgYDS.gif) #bcc6ff;}.tooltip_reward_day .reward_wrapper{background:url() #bcc6ff}#unit_order_confirm:hover,a#unit_order_max:hover,a#unit_order_min:hover,a.left:hover,a.right:hover,a.unit_order_show:hover{box-shadow:-1px -1px 10px #00ff34}[ng-app=bot][new][ng-controller=commander]{background:repeating-linear-gradient(45deg,#908df9 0,#8d8afb 10%,#a098fc 0,#afadf9 50%) 0/15px 15px;text-shadow:0 0 10px #fff,0 0 20px #fff,0 0 30px #fff,0 0 40px #228DFF,0 0 70px #228DFF,0 0 80px #228DFF,0 0 100px #228DFF,0 0 150px #228DFF;outline:hsla(245.1,100%,81.4%,.93) solid 5px}[ng-app=bot][new][ng-controller=heraldController] .attacks .attack,button{background-color:#bcc6ff}[ng-app=bot][new] button:nth-child(n+2){margin-left:0}.botSettings{background-color:#8ba2fb}.botSettings .control{border-bottom:solid 2px #869eff}.botSettings .control:hover{background-color:#bcc6ff}.queue2{background-color:#8ba2fb}[ng-app=bot][new][ng-controller=commanderOrdersController] .orders .order{background-color:#bcc6ff}[ng-app=bot][new].window{background:#8ba2fb}.bbcode_box.middle_center{background:url() #bcc6ff}.bb_ally_chooser_ally_input.ac_input,.bb_player_chooser_player_input.ac_input,.bb_town_chooser_town_input.ac_input{background-color:#ecf2fc}#notification_area div.description{background-color:rgba(249,112,195,.68)}.farm_towns.lvl_0 .actions .action_wrapper{background:url() #bcc6ff}#ranking_search_info,.ac_odd,.farm_towns.lvl_0 .actions .action_wrapper .bpv_trade_illustration{background:url() #869eff}.ac_even{background:url() #bcc6ff}.ac_over{background-color:#94adf6}#notification_area div.notification{background-color:rgba(0,0,0,0)}#notification_area div.notification.incoming_attack div.icon{background-color:rgba(255,130,130,.5)}#notification_area div.notification.incoming_support div.icon{background-color:rgba(134,255,130,.5)}#notification_area div.notification.resourcetransport div.icon{background-color:rgba(250,233,212,.5)}#notification_area div.notification.newreport div.icon{background-color:rgba(255,255,130,.5)}#notification_area div.notification.newaward div.icon{background-color:rgba(224,139,255,.39)}#notification_area div.notification.awmessage div.icon,#notification_area div.notification.newmessage div.icon{background-color:rgba(57,106,252,.5)}.content.js-dropdown-item-list,.grepolis_score .score_content li.award_group:nth-child(2n+1),.item.trade.option.even{background-color:#bcc6ff}.grepolis_score .score_content li.award_group:nth-child(2n){background-color:#869eff}.shadow_box .content_background{background-color:#143a50;opacity:.7}.classic_window.heroes_train .heroes_train .middle_border{background:#bcc6ff}.classic_window.heroes_train .heroes_train .inner_border{background:#869eff}.dropdown-list.default{background-color:#bcc6ff}#message_report_affront_dialog{background:#bcc6ff}#affront_input,#affront_player{background:url() #869eff}.advisor_hint,div.island_info_towns ul{background:url() #bcc6ff}.captain_commercial .message{background-color:#bcc6ff}.gp_window.classic_sub_window>.background{background:url() #869eff}.temple_gods_large{background-image:url(https://i.imgur.com/xUroKua.png)}.god_selection #temple_gods{background:url(https://i.imgur.com/xUroKua.png) -995px 0 no-repeat}.content.js-dropdown-item-list.instant_buy{background-color:#bcc6ff}#ph_trader_image,.daily_login_wrapper,.ph_order_info,.textarea .middle{filter:grayscale(50%)}div.quote div.quote_message{background-color:#ecf2fc}.game_inner_box .game_body2{background:url() #869eff}.attack_planner .bar_top,.attack_planner .details_container,.attack_planner.attacks .attacks_list,.background_default{background:url() #bcc6ff}.attack_planner .town_box .town_name_box,.attack_planner .units_box td{background-color:#eef3fe}.attack_planner.show_plan .attacks_list li.selected{background-color:#869eff}.attack_planner li.selected{background:url(https://gppt.innogamescdn.com/images/game/unit_overview/arrow_right.png) left no-repeat #869eff}#joe_town_popup .god_content,#joe_town_popup .hero_content,#joe_town_popup .resources_content,#joe_town_popup .spy_content,#joe_town_popup .unit_content{background:#8ba2fb}.popup_middle_middle{background:url() #869eff}.popup_table_inside,.town_infos{background-color:#bcc6ff}.popup_bottom_middle,.popup_middle_left,.popup_middle_right,.popup_top_middle{filter:grayscale(50%) hue-rotate(10deg)}.classic_window .filler,div.gpwindow_content{background:url() #8ba2fb}.color_highlight,.item_selected{background-color:#7b96fff0}#buildings .building{filter:grayscale(50%)}.box.bottom.left,.box.bottom.right,.box.top.left,.box.top.right,.classic_window .corner_bl,.classic_window .corner_br,.classic_window .corner_tl,.classic_window .corner_tr,.classic_window .wnd_border_b,.classic_window .wnd_border_l,.classic_window .wnd_border_r,.classic_window .wnd_border_t,.special_buildings_image{filter:grayscale(50%) hue-rotate(10deg)}.game_table_odd{background:#bcc6ff}.game_table{background:url()}.game_list .odd{background-image:url();background-color:#869eff}.odd{background:url() #869eff}.game_list .even{background-image:url();background-color:#bcc6ff}.even{background:url()}.game_list_footer{background:url() #869eff}#folder_toggle_menu,.game_body{background:url() #bcc6ff}#message_message,#message_new_message,.notes .window_content .notes_container textarea{background-color:#ecf2fc}.forum_toggle,.notes .window_content .notes_container .preview_box{background:url() #869eff}.forum_toggle{position:relative}#thread_functions{background:url() #bcc6ff}.forum_toggle #toggle{background:url() #8ba2fb}textarea{background-color:#ecf2fc}#newthread,#newthread #bbcodes{background:url()}#forum_admin .forum.odd .name .text_box,#poll_wrapper,#post_save_wrapper{background:url() #bcc6ff}#forum_admin .forum.even .name .text_box{background:url() #869eff}.box.middle.center{background:#869eff}.colA0A0FF{background:#c4f4f4}#trade_selected,.box.middle.center div.box_content,div.overview_search_bar{background:#869eff}.trade_town_wrapper{filter:grayscale(50%) hue-rotate(950deg)}.celebration_name.bold,.textbox .middle,.town_info_input,span.grepo_input select{filter:grayscale(50%)}#recruit_overview .cell_casted_powers{background-color:#869eff}#outer_troops_box .outer_troops_sort_box{background:url() #869eff}#building_overview tr td.locked{background-color:#88a4fe}.building_overview #building_overview td.building.hover,.building_overview #building_overview tr:hover{background:#fbfcd2}#building_overview td.locked.hover,#building_overview td.locked:hover{background-color:#ffc4c4}#culture_overview_towns div.celebration_button,#culture_overview_towns div.celebration_icon,#culture_overview_towns div.celebration_icon_bg,#culture_overview_towns div.celebration_name,#culture_overview_towns div.celebration_progressbar,#culture_overview_towns div.celebration_progressbar div,#hides_overview_towns div.help_button,#hides_overview_towns div.hide_icon,#hides_overview_towns div.hide_icon_bg,#hides_overview_towns div.hide_progressbar,#hides_overview_towns div.hide_progressbar div,#hides_overview_towns div.iron_name{filter:grayscale(30%)}#active_town_list_head,#all_town_list_head,#premium_exchange,#town_group_active_towns,#town_group_all_towns,#unit_order div.unit_order_tab,.advisors_container .advisors_box .advisor_box .extension_box,.farm_town .action_wrapper .trading_wrapper,.farm_towns .actions .action_wrapper .action_card,.farm_towns .actions .resources::after,.farm_towns .actions .trade::after,.farm_towns .actions .units::after,.gp_tab .gp_pc_left,.gp_tab .gp_pc_middle,.gp_tab .gp_pc_right,.marketplace.create_offer .section.market_offer,.marketplace.own_offers #town_filter,.spinner .body,.spinner .border_l,.spinner .border_r,.spinner .button_down,.spinner .button_up,.ui_construction_queue .construction_queue_frame .queue_BG_slice-middle{filter:grayscale(50%)}#townsoverview .game_list li:hover{background-image:url();background-color:#869eff}.message_post_content{background:url() #869eff}#ally_announce_bbcodes,#message_partner,.message_post{background:url() #bcc6ff}.published_report .report_units_overview{background:#ecf2fc}.published_report_header{background-color:#cad0ff}#island_towns_controls{background:url(h) #bcc6ff}#fto_town_list{background:url() #bcc6ff}#fto_town_list li.fto_town.active,div.fto_time_checkbox.active{background:#869eff}#fto_town_list li.fto_island,.questlog_index .quest.selected,.table_box .table_box_content .body{background:url() #bcc6ff}.brown{background:#869eff}#ally_finder_text tr:first-child{background-color:#b2dcfa}#ally_announce_textarea,#ally_profile_textarea{background-color:#ecf2fc}#ally_flags .game_body{background-image:url()}.reservation_tool .gp_tab_page,table.present_data tr.even{background:url() #bcc6ff}table.present_data tr.odd{background:url() #869eff}#ally_pact_list{background-color:#869eff}#mines_values tr.even,#premium_overview_inner{background:url() #bcc6ff}#mines_values tr.odd{background:url() #869eff}.background_light{background:url() #bcc6ff}#mines_text{background-image:url();background-color:#bcc6ff}#ally_profile_info #ally_pacts,#ally_profile_info #ally_profile,#ally_towns .members_list li.header{background:url() #bcc6ff}#ally_towns .members_list{background:url() #869eff}#premium_exchange .premium_exchange_rules .expand_text,#premium_exchange .premium_exchange_rules .rules{background:url() #bcc6ff}.marketplace.all_offers tr:nth-child(2n):not(.premium_exchange),.marketplace.own_offers tr:nth-child(2n):not(.premium_exchange){background:url() #869eff}.marketplace.all_offers table,.marketplace.own_offers table{background:url() #bcc6ff}.unit.unit_order_unit_image.unit_icon50x50:hover{-webkit-border-radius:20px;transform:scaleX(1.1);padding:2px;filter:hue-rotate(-50deg);box-shadow:3px 8px 30px #00dbff}.curtain_box .cb_bg{background-color:#bcc6ff}.attack_spots .attacking_units .cb_bg,.attack_spots .attacking_units .curtain_box .cb_bg,.attack_spots .defending_units .cb_bg{background:url()}.hide_window_wrapper .hide_window_background{filter:blur(90px) grayscale(100%)}#place_culture_bg,.place_simulator_even,.place_simulator_even2,.place_simulator_odd,.place_simulator_odd2,span.grepo_input input{filter:grayscale(50%)}.god_selection .background{filter:blur(90px) grayscale(100%)}.report_units_overview{background:url() #bcc6ff}.report_booty_bonus_fight{background:url() #869eff}#folder_menu_reports{background:url() #e5f7b5}.dropdown.blue_arrow .border-left,.dropdown.blue_arrow .border-right,.dropdown.blue_arrow .caption,.dropdown.default .border-left,.dropdown.default .border-right,.dropdown.default .caption{filter:grayscale(50%)}.academy .academy_image{filter:blur(90px) grayscale(100%)}.construction_queue_sprite,.various_orders_queue .various_orders_middle{filter:grayscale(50%)}.docks.window_background,.main_window_background{filter:blur(90px) grayscale(100%)}#unit_order_unit_info td,#unit_order_values td{background:#f2e8d2}#unit_order_ph_background{filter:grayscale(50%)}#towninfo_description{background:#bcc6ff}.town_cast_spell_oldcontent { background: #bcc6ff !important;}.ironer_window_background,.window_storage_wrapper .storage_window_background{filter:blur(90px) grayscale(100%)}.storage_resbar{filter:grayscale(50%)}.barracks.window_background,.farm_window_background,.lumber_window_background,.marketplace .marketplace_window_background,.place_window_background,.stoner_window_background,.wall_window_background{filter:blur(90px) grayscale(100%)}.game_inner_box .game_footer{background-image:url();background-color:#869eff}.academy .tech_tree_box .column{border-left:2px groove #d6b468;background:url()}.academy .tech_tree_box .column.inactive{background-image:url();background-color:#c3d1cd}a.submenu_link .left,a.submenu_link .middle,a.submenu_link .right{filter:grayscale(20%) hue-rotate(1deg)}div.gpwindow_bottom,div.gpwindow_left,div.gpwindow_right,div.gpwindow_top{filter:grayscale(50%) hue-rotate(10deg)}.academy .research_points_box{filter:grayscale(50%)}#custom_map_color_background{background:url() no-repeat #bcc6ff}#awards_visibility_all,#awards_visibility_ally,#awards_visibility_player{background:url() repeat-y #bcc6ff}.olympus_temple_info .temple_actions_wrapper,.olympus_temple_info .temple_info_wrapper .owner,.olympus_temple_info .temple_info_wrapper .troops_movements{background-image:url();background-color:#bcc6ff}.olympus_temple_info .temple_info_wrapper .troops_support .unit_slots .empty{background-image:url();background-color:#dbdafcf0}.olympus_temple_info .temple_info_wrapper .troops_support .unit_slots .empty:nth-child(2n){background-image:url();background-color:#bcc6ff}.olympus_temple_info .temple_defense_wrapper li{background:url();background-color:#dbdafcf0}.olympus_temple_info .temple_defense_wrapper li:nth-child(2n+1){background:url() #bcc6ff}.olympus_temple_info .temple_powers_overlay{background-color:#c7c5fc}div.quote div.quote_author{background-color:#869eff}#report_date{background-color:#cad0ff}.button:hover{box-shadow:0 0 3px rgb(1 197 33)} </style>').appendTo("head")
@@ -9779,6 +9842,96 @@ function JOE_GAME(version, gm, DATA, time_a) {
         },
     };
     ///////////////////////////////////
+   //   * player/alliance BBCode*   //
+  ///////////////////////////////////
+    var BBTownPlayer = {
+        activate: function () {
+
+            var wnds = GPWindowMgr.getOpen(Layout.wnd.TYPE_TOWN);
+            for (var e in wnds) {
+                if (wnds.hasOwnProperty(e)) {
+                    var wndid = wnds[e].getID();
+                    // Style
+                    $('<style id="joe_BBtowninfo_style"> ' +
+
+                      // Button
+                      '#joe_'+wndid+'BBplayer { background: url(https://gpfr.innogamescdn.com/images/game/autogenerated/common/bbcodes/bbcodes_6e4f630.png) no-repeat -207px -28px; position:absolute; height: 22px; width: 21px; top:1px ;left: 0px; } ' +
+                      '#joe_'+wndid+'BBalliance { background: url(https://gpfr.innogamescdn.com/images/game/autogenerated/common/bbcodes/bbcodes_6e4f630.png) no-repeat -207px -5px; position:absolute; height: 22px; width: 21px; top:1px ;left: 0px;z-index: 555; } ' +
+
+                      // clipboard
+                      '#joe_'+wndid+'clipboard-player { background: rgba(0, 0, 0, 0) url("https://gppt.innogamescdn.com/images/game/autogenerated/layout/layout_095495a.png") no-repeat scroll -482px -647px; position:absolute; height: 18px; width: 18px; z-index: 555; top:4px ;left: 229px; } ' +
+                      '#joe_'+wndid+'clipboard-alliance { background: rgba(0, 0, 0, 0) url("https://gppt.innogamescdn.com/images/game/autogenerated/layout/layout_095495a.png") no-repeat scroll -482px -647px; position:absolute; height: 18px; width: 18px; z-index: 555; top:4px ;left: 229px; } ' +
+                      '#joe_'+wndid+'clipboard-player:hover { filter: drop-shadow(0 0mm 2mm rgb(0, 210, 53)); } ' +
+                      '#joe_'+wndid+'clipboard-alliance:hover { filter: drop-shadow(0 0mm 2mm rgb(0, 210, 53)); } ' +
+                      // Style
+                      '#input_'+wndid+'BBplayer { display: none; position: absolute; left: 40px; top: 4px; width: 200px; height: 12px; text-align: center; z-index: 555; background-image: url(https://gppt.innogamescdn.com/images/game/layout/gpwindow_bg.jpg); color: #0070ff; font-weight: bold; font-size: 10px;} ' +
+                      '#input_'+wndid+'BBalliance { display: none; position: absolute; left: 40px; top: 4px; width: 200px; height: 12px; text-align: center; z-index: 555; background-image: url(https://gppt.innogamescdn.com/images/game/layout/gpwindow_bg.jpg); color: #0070ff; font-weight: bold; font-size: 10px;} ' +
+                      '</style>').appendTo("head");
+
+                    if ($("div#gpwnd_"+wndid+" div#info_tab_content div#towninfo_towninfo div.game_border ul.game_list li.even div.list_item_left a.gp_player_link").is(':visible')){
+                        $('<style id="joe_BBplayer_style"> ' +
+                          // img
+                          'div#gpwnd_'+wndid+' div#info_tab_content div#towninfo_towninfo div.game_border ul.game_list li.even img { padding-left: 21px; } ' +
+                          'div#gpwnd_'+wndid+' div#info_tab_content div#towninfo_towninfo div.game_border ul.game_list li.odd.clearfix { padding-left: 25px; } ' +
+                          '</style>').appendTo("head");
+                    }else {
+                        $('<style id="joe_BBplayer_style"> ' +
+                          'div#gpwnd_'+wndid+' div#info_tab_content div#towninfo_towninfo div.game_border ul.game_list li.even img { padding-left: 0px; } ' +
+                          '</style>').appendTo("head");}
+
+
+                    // Function
+                    if (!$('#joe_'+wndid+'BBplayer').get(0)){
+
+                        // BBCode player
+                        if ($("div#gpwnd_"+wndid+" div#info_tab_content div#towninfo_towninfo div.game_border ul.game_list li.even div.list_item_left a.gp_player_link").is(':visible')){
+                            $('<a id="joe_'+wndid+'BBplayer"></a><input id="input_'+wndid+'BBplayer" type="text" onfocus="this.select();" onclick="this.select();"></div>').appendTo('div#gpwnd_'+wndid+' div#info_tab_content div#towninfo_towninfo div.game_border ul.game_list li.even div.list_item_left');
+                            $("#joe_"+wndid+"BBplayer").click(function () {
+
+                                if ($('#joe_'+wndid+'clipboard-player').is(':visible')){
+                                    $('#joe_'+wndid+'clipboard-player').remove();
+                                }else { $('<a id="joe_'+wndid+'clipboard-player" data-clipboard-text="[player]' + $("div#gpwnd_"+wndid+" div#info_tab_content div#towninfo_towninfo div.game_border ul.game_list li.even div.list_item_left a.gp_player_link").text().trim() + '[/player]"></a>').appendTo('div#gpwnd_'+wndid+' div#info_tab_content div#towninfo_towninfo div.game_border ul.game_list li.even div.list_item_left').tooltip(getText("messages", "copy"));}
+
+                                $("#input_"+wndid+"BBplayer").toggle();
+                                $("#input_"+wndid+"BBplayer").val("[player]" + $("div#gpwnd_"+wndid+" div#info_tab_content div#towninfo_towninfo div.game_border ul.game_list li.even div.list_item_left a.gp_player_link").text().trim() + "[/player]");
+                            });}
+
+                        // BBCode alliance
+                        $('<a id="joe_'+wndid+'BBalliance"></a><input id="input_'+wndid+'BBalliance" type="text" onfocus="this.select();" onclick="this.select();"></div>').appendTo('div#gpwnd_'+wndid+' div#info_tab_content div#towninfo_towninfo div.game_border ul.game_list li.odd.clearfix');
+                        $("#joe_"+wndid+"BBalliance").click(function () {
+
+                            if ($('#joe_'+wndid+'clipboard-alliance').is(':visible')){
+                                $('#joe_'+wndid+'clipboard-alliance').remove();
+                            }else { $('<a id="joe_'+wndid+'clipboard-alliance" data-clipboard-text="[ally]' + $("div#gpwnd_"+wndid+" div#info_tab_content div#towninfo_towninfo div.game_border ul.game_list li.odd.clearfix a").text().trim() + '[/ally]"></a>').appendTo('div#gpwnd_'+wndid+' div#info_tab_content div#towninfo_towninfo div.game_border ul.game_list li.odd.clearfix').tooltip(getText("messages", "copy"));}
+
+                            $("#input_"+wndid+"BBalliance").toggle();
+                            $("#input_"+wndid+"BBalliance").val("[ally]" + $("div#gpwnd_"+wndid+" div#info_tab_content div#towninfo_towninfo div.game_border ul.game_list li.odd.clearfix a").text().trim() + "[/ally]");
+                        });
+
+                        // Clipboard success
+                        new ClipboardJS("#joe_"+wndid+"clipboard-player").on("success", function() {
+                            setTimeout(function() {
+                                HumanMessage.success(getText("messages", "copybb"))
+                            }, 50)
+                        })
+                        new ClipboardJS("#joe_"+wndid+"clipboard-alliance").on("success", function() {
+                            setTimeout(function() {
+                                HumanMessage.success(getText("messages", "copybb"))
+                            }, 50)
+                        })
+                    }
+                }}
+
+            // Tooltip
+            $('#joe_'+wndid+'BBplayer').tooltip(joe_icon + 'BBCode '+ DM.getl10n("bbcodes").player.name);
+            $('#joe_'+wndid+'BBalliance').tooltip(joe_icon + 'BBCode '+ DM.getl10n("bbcodes").ally.name);
+        },
+        deactivate: function () {
+            $('#joe_BBTownPlayer_style').remove();
+            $('#joe_BBplayer_style').remove();
+        },
+    };
+    ///////////////////////////////////
    //      * Message Exporter *     //
   ///////////////////////////////////
     $('<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>').appendTo("head");
@@ -10262,8 +10415,8 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 '#joe_townbb:hover { background: url("https://i.imgur.com/BoAdRfl.png") -23px -23px transparent; position:absolute; height: 22px; width: 21px; top:26px; left:184px; z-index:5; } ' +
                 '#joe_townbb_logo { background: url(""); position: absolute; height: 30px; width: 30px; left:180px; top:27px; } ' +
                 '#joe_townbb-clipboard:hover { filter: drop-shadow(0 0mm 2mm rgb(0, 210, 53)); } ' +
-                '#input_townbb { display: none; position: absolute; left: 23px; top: 29px; width: 157px; height: 12px; text-align: center; z-index: 5;  background: url(https://gppt.innogamescdn.com/images/game/autogenerated/layout/layout_596941d.png) no-repeat -170px -286px; color: #0070ff; } ' +
-                '#joe_townbb-clipboard { background: rgba(0, 0, 0, 0) url("https://gppt.innogamescdn.com/images/game/autogenerated/layout/layout_596941d.png") no-repeat scroll -482px -647px; position: absolute; height: 18px; width: 18px; z-index: 555; top: 29px; left: 167px; } ' +
+                '#input_townbb { display: none; position: absolute; left: 23px; top: 29px; width: 157px; height: 12px; text-align: center; z-index: 5;  background: url(https://gppt.innogamescdn.com/images/game/autogenerated/layout/layout_095495a.png) no-repeat -170px -286px; color: #0070ff; } ' +
+                '#joe_townbb-clipboard { background: rgba(0, 0, 0, 0) url("https://gppt.innogamescdn.com/images/game/autogenerated/layout/layout_095495a.png") no-repeat scroll -482px -647px; position: absolute; height: 18px; width: 18px; z-index: 555; top: 29px; left: 167px; } ' +
                 '</style>').appendTo("head");
         },
         deactivate: function() {
@@ -10303,10 +10456,10 @@ function JOE_GAME(version, gm, DATA, time_a) {
             $('#ui_box .nui_main_menu .middle .content ul li[data-option-id=cityview]').remove();
             $('#ui_box .nui_main_menu .middle .content ul li[data-option-id=messages]').removeClass("first");
             $('#ui_box .nui_main_menu .middle .content ul li[data-option-id=GRM_button]').addClass("messages main_menu_item first");
-            $('#ui_box .nui_main_menu .middle .content ul').not("ul li ul").prepend('<div id="joe_cityview_style"><li data-option-id="joe_cityview" class="messages main_menu_item first"><span class="content_wrapper"><span class="button_wrapper" style="opacity: 1;"><span class="button"><span class="icon" style="background:url(https://gppt.innogamescdn.com/images/game/autogenerated/layout/layout_596941d.png) no-repeat -613px -380px"></span><span class="indicator" style="display: none;">0</span></span></span><span class="name_wrapper" style="opacity: 1;"><span class="name">' + getText("grepo_mainmenu", "island_view") + '</span></span></span></li></div>');
+            $('#ui_box .nui_main_menu .middle .content ul').not("ul li ul").prepend('<div id="joe_cityview_style"><li data-option-id="joe_cityview" class="messages main_menu_item first"><span class="content_wrapper"><span class="button_wrapper" style="opacity: 1;"><span class="button"><span class="icon" style="background:url(https://gppt.innogamescdn.com/images/game/autogenerated/layout/layout_095495a.png) no-repeat -613px -380px"></span><span class="indicator" style="display: none;">0</span></span></span><span class="name_wrapper" style="opacity: 1;"><span class="name">' + getText("grepo_mainmenu", "island_view") + '</span></span></span></li></div>');
             function joe_island_overview() {
                 $('#ui_box .nui_main_menu .middle .content ul li[data-option-id=joe_cityview] .icon').css({
-                    "background": "url(https://gppt.innogamescdn.com/images/game/autogenerated/layout/layout_596941d.png) no-repeat -613px -380px",
+                    "background": "url(https://gppt.innogamescdn.com/images/game/autogenerated/layout/layout_095495a.png) no-repeat -613px -380px",
                     "top": "8px",
                     "left": "5px"
                 });
@@ -10314,7 +10467,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
             }
             function joe_city_overview() {
                 $('#ui_box .nui_main_menu .middle .content ul li[data-option-id=joe_cityview] .icon').css({
-                    "background": "url(https://gppt.innogamescdn.com/images/game/autogenerated/layout/layout_596941d.png) no-repeat -645px -380px",
+                    "background": "url(https://gppt.innogamescdn.com/images/game/autogenerated/layout/layout_095495a.png) no-repeat -645px -380px",
                     "top": "6px",
                     "left": "6px"
                 });
@@ -11090,18 +11243,21 @@ function JOE_GAME(version, gm, DATA, time_a) {
         },
         NewYear: {
             add: function() {
+                var Year = new Date().getFullYear();
+                var DateYear = Year - 2020;
                 $('<a href="http://www.greensmilies.com/smilie-album/" target="_blank"><div id="joe_newYear">' +
-                    '<img src="https://wiki.en.grepolis.com/images/b/bf/New_Years_Forum_Banner.png" style="width:400px; opacity: 0.70;">' +
-                    '<img src="https://i.imgur.com/RJMgQk9.gif" style="position:absolute; top: 10px; left: 280px">' + //(2) ano 2022
-                    '<img src="https://i.imgur.com/VS5DRM3.gif" style="position:absolute; top: 10px; left: 300px">' + //(0)
-                    '<img src="https://i.imgur.com/RJMgQk9.gif" style="position:absolute; top: 10px; left: 320px">' + //(2)
-                    '<img src="https://i.imgur.com/RJMgQk9.gif" style="position:absolute; top: 10px; left: 340px">' + //(2)
+                    '<img src="https://wiki.en.grepolis.com/images/b/bf/New_Years_Forum_Banner.png" style="width:400px; opacity: 0.70; max-width: 70%; height: auto; left: -50px;">' +
+                    '<img src="https://mycitygre.000webhostapp.com/Gatinho/Smiley/smiley_emoticons_fred_wand_maler.gif" style="position:absolute; top: 10px; left: 120px;">' +
+                    '<img src="https://mycitygre.000webhostapp.com/Gatinho/Smiley/sign2_2.gif" style="position:absolute; top: 10px; filter: hue-rotate(80deg); left: 250px;">' + //(2) ano 2022
+                    '<img src="https://mycitygre.000webhostapp.com/Gatinho/Smiley/sign2_0.gif" style="position:absolute; top: 10px; filter: hue-rotate(300deg); left: 270px;">' + //(0)
+                    '<img src="https://mycitygre.000webhostapp.com/Gatinho/Smiley/sign2_2.gif" style="position:absolute; top: 10px; filter: hue-rotate(10deg); left: 290px;">' + //(2)
+                    '<img src="https://mycitygre.000webhostapp.com/Gatinho/Smiley/sign2_'+ DateYear + '.gif" style="position:absolute; top: 10px; filter: hue-rotate(230deg); left: 310px;">' + //(de 00 a 09 automatiquement, les images 00/09 doivent etre online )
                     '</div></a>').appendTo('#ui_box');
                 var joeNewYear = $('#joe_newYear');
                 joeNewYear.css({
                     position: 'absolute',
                     bottom: '10px',
-                    left: '70px',
+                    left: '-50px',
                     zIndex: '10'
                 });
                 joeNewYear.tooltip("Happy new year!");
@@ -11409,145 +11565,3 @@ var JoeManCalculator = w.JoeManCalculator = {
     }
 };
 JoeManCalculator.Starten();
-
-//////////////////////////////////////////////////////////////////////////////novo
-
-(function() {
-    'use strict';
-    // Configuration des liens de raccourcis
-    // `label` (qui peut être du html) correspond à ce qui est affiché à l'écran
-    // `fn` correspond à la fonction appelée lors du clique sur le lien
-    // Les fonctions ont été récupéré depuis https://wiki.en.grepolis.com/wiki/The_Game_Interface#Quick_Bar
-    let configLinks = {
-        senate: {
-            label: 'Senat',
-            fn: () => MainWindowFactory.openMainWindow(),
-            //label: () => "senado",
-        },
-        cave: {
-            label: 'Grotte',
-            fn: () => HideWindowFactory.openHideWindow(),
-        },
-        warehouse: {
-            label: 'Entrepôt',
-            fn: () => BuildingWindowFactory.open('storage'),
-        },
-        farm: {
-            label: 'Ferme',
-            fn: () => FarmWindowFactory.openFarmWindow(),
-        },
-        timberCamp: {
-            label: 'Scierie',
-            fn: () => LumberWindowFactory.openLumberWindow(),
-        },
-        quarry: {
-            label: 'Carrière',
-            fn: () => StonerWindowFactory.openStonerWindow(),
-        },
-        silverMine: {
-            label: 'Mine d\'argent',
-            fn: () => IronerWindowFactory.openIronerWindow(),
-        },
-        marketPlace: {
-            label: 'Marché',
-            fn: () => MarketWindowFactory.openMarketWindow(),
-        },
-        harbor: {
-            label: 'Port',
-            fn: () => DocksWindowFactory.openDocksWindow(),
-        },
-        barracks: {
-            label: 'Caserne',
-            fn: () => BarracksWindowFactory.openBarracksWindow(),
-        },
-        cityWall: {
-            label: 'Rempart',
-            fn: () => BuildingWindowFactory.open('wall'),
-        },
-        academy: {
-            label: 'Académi',
-            fn: () => AcademyWindowFactory.openAcademyWindow(),
-        },
-        temple: {
-            label: 'Temple',
-            fn: () => TempleWindowFactory.openTempleWindow(),
-        },
-        agoraDefence: {
-            label: 'Agora (défence)',
-            fn: () => PlaceWindowFactory.openPlaceWindow('index', open),
-        },
-        troopsOutside: {
-            label: 'Troupes en dehors',
-            fn: () => PlaceWindowFactory.openPlaceWindow('units_beyond', open),
-        },
-        simulator: {
-            label: 'Simulateur',
-            fn: () => PlaceWindowFactory.openPlaceWindow('simulator', open),
-        },
-        culture: {
-            label: 'Culture',
-            fn: () => PlaceWindowFactory.openPlaceWindow('culture'),
-        },
-    };
-
-    // La configuration générale de la barre de menu
-    // Elle est divisée en deux. Chaque élément de positionnement
-    // doit contenir un pointeur vers une config présente dans configLinks.
-    let uiBarConfig = {
-        left: [
-            configLinks.senate,
-            configLinks.academy,
-            configLinks.marketPlace,
-            configLinks.culture,
-        ],
-        right: [
-            configLinks.simulator,
-            configLinks.cave,
-            configLinks.harbor,
-            configLinks.barracks,
-        ],
-    };
-    uiBarConfig.right.reverse();
-
-    // On vérifie si la barre de raccourcis existent et si elle ne contient pas déjà des choses
-    let uiBar = $('.ui_quickbar');
-    if (!uiBar.length) return;
-    if (uiBar.has('*').length) return;
-
-    // On place les raccourcis
-    uiBarConfig.left.forEach(cfg => appendToUiBar(uiBar, 'left', cfg));
-    uiBarConfig.right.forEach(cfg => appendToUiBar(uiBar, 'right', cfg));
-
-
-
-    // Place les raccourcis sur la barre, selon une position 'left' ou 'right'
-    function appendToUiBar(uiBar, position, cfg) {
-        let link = $('<a href="#"></a>');
-        link.html(cfg.label);
-        link.css({
-            'float': position,
-            'margin': '0 3em',
-            'color': 'white',
-            'line-height': '1.6',
-        });
-        link.click(cfg.fn);
-        uiBar.append(link);
-    }
-})();
-
-//$("a:contains('Senat')").text("Senado");
-//$("a:contains('Grotte')").text("uni");
-//$("a:contains('Entrepôt')").text = getText("labels","uni");
-//$("a:contains('Ferme')").text = getText("labels","uni");
-//$("a:contains('Scierie')").text = getText("labels","uni");
-//$("a:contains('Culture')").text = getText("labels","uni");
-//$("a:contains('Culture')").text = getText("labels","uni");
-//$("a:contains('Culture')").text = getText("labels","uni");
-//$("a:contains('Culture')").text = getText("labels","uni");
-//$("a:contains('Culture')").text = getText("labels","uni");
-//$("a:contains('Culture')").text = getText("labels","uni");
-//$("a:contains('Culture')").text = getText("labels","uni");
-//$("a:contains('Culture')").text = getText("labels","uni");
-//$("a:contains('Culture')").text = getText("labels","uni");
-//$("a:contains('Culture')").text = getText("labels","uni");
-//$("a:contains('Culture')").text = getText("labels","uni");
