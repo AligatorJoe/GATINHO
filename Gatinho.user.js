@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name		Gatinho
 // @namespace   Gatinho
-// @version		4.57.14
+// @version		4.57.15
 // @author		Gatinho
 // @description Gatinho é uma pequena extençao para o jogo browser Grepolis. (counter, displays, smilies, trade options, changes to the layout)
 // @include     http://*.grepolis.com/*
@@ -19,7 +19,7 @@
 // @grant		GM_getResourceURL
 // @downloadURL https://github.com/AligatorJoe/Dio-Tools-2019/raw/master/Gatinho.user.js
 // ==/UserScript==
-var version = '4.57.14';
+var version = '4.57.15';
                    /////////////////////////////////////////////////////////////////////////////////////////
                   //  * @license  GPL-3.0                                                                //
                  //                                                                                     //
@@ -272,6 +272,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
     joe_sprite = "https://i.imgur.com/HQq4rV1.png"; //"https://i.imgur.com/cILbyDs.png";
     joe_icon = '<img src="https://i.imgur.com/bW8lxNz.gif" style="width: 15px;float:left;margin: 1px 4px 0px -3px">';
     //.................news atalho................./
+    /*
     Serracao_icon = '<img id="Serracao" title="lumber" src="https://i.ibb.co/XCZ7SjZ/Serracao.png" style="margin-top: -14px; float: left; mask: linear-gradient(360deg, #000 75%, transparent 50%);">';
     Academie_icon = '<img id="Academia" title="Academy" src="https://i.ibb.co/QryCtmn/Academia.png.png" style="margin-top: -14px; float: left; mask: linear-gradient(360deg, #000 75%, transparent 50%);">';
     Gruta_icon = '<img id="Gruta" title="Cave" src="https://i.ibb.co/PthprsT/Gruta.png" style="margin-top: -14px; float: left; mask: linear-gradient(360deg, #000 75%, transparent 50%);">';
@@ -288,7 +289,8 @@ function JOE_GAME(version, gm, DATA, time_a) {
     Quinta_icon = '<img id="Quinta" title="Farm" src="https://i.ibb.co/hgXjwJs/Quinta.png" style="margin-top: -14px; float: left; mask: linear-gradient(360deg, #000 75%, transparent 50%);">';
     Simulator_icon = '<img id="Simulador" title="Simulator" src="https://i.ibb.co/9TBGwR7/Simulator.png" style="margin-top: -14px; float: left; mask: linear-gradient(360deg, #000 75%, transparent 50%);">';
     Exterior_icon = '<img id="Exterior" title="troops abroad" src="https://i.ibb.co/0cP3DT6/Exterior.png" style="margin-top: -14px; float: left; mask: linear-gradient(360deg, #000 75%, transparent 50%);">';
-    if (uw.location.pathname.indexOf("game") >= 0) {
+    */
+   if (uw.location.pathname.indexOf("game") >= 0) {
         DATA = JSON.parse(DATA.replace(/##/g, "'"));
         WID = uw.Game.world_id;
         MID = uw.Game.market_id;
@@ -2683,13 +2685,13 @@ function JOE_GAME(version, gm, DATA, time_a) {
         if (version_text === '') {
             if (version < latest_version) {
                 version_text = "<a href='https://github.com/AligatorJoe/Dio-Tools-2019/raw/master/Gatinho.user.js' target='_blank' style='color:crimson'><div class='version_icon red'></div><div class='version_text'>" + getText('settings', 'version_old') + "</div><div class='version_icon red'></div></a>" +
-                    "<a class='version_text' href='https://github.com/AligatorJoe/Dio-Tools-2019' target='_blank'>--> " + getText('settings', 'version_update') + "</a>";
+                    "<a class='version_text' href='https://github.com/AligatorJoe/Dio-Tools-2019/raw/master/Gatinho.user.js' target='_blank'>--> " + getText('settings', 'version_update') + "</a>";
                 version_color = 'crimson';
                 Messageversion = HumanMessage.error("GATINHO " + getText('settings', 'version_old'));
             } else if (version == latest_version) {
                 version_text = "<a href='https://github.com/AligatorJoe/Dio-Tools-2019/raw/master/Gatinho.user.js' target='_blank' style='color:darkgreen'><div class='version_icon green'></div><div class='version_text'>" + getText('settings', 'version_new') + "</div><div class='version_icon green'></div></a>";
             } else {
-                version_text = "<a href='https://github.com/AligatorJoe/Dio-Tools-2019' target='_blank' style='color:darkblue'><div class='version_icon blue'></div><div class='version_text'>" + getText('settings', 'version_dev') + "</div><div class='version_icon blue'></div></a>";
+                version_text = "<a href='https://github.com/AligatorJoe/Dio-Tools-2019/raw/master/Gatinho.user.js' target='_blank' style='color:darkblue'><div class='version_icon blue'></div><div class='version_text'>" + getText('settings', 'version_dev') + "</div><div class='version_icon blue'></div></a>";
                 version_color = 'darkblue';
                 Messageversion = HumanMessage.error("Gatinho " + getText('settings', 'version_dev'));
             }
