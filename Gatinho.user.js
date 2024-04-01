@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name		Dio-Tools Gatinho
 // @namespace   DIO
-// @version		4.57.12
+// @version		4.57.15
 // @author		Diony
 // @description DIO-Tools Gatinho é uma pequena extençao para o jogo browser Grepolis. (counter, displays, smilies, trade options, changes to the layout)
 // @include		http://de.grepolis.com/game*
