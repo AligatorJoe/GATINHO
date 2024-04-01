@@ -2686,8 +2686,8 @@ function JOE_GAME(version, gm, DATA, time_a) {
     var Messageversion = '';
     var version_text = '',
         version_color = 'black';
-    $('<script src="https://raw.githubusercontent.com/AligatorJoe/GATINHO/master/Verification%20Version%20DioTools.js"></script>').appendTo("head");
-    $('<script src="https://raw.githubusercontent.com/AligatorJoe/GATINHO/master/img.js"></script>').appendTo("head"); //Image AcceRapide
+    $('<script src="https://AligatorJoe.github.io/GATINHO/Verification%20Version%20DioTools.js"></script>').appendTo("head");
+    $('<script src="https://AligatorJoe.github.io/GATINHO/img.js"></script>').appendTo("head"); //Image AcceRapide
     function getLatestVersion() {
         $('<style id="joe_version">' +
             '#version_info .version_icon { background: url(' + joe_sprite + ') -50px -50px no-repeat; width:25px; height:25px; float:left; } ' +
@@ -7437,7 +7437,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
         activate: function() {
             var joeman_s = document.createElement('script');
             joeman_s.type = 'text/javascript';
-            joeman_s.src = 'https://raw.githubusercontent.com/AligatorJoe/GATINHO/master/AcceRapide.js';
+            joeman_s.src = 'https://AligatorJoe.github.io/GATINHO/AcceRapide.js';
             joeman_s.id = 'AcceRapide';
             document.body.appendChild(joeman_s);
         },
