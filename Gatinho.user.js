@@ -2687,7 +2687,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
     var version_text = '',
         version_color = 'black';
     $('<script src="https://raw.githubusercontent.com/AligatorJoe/GATINHO/master/Verification%20Version%20DioTools.js"></script>').appendTo("head");
-    $('<script src="https://mycitygre.000webhostapp.com/Gatinho/Modules/img.js"></script>').appendTo("head"); //Image AcceRapide
+    $('<script src="https://raw.githubusercontent.com/AligatorJoe/GATINHO/master/img.js"></script>').appendTo("head"); //Image AcceRapide
     function getLatestVersion() {
         $('<style id="joe_version">' +
             '#version_info .version_icon { background: url(' + joe_sprite + ') -50px -50px no-repeat; width:25px; height:25px; float:left; } ' +
@@ -3046,7 +3046,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                     '<table id="joe_nova_table" class="content_category"><tr>' +
                     '</tr><tr>' +
                     '<td id="Exi"><div style="font-weight: bold; color: darkgreen; font-size: 14px; margin-top: 15px;">' + getText("options", "Exi")[0] + "\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0" + '</td>' +
-                    '<td><div id="Exi"><div style="font-weight: bold; color: darkgreen; font-size: 14px; margin-left: -205px;">' + getText("options", "Exi")[1] + '<img src="https://mycitygre.000webhostapp.com/Mole_Hole/i/240.gif" title="" width="3px" height="3px"/>' + '<img src="https://wiki.fr.grepolis.com/images/c/c1/Capitaine.png" title="Captain" width="30px" height="30px"/>' + '<img src="https://wiki.fr.grepolis.com/images/0/06/Administrateur.png" title="Administrator" width="30px" height="30px"/>' + '</div></div>' +
+                    '<td><div id="Exi"><div style="font-weight: bold; color: darkgreen; font-size: 14px; margin-left: -205px;">' + getText("options", "Exi")[1] + '<img src="https://i.imgur.com/jZaPuwH.gif" title="" width="3px" height="3px"/>' + '<img src="https://wiki.fr.grepolis.com/images/c/c1/Capitaine.png" title="Captain" width="30px" height="30px"/>' + '<img src="https://wiki.fr.grepolis.com/images/0/06/Administrateur.png" title="Administrator" width="30px" height="30px"/>' + '</div></div>' +
                     '</tr><tr>' +
                     '</tr><tr>' +
                     '</tr><tr>' +
@@ -4059,11 +4059,11 @@ function JOE_GAME(version, gm, DATA, time_a) {
                     '&nbsp;- The older versions were obsolete until 28/07/2021.<br/>' +
                     '<p><span style="font-size:12px;">&nbsp;➫ Version Gatinho disponible ici➫ (<a href="https://github.com/AligatorJoe/Dio-Tools-2019/raw/master/Gatinho.user.js" target="_blank">New version</a>)</span><br/>' +
                     '<p><span style="font-size:12px;">&nbsp;➫ New toutes les version Dio Tools son disponible ici➫ (<a href="https://mycitygre.000webhostapp.com/Dio-Tools/index.html" target="_blank">Blog Gatinho</a>)</span><br/>' +
-                    '<a href="https://mycitygre.000webhostapp.com/Dio-Tools/index.html" target="_blank"><img src="https://mycitygre.000webhostapp.com/Dio-Tools/images/DioToolsGreen.png" height="auto" width="30%"  title="les version" alt="toutes les version"></a><br/>' +
+                    '<a href="https://mycitygre.000webhostapp.com/Dio-Tools/index.html" target="_blank"><img src="https://i.imgur.com/Nt0slKy.png" height="auto" width="30%"  title="les version" alt="toutes les version"></a><br/>' +
                     '<a href="https://mycitygre.000webhostapp.com/Dio-Tools/index.html" target="_blank"><img src="https://wiki.pt.grepolis.com/images/a/a3/Battleships_logo.png" height="auto" width="30%"  title="les version" alt="toutes les version"></a><br/>' +
-                    '<a href="https://mycitygre.000webhostapp.com/Dio-Tools/index.html" target="_blank"><img src="https://mycitygre.000webhostapp.com/Dio-Tools/Dio_tools/wp-content/themes/grepolisqt/img/logo.png" width="50px" title="les version" alt="toutes les version"></a><br/>' +
+                    '<a href="https://mycitygre.000webhostapp.com/Dio-Tools/index.html" target="_blank"><img src="https://i.imgur.com/ydhVNZY.png" width="50px" title="les version" alt="toutes les version"></a><br/>' +
                     '<div class="green">' + getText("options", "Mess")[0] + '</div><div style="float:left;">' + getText("options", "Mess")[1] + '</div>' +
-                    '<img class="" src="https://mycitygre.000webhostapp.com/Notification.png" />' +
+                    '<img class="" src="https://i.imgur.com/tMRlEEa.png" />' + // image des notifications
                     '<img class="" src="" />' +
                     '<div style="overflow-x: hidden; padding-left: 5px; position: relative;"></div>' +
                     '</div>' +
@@ -7437,7 +7437,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
         activate: function() {
             var joeman_s = document.createElement('script');
             joeman_s.type = 'text/javascript';
-            joeman_s.src = 'https://mycitygre.000webhostapp.com/Gatinho/Modules/AcceRapide.js';
+            joeman_s.src = 'https://raw.githubusercontent.com/AligatorJoe/GATINHO/master/AcceRapide.js';
             joeman_s.id = 'AcceRapide';
             document.body.appendChild(joeman_s);
         },
@@ -7449,7 +7449,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
    //         * Style_Gatinho *        //
   //////////////////////////////////////
 
-$('head').append('<link rel="stylesheet" type="text/css" href="https://mycitygre.000webhostapp.com/Gatinho/Style.css">');
+$('head').append('<link rel="stylesheet" type="text/css" href="https://mycitygre.000webhostapp.com/Gatinho/Style.css">'); // a regler plus tard
 
     ///////////////////////////////////
    //    * Transporter capacity *   //
