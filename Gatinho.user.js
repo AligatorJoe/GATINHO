@@ -367,9 +367,9 @@ function JOE_GAME(version, gm, DATA, time_a) {
     var LANG = {
         de: {
             link: {
-                Update: "https://mycitygre.000webhostapp.com/Dio-Tools/Dio_tools/changelog-en/index.html",
+                Update: "https://joeman.i234.me/Dio_tools/changelog-en/index.html",
                 contact: "http://grepotemas.blogspot.com/",
-                forum: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
+                forum: "https://joeman.i234.me",
                 UnitComparison: "https://wiki.en.grepolis.com/wiki/Units_Portal/"
             },
             settings: {
@@ -550,9 +550,9 @@ function JOE_GAME(version, gm, DATA, time_a) {
       ///////////////////////////////////////////
         it: {
             link: {
-                Update: "https://mycitygre.000webhostapp.com/Dio-Tools/Dio_tools/changelog-en/index.html",
+                Update: "https://joeman.i234.me/Dio_tools/changelog-en/index.html",
                 contact: "http://grepotemas.blogspot.com/",
-                forum: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
+                forum: "https://joeman.i234.me",
                 UnitComparison: "https://wiki.en.grepolis.com/wiki/Units_Portal/"
             },
             settings: {
@@ -565,8 +565,8 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 version_update: "aggiornare",
                 cat_wonders: "WW",
                 Update: "Versione corrente V" + version,
-                link_forum: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
-                link_contact: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
+                link_forum: "https://joeman.i234.me",
+                link_contact: "https://joeman.i234.me",
                 link_Excel: "https://docs.zoho.com/file/5y2lva773ddcde22f4ebc8febadec843aaceb",
                 forum: "Forum",
                 author: "Autore",
@@ -734,9 +734,9 @@ function JOE_GAME(version, gm, DATA, time_a) {
 
         el: {
             link: {
-                Update: "https://mycitygre.000webhostapp.com/Dio-Tools/Dio_tools/changelog-en/index.html",
+                Update: "https://joeman.i234.me/Dio_tools/changelog-en/index.html",
                 contact: "http://grepotemas.blogspot.com/",
-                forum: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
+                forum: "https://joeman.i234.me",
                 UnitComparison: "https://wiki.en.grepolis.com/wiki/Units_Portal/"
             },
             settings: {
@@ -749,8 +749,8 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 version_update: "εκσυγχρονίζω",
                 cat_wonders: "WW",
                 Update: "Τρέχουσα έκδοση V" + version,
-                link_forum: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
-                link_contact: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
+                link_forum: "https://joeman.i234.me",
+                link_contact: "https://joeman.i234.me",
                 link_Excel: "https://docs.zoho.com/file/5y2lva773ddcde22f4ebc8febadec843aaceb",
                 forum: "Δικαστήριο",
                 author: "Συγγραφέας",
@@ -917,9 +917,9 @@ function JOE_GAME(version, gm, DATA, time_a) {
       ///////////////////////////////////////////////////////////
         dk: {
             link: {
-                Update: "https://mycitygre.000webhostapp.com/Dio-Tools/Dio_tools/changelog-en/index.html",
+                Update: "https://joeman.i234.me/Dio_tools/changelog-en/index.html",
                 contact: "http://grepotemas.blogspot.com/",
-                forum: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
+                forum: "https://joeman.i234.me",
                 UnitComparison: "https://wiki.en.grepolis.com/wiki/Units_Portal/"
             },
             settings: {
@@ -932,8 +932,8 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 version_update: "bijwerken",
                 cat_wonders: "WW",
                 Update: "Huidige versie V" + version,
-                link_forum: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
-                link_contact: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
+                link_forum: "https://joeman.i234.me",
+                link_contact: "https://joeman.i234.me",
                 link_Excel: "https://docs.zoho.com/file/5y2lva773ddcde22f4ebc8febadec843aaceb",
                 forum: "Forum",
                 author: "Schrijver",
@@ -1100,9 +1100,9 @@ function JOE_GAME(version, gm, DATA, time_a) {
       ///////////////////////////////////////////
         en: {
             link: {
-                Update: "https://mycitygre.000webhostapp.com/Dio-Tools/Dio_tools/changelog-en/index.html",
+                Update: "https://joeman.i234.me/Dio_tools/changelog-en/index.html",
                 contact: "http://grepotemas.blogspot.com/",
-                forum: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
+                forum: "https://joeman.i234.me",
                 UnitComparison: "https://wiki.en.grepolis.com/wiki/Units_Portal/"
             },
             settings: {
@@ -1115,8 +1115,8 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 version_update: "update",
                 cat_wonders: "WW",
                 Update: "Current version V" + version,
-                link_forum: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
-                link_contact: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
+                link_forum: "https://joeman.i234.me",
+                link_contact: "https://joeman.i234.me",
                 link_Excel: "https://docs.zoho.com/file/5y2lva773ddcde22f4ebc8febadec843aaceb",
                 forum: "Forum",
                 author: "Author",
@@ -1283,9 +1283,9 @@ function JOE_GAME(version, gm, DATA, time_a) {
       ///////////////////////////////////////////////////
         fr: {
             link: {
-                Update: "https://mycitygre.000webhostapp.com/Dio-Tools/Dio_tools/changelog-en/index.html",
+                Update: "https://joeman.i234.me/Dio_tools/changelog-en/index.html",
                 contact: "http://grepotemas.blogspot.com/",
-                forum: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
+                forum: "https://joeman.i234.me",
                 UnitComparison: "https://wiki.en.grepolis.com/wiki/Units_Portal/"
             },
             settings: {
@@ -1298,8 +1298,8 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 version_update: "mise à jour",
                 cat_wonders: "WW",
                 Update: "Version actuelle V" + version,
-                link_forum: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
-                link_contact: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
+                link_forum: "https://joeman.i234.me",
+                link_contact: "https://joeman.i234.me",
                 link_Excel: "https://docs.zoho.com/file/5y2lva773ddcde22f4ebc8febadec843aaceb",
                 forum: "Forum",
                 author: "Auteur",
@@ -1466,9 +1466,9 @@ function JOE_GAME(version, gm, DATA, time_a) {
       ///////////////////////////////////////////////////
         ru: {
             link: {
-                Update: "https://mycitygre.000webhostapp.com/Dio-Tools/Dio_tools/changelog-en/index.html",
+                Update: "https://joeman.i234.me/Dio_tools/changelog-en/index.html",
                 contact: "http://grepotemas.blogspot.com/",
-                forum: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
+                forum: "https://joeman.i234.me",
                 UnitComparison: "https://wiki.en.grepolis.com/wiki/Units_Portal/"
             },
             settings: {
@@ -1481,8 +1481,8 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 version_update: "Обновить",
                 cat_wonders: "WW",
                 Update: "Текущая версия V" + version,
-                link_forum: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
-                link_contact: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
+                link_forum: "https://joeman.i234.me",
+                link_contact: "https://joeman.i234.me",
                 link_Excel: "https://docs.zoho.com/file/5y2lva773ddcde22f4ebc8febadec843aaceb",
                 forum: "Форум",
                 author: "автор",
@@ -1649,9 +1649,9 @@ function JOE_GAME(version, gm, DATA, time_a) {
       /////////////////////////////////////////////////////////////
         pl: {
             link: {
-                Update: "https://mycitygre.000webhostapp.com/Dio-Tools/Dio_tools/changelog-en/index.html",
+                Update: "https://joeman.i234.me/Dio_tools/changelog-en/index.html",
                 contact: "http://grepotemas.blogspot.com/",
-                forum: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
+                forum: "https://joeman.i234.me",
                 UnitComparison: "https://wiki.en.grepolis.com/wiki/Units_Portal/"
             },
             settings: {
@@ -1664,8 +1664,8 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 version_update: "aktualizacja",
                 cat_wonders: "W W",
                 Update: "Obecna wersja V" + version,
-                link_forum: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
-                link_contact: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
+                link_forum: "https://joeman.i234.me",
+                link_contact: "https://joeman.i234.me",
                 link_Excel: "https://docs.zoho.com/file/5y2lva773ddcde22f4ebc8febadec843aaceb",
                 forum: "Forum",
                 author: "Autor",
@@ -1832,9 +1832,9 @@ function JOE_GAME(version, gm, DATA, time_a) {
       ////////////////////////////////////////////
         ro: {
             link: {
-                Update: "https://mycitygre.000webhostapp.com/Dio-Tools/Dio_tools/changelog-en/index.html",
+                Update: "https://joeman.i234.me/Dio_tools/changelog-en/index.html",
                 contact: "http://grepotemas.blogspot.com/",
-                forum: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
+                forum: "https://joeman.i234.me",
                 UnitComparison: "https://wiki.en.grepolis.com/wiki/Units_Portal/"
             },
             settings: {
@@ -1847,8 +1847,8 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 version_update: "Actualizați",
                 cat_wonders: "WW",
                 Update: "Versiune curentă V" + version,
-                link_forum: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
-                link_contact: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
+                link_forum: "https://joeman.i234.me",
+                link_contact: "https://joeman.i234.me",
                 link_Excel: "https://docs.zoho.com/file/5y2lva773ddcde22f4ebc8febadec843aaceb",
                 forum: "forum",
                 author: "Autor",
@@ -2015,9 +2015,9 @@ function JOE_GAME(version, gm, DATA, time_a) {
       //////////////////////////////////////////
         es: {
             link: {
-                Update: "https://mycitygre.000webhostapp.com/Dio-Tools/Dio_tools/changelog-en/index.html",
+                Update: "https://joeman.i234.me/Dio_tools/changelog-en/index.html",
                 contact: "http://grepotemas.blogspot.com/",
-                forum: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
+                forum: "https://joeman.i234.me",
                 UnitComparison: "https://wiki.en.grepolis.com/wiki/Units_Portal/"
             },
             settings: {
@@ -2030,8 +2030,8 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 version_update: "actualizar",
                 cat_wonders: "WW",
                 Update: "Versión actual V" + version,
-                link_forum: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
-                link_contact: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
+                link_forum: "https://joeman.i234.me",
+                link_contact: "https://joeman.i234.me",
                 link_Excel: "https://docs.zoho.com/file/5y2lva773ddcde22f4ebc8febadec843aaceb",
                 forum: "Foro",
                 author: "Autor",
@@ -2199,9 +2199,9 @@ function JOE_GAME(version, gm, DATA, time_a) {
       //////////////////////////////////////////////
         br: {
             link: {
-                Update: "https://mycitygre.000webhostapp.com/Dio-Tools/Dio_tools/changelog-en/index.html",
+                Update: "https://joeman.i234.me/Dio_tools/changelog-en/index.html",
                 contact: "http://grepotemas.blogspot.com/",
-                forum: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
+                forum: "https://joeman.i234.me",
                 UnitComparison: "https://wiki.en.grepolis.com/wiki/Units_Portal/"
             },
             settings: {
@@ -2214,8 +2214,8 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 version_update: "Atualização",
                 cat_wonders: "WW",
                 Update: "Versão atual  V" + version,
-                link_forum: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
-                link_contact: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
+                link_forum: "https://joeman.i234.me",
+                link_contact: "https://joeman.i234.me",
                 link_Excel: "https://docs.zoho.com/file/5y2lva773ddcde22f4ebc8febadec843aaceb",
                 forum: "Fórum",
                 author: "Autor",
@@ -2396,9 +2396,9 @@ function JOE_GAME(version, gm, DATA, time_a) {
       //////////////////////////////////////////////////
         cz: {
             link: {
-                Update: "https://mycitygre.000webhostapp.com/Dio-Tools/Dio_tools/changelog-en/index.html",
+                Update: "https://joeman.i234.me/Dio_tools/changelog-en/index.html",
                 contact: "http://grepotemas.blogspot.com/",
-                forum: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
+                forum: "https://joeman.i234.me",
                 UnitComparison: "https://wiki.en.grepolis.com/wiki/Units_Portal/"
             },
             settings: {
@@ -2411,8 +2411,8 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 version_update: "Aktualizace",
                 cat_wonders: "WW",
                 Update: "Současná verze V" + version,
-                link_forum: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
-                link_contact: "https://mycitygre.000webhostapp.com/Dio-Tools/index.html",
+                link_forum: "https://joeman.i234.me",
+                link_contact: "https://joeman.i234.me",
                 link_Excel: "https://docs.zoho.com/file/5y2lva773ddcde22f4ebc8febadec843aaceb",
                 forum: "Fórum",
                 author: "Autor",
@@ -2791,8 +2791,8 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 var Browser = getBrowser().replace(/(1|2|3|4|5|6|7|8|9|\ )/gm, "");
                 $('.settings-container').append(
                     '<div id="joe_settings" class="player_settings section"><div id="joe_bg_medusa"></div>' +
-                    '<div class="game_header bold"><a href="https://github.com/AligatorJoe/Dio-Tools-2019/raw/master/Gatinho.user.js" target="_blank" style="color:white">Gatinho (v' + version + ')</a><a href="https://mycitygre.000webhostapp.com/Dio-Tools/Help.html" target="_blank" style="color:#ffe2a0"><img id="OffLine" style="left:510px; position:absolute; transform: scale(1.5);" src="https://i.imgur.com/eunBE4p.png"></a></div>' +
-                    '<div id="version_info"><img src="https://i.imgur.com/NeBU2YJ.gif" /><a href="https://mycitygre.000webhostapp.com/Dio-Tools/Help.html" target="_blank" style="color:#ffe2a0">  &nbsp;&nbsp;&nbsp;&nbsp; Problem!? Click here!</a></div>' +
+                    '<div class="game_header bold"><a href="https://github.com/AligatorJoe/Dio-Tools-2019/raw/master/Gatinho.user.js" target="_blank" style="color:white">Gatinho (v' + version + ')</a><a href="https://joeman.i234.me/Help.html" target="_blank" style="color:#ffe2a0"><img id="OffLine" style="left:510px; position:absolute; transform: scale(1.5);" src="https://i.imgur.com/eunBE4p.png"></a></div>' +
+                    '<div id="version_info"><img src="https://i.imgur.com/NeBU2YJ.gif" /><a href="https://joeman.i234.me/Help.html" target="_blank" style="color:#ffe2a0">  &nbsp;&nbsp;&nbsp;&nbsp; Problem!? Click here!</a></div>' +
                     '<div style="position:absolute; left: 495px;top: 40px;"><a href="https://www.paypal.com/pools/c/8fFFEyptCf" target="_blank">' +
                     '<div id="donate_btn" class="' + LID + '" alt="Donate"></div></a></div>' +
                     '<ul class="menu_inner joe_settings_tabs">' +
@@ -2962,7 +2962,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                     '<td><div id="pop" class="checkbox_new"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("options", "pop")[0] + '</div></div>' +
                     '<p>' + getText("options", "pop")[1] + '</p></td>' +
                     '</tr><tr>' +
-                    '<td><img src="https://i.ibb.co/r0bp310/Box-actio-Vasia.png" alt="activity_boxes" style="transform: scale(1.00);"/></td>' +
+                    '<td><img src="https://i.imgur.com/ZfV5lis.png" alt="activity_boxes" style="transform: scale(1.00);"/></td>' +
                     '<td><div id="act" class="checkbox_new"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("options", "act")[0] + '</div></div>' +
                     '<p>' + getText("options", "act")[1] + '</p></td>' +
                     '</tr><tr>' +
@@ -2981,12 +2981,12 @@ function JOE_GAME(version, gm, DATA, time_a) {
                     '<td><div id="scr" class="checkbox_new"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("options", "scr")[0] + '</div></div>' +
                     '<p>' + getText("options", "scr")[1] + '</p></td>' + //'</p><br><br></td>' +
                     '</tr><tr>' +
-                    '<td><img src="https://i.ibb.co/HgrHzNn/stastistique1.png" style="transform: scale(0.8);" alt="" /></td>' +
+                    '<td><img src="https://i.imgur.com/NfPxsMi.png" style="transform: scale(0.8);" alt="" /></td>' +
                     '<td><div id="stt" class="checkbox_new"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("options", "stt")[0] + '</div></div>' +
                     '<p>' + getText("options", "stt")[1] + '</p></td>' +
                     '</tr><tr>' +
                     '</tr><tr>' +
-                    '<td><img src="https://i.ibb.co/bs8MD1w/Player-City.png" alt="" /></td>' +
+                    '<td><img src="https://i.imgur.com/QYzG3a9.png" alt="" /></td>' +
                     '<td><div id="Bjc" class="checkbox_new"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("options", "Bjc")[0] + '</div></div>' +
                     '<p>' + getText("options", "Bjc")[1] + '</p></td>' +
                     '</tr><tr>' +
@@ -3033,7 +3033,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                     '<p>' + getText("options", "CVW")[1] + '</p></td>' +
                     '</tr><tr>' +
                     '</tr><tr>' +
-                    '<td><img src="https://i.ibb.co/6tggKd7/screenshot-pt67-grepolis-com-2020-09-08-19-49-54.png" style="transform: scale(1.00);" /></td>' +
+                    '<td><img src="https://i.imgur.com/cy64JSV.png" style="transform: scale(1.00);" /></td>' +
                     '<td><div id="Ciw" class="checkbox_new"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("options", "Ciw")[0] + '</div></div>' +
                     '<p>' + getText("options", "Ciw")[1] + '</p></td>' +
                     '</tr><tr>' +
@@ -3065,7 +3065,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                     '<p>' + getText("options", "Hio")[1] + '</p></td>' +
                     '</tr><tr>' +
                     '</tr><tr>' +
-                    '<td><img src="https://i.ibb.co/3FVjFRS/Axe-Rapide.png" alt="" /></td>' +
+                    '<td><img src="https://i.imgur.com/UHg3T4R.png" alt="" /></td>' +
                     '<td><div id="Arb" class="checkbox_new"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("options", "Arb")[0] + '<button id="Refrech" style="width: 65px; height: 15px;" onClick="window.location.reload();">Click refresh</button></div></div>' +
                     '<p>' + getText("options", "Arb")[1] + '</p></td>' +
                     '</tr><tr>' +
@@ -3073,7 +3073,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
 
 
  //novo tentar fazer foncionar lista jogadores na ilha
-                    '<td><img src="https://i.ibb.co/3FVjFRS/Axe-Rapide.png" alt="" /></td>' +
+                    '<td><img src="https://i.imgur.com/UHg3T4R.png" alt="" /></td>' +
                     '<td><div id="dio_Isl" class="checkbox_new"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("options", "Isl")[0] +
                     '<p>' + getText("options", "Isl")[1] + '</p></td>' +
                     '</tr><tr>' +
@@ -3085,7 +3085,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                     '<div id="joe_hall" class="content_category" style="font-weight: bold;">' +
                     "<p id='Title' >Information of the day" + joe_icon + "</p>" +
                     '<table>' +
-                    '<iframe name="iframe1" id="iframe1" allowtransparency="true" style="margin-left: -5px;" src="https://mycitygre.000webhostapp.com/Dio-Tools/info.html" width="100%" height="280px" ></iframe>' +
+                    '<iframe name="iframe1" id="iframe1" allowtransparency="true" style="margin-left: -5px;" src="https://joeman.i234.me/info.html" width="100%" height="280px" ></iframe>' +
                     '</table>' +
                     '</div>' +
                     '</DIV>' +
@@ -4055,13 +4055,13 @@ function JOE_GAME(version, gm, DATA, time_a) {
                     '<div style="overflow-x: hidden; padding-left: 5px; position: relative;"></div>' +
                     '<p><span style="font-size:21px;">&nbsp;➫ New Blog Gatinho</span><br/>' +
                     '&nbsp;- To start this year 2021 Gatinho created his blog Gatinho, at the moment the description of the modules<br/>' +
-                    '&nbsp; is available with some explanations and the history of Gatinho ➫ (<a href="https://mycitygre.000webhostapp.com/Dio-Tools/index.html" target="_blank">Blog Gatinho</a>)<br/>' +
+                    '&nbsp; is available with some explanations and the history of Gatinho ➫ (<a href="https://joeman.i234.me" target="_blank">Blog Gatinho</a>)<br/>' +
                     '&nbsp;- The older versions were obsolete until 28/07/2021.<br/>' +
                     '<p><span style="font-size:12px;">&nbsp;➫ Version Gatinho disponible ici➫ (<a href="https://github.com/AligatorJoe/Dio-Tools-2019/raw/master/Gatinho.user.js" target="_blank">New version</a>)</span><br/>' +
-                    '<p><span style="font-size:12px;">&nbsp;➫ New toutes les version Dio Tools son disponible ici➫ (<a href="https://mycitygre.000webhostapp.com/Dio-Tools/index.html" target="_blank">Blog Gatinho</a>)</span><br/>' +
-                    '<a href="https://mycitygre.000webhostapp.com/Dio-Tools/index.html" target="_blank"><img src="https://i.imgur.com/Nt0slKy.png" height="auto" width="30%"  title="les version" alt="toutes les version"></a><br/>' +
-                    '<a href="https://mycitygre.000webhostapp.com/Dio-Tools/index.html" target="_blank"><img src="https://wiki.pt.grepolis.com/images/a/a3/Battleships_logo.png" height="auto" width="30%"  title="les version" alt="toutes les version"></a><br/>' +
-                    '<a href="https://mycitygre.000webhostapp.com/Dio-Tools/index.html" target="_blank"><img src="https://i.imgur.com/ydhVNZY.png" width="50px" title="les version" alt="toutes les version"></a><br/>' +
+                    '<p><span style="font-size:12px;">&nbsp;➫ New toutes les version Dio Tools son disponible ici➫ (<a href="https://joeman.i234.me" target="_blank">Blog Gatinho</a>)</span><br/>' +
+                    '<a href="https://joeman.i234.me" target="_blank"><img src="https://i.imgur.com/Nt0slKy.png" height="auto" width="30%"  title="les version" alt="toutes les version"></a><br/>' +
+                    '<a href="https://joeman.i234.me" target="_blank"><img src="https://wiki.pt.grepolis.com/images/a/a3/Battleships_logo.png" height="auto" width="30%"  title="les version" alt="toutes les version"></a><br/>' +
+                    '<a href="https://joeman.i234.me" target="_blank"><img src="https://i.imgur.com/ydhVNZY.png" width="50px" title="les version" alt="toutes les version"></a><br/>' +
                     '<div class="green">' + getText("options", "Mess")[0] + '</div><div style="float:left;">' + getText("options", "Mess")[1] + '</div>' +
                     '<img class="" src="https://i.imgur.com/tMRlEEa.png" />' + // image des notifications
                     '<img class="" src="" />' +
@@ -7449,7 +7449,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
    //         * Style_Gatinho *        //
   //////////////////////////////////////
 
-$('head').append('<link rel="stylesheet" type="text/css" href="https://mycitygre.000webhostapp.com/Gatinho/Style.css">'); // a regler plus tard
+$('head').append('<link rel="stylesheet" type="text/css" href="https://joeman.i234.me/css/styleEEEE.css">'); // a regler plus tard
 
     ///////////////////////////////////
    //    * Transporter capacity *   //
@@ -8346,7 +8346,7 @@ var Npui = document.getElementsByClassName( 'olao' ),
                 ($('#f_R212').hasClass("checked") ? ' ☆━━━━━━━━━━━━━━━━━☆━━━━━━━━━━━━━━━━━━━☆━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━☆ ' + '\n' : ' ') +
                 ($('#f_R210').hasClass("checked") ? ' ☆━━━━━━━━━━━━━━━━━☆━━━━━━━━━━━━━━━━━━━☆━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━☆ ' + '\n' : ' ') +
                 ($('#T_R1').hasClass("checked") ? '[color=#28045A][size=8][i][b]' + npu + ' \u00a0' + Npui + '[/b][/i][/size][/color]' + '\n' : ' ') + //Test
-                '[size=7][url=https://mycitygre.000webhostapp.com/Dio-Tools/index.html]Gatinho[/url] - (v' + '\u00a0' + version + ')' + '[/size]\n';
+                '[size=7][url=https://joeman.i234.me]Gatinho[/url] - (v' + '\u00a0' + version + ')' + '[/size]\n';
             var bb_count_str = parseInt(str.match(/\[/g).length, 10),
                 bb_count_move = 0;
             var i = 0;
@@ -8932,8 +8932,8 @@ var Npui = document.getElementsByClassName( 'olao' ),
                 '.nui_main_menu li.chat { display:none !important; }' +
                 '#grcgrc { display:none }' +
                 '</style>').appendTo('head');
-            $('<div id="joe_chat"><div class="icon"></div><div class="messagebox"><div class="slider"></div></div><input type="text" placeholder="Nachricht eingeben..." /></div>').appendTo("#ui_box");
-            $('<div class="welcome"><div class="time">' + Chat.formatTime(Timestamp.server()) + ':&nbsp;</div><div class="text">Hallo ' + Game.player_name + '! Willkommen im Gatinho Weltenchat (' + Game.world_id + ')</div></div>').appendTo("#ui_box .messagebox");
+            $('<div id="joe_chat"><div class="icon"></div><div class="messagebox"><div class="slider"></div></div><input type="text" placeholder="Enter your Message..." /></div>').appendTo("#ui_box");
+            $('<div class="welcome"><div class="time">' + Chat.formatTime(Timestamp.server()) + ':&nbsp;</div><div class="text">Hallo ' + Game.player_name + '! Welcome to the Gatinho world chat (' + Game.world_id + ')</div></div>').appendTo("#ui_box .messagebox");
             $('<div class="togglebutton"><div class="top"></div><div class="middle"><div class="arrow">👈</div></div><div class="bottom"></div></div>').appendTo("#joe_chat");
             $('#joe_chat input').keypress(function(e) {
                 if (e.keyCode === 13) {
@@ -8952,14 +8952,14 @@ var Npui = document.getElementsByClassName( 'olao' ),
                     setTimeout(function() {
                         $('#joe_chat .togglebutton .arrow').get(0).innerHTML = "👉";
                     }, 1300);
-                    $('#joe_chat .togglebutton').tooltip("Chat öffnen");
+                    $('#joe_chat .togglebutton').tooltip("Open chat");
                 },
                 function() {
                     $('#joe_chat').css("left", 0);
                     setTimeout(function() {
                         $('#joe_chat .togglebutton .arrow').get(0).innerHTML = "👈";
                     }, 1300);
-                    $('#joe_chat .togglebutton').tooltip("Chat schließen");
+                    $('#joe_chat .togglebutton').tooltip("Close chat");
                 }
             );
             $(window).on("resize.joe", function() {
@@ -8972,7 +8972,7 @@ var Npui = document.getElementsByClassName( 'olao' ),
                     }, 0);
                 }
             });
-            $('#joe_chat .togglebutton').tooltip("Chat schließen");
+            $('#joe_chat .togglebutton').tooltip("Close chat");
             $('#joe_chat .slider').mousedown(function(e) {
                 e.preventDefault();
                 $('#joe_chat .messagebox').css("max-height", "none");
@@ -9041,12 +9041,12 @@ var Npui = document.getElementsByClassName( 'olao' ),
                 url: "https://felix.de/php/sendMessage.php?world=" + Game.world_id + "&time=" + Timestamp.server() + "&player=" + Game.player_name + "&message=" + _message,
                 dataType: 'text',
                 success: function(response) {
-                    console.debug("Nachricht wurde erfolgreich gesendet");
+                    console.debug("Message was sent successfully");
                     $('#joe_chat .messagebox')[0].scrollTop = $('#joe_chat .messagebox')[0].scrollHeight
                     Chat.getMessages();
                 },
                 error: function(e) {
-                    console.debug("Nachricht konnte nicht gesendet werden", e);
+                    console.debug("Message could not be sent", e);
                 }
             });
         },
@@ -9094,7 +9094,7 @@ var Npui = document.getElementsByClassName( 'olao' ),
                             }
                         },
                         error: function(xhr) {
-                            console.debug("Nachrichten konnten nicht geladen werden", xhr);
+                            console.debug("Messages could not be loaded", xhr);
                             clearTimeout(Chat.timeout);
                             Chat.timeout = setTimeout(function() {
                                 Chat.getMessages();
@@ -9370,7 +9370,7 @@ var Npui = document.getElementsByClassName( 'olao' ),
                 }
                 //halloween
                 if (DATA.options.joe_tf) {
-                    $('<style id="joe_Scrollbar">#trade_tab .content { background: #f9f9f999 url(https://i.imgur.com/BCUgYDS.gif);}.gods_area .gods_container.god.zeus { background: url(https://i.ibb.co/NFgxStr/gods-layout-grande-halloween.png) no-repeat -76px -154px; } .gods_area .gods_container.god.artemis { background: url(https://i.ibb.co/NFgxStr/gods-layout-grande-halloween.png) no-repeat 0 -78px; } .gods_area .gods_container.god.hera { background: url(https://i.ibb.co/NFgxStr/gods-layout-grande-halloween.png) no-repeat -156px -76px; } .gods_area .gods_container.god.poseidon { background: url(https://i.ibb.co/NFgxStr/gods-layout-grande-halloween.png) no-repeat 0 -154px;; } .gods_area .gods_container.god.hades { background: url(https://i.ibb.co/NFgxStr/gods-layout-grande-halloween.png) no-repeat -156px 0; } .gods_area .gods_container.god.athena { background: url(https://i.ibb.co/NFgxStr/gods-layout-grande-halloween.png) no-repeat -76px -78px; } .god_selection .js-list .zeus_small { background: url(https://i.ibb.co/sJYsv2w/gods-temple-halloween.png) no-repeat -870px -787px; } .god_selection .js-list .poseidon_small { background: url(https://i.ibb.co/sJYsv2w/gods-temple-halloween.png) no-repeat -870px -737px; } .god_selection .js-list .hera_small { background: url(https://i.ibb.co/sJYsv2w/gods-temple-halloween.png) no-repeat -870px -687px; } .god_selection .js-list .athena_small { background: url(https://i.ibb.co/sJYsv2w/gods-temple-halloween.png) no-repeat -870px -587px; } .god_selection .js-list .hades_small { background: url(https://i.ibb.co/sJYsv2w/gods-temple-halloween.png) no-repeat -870px -637px; } .god_selection .js-list .artemis_small { background: url(https://i.ibb.co/sJYsv2w/gods-temple-halloween.png) no-repeat -870px -537px; } .god_selection #temple_gods { background: url(https://i.imgur.com/xUroKua.png) no-repeat -995px 0; } .temple_gods_large { background-image: url(https://i.imgur.com/AQAHoVM.png); } .alliance_temple_overview .content tbody tr:nth-child(2n+1) { background: url() ; } .popup_middle_middle { background: linear-gradient(0deg,rgba(255, 255, 255, 0.62),rgba(255, 255, 255, 0.64)),url(https://gppt.innogamescdn.com/images/game/overviews/group_list_bg.jpg) repeat-y; } .alliance_temple_overview .content tbody tr:nth-child(2n) { background: url() ; background-color: #ffffff69 ; } .alliance_temple_overview .expandable_list .content, .alliance_temple_overview .expandable_list .expand_text { background: url(); } .even { background: url() ; background-color: #f9f9f969; } #townsoverview .game_list li:hover { background-image: url(); }#town_group_active_towns { background: linear-gradient(0deg,rgba(255, 255, 255, 0.62),rgba(255, 255, 255, 0.64)),url(https://gppt.innogamescdn.com/images/game/overviews/group_list_bg.jpg) repeat-y; } .building_overview #building_overview td.building.hover, .building_overview #building_overview tr:hover { background: #a3fd7142; } #joe_town_popup .god_content { background-color: #f9f9f999; } #joe_town_popup .spy_content { background-color: #f9f9f999; } #joe_town_popup .resources_content { background-color: #f9f9f999; } #joe_town_popup .unit_content { background-color: #f9f9f999; } .farmtown_tooltip { background-color: #f9f9f999; } .game_list li { background-color: #f9f9f999; }  .temple_power_popup { background-color: #f9f9f999; } .popup_middle_middle { background: linear-gradient(0deg,rgba(255, 255, 255, 0.62),rgba(255, 255, 255, 0.64)),url(https://i.imgur.com/2STCQgX.png); } .god_selection .background  { background: url(https://i.imgur.com/lij0NI5.png)no-repeat 0 0; } .ng-scope { background-color: #f9f9f999; } .subsection.captain.enabled { background-color: #f9f9f999; }.subsection.curator.enabled { background-color: #f9f9f999; }.game_body { background: url(); } .table_box .table_box_content .body { background: rgba(255, 255, 255, 0.58) url("") ; } .classic_window .filler  { background: url(); } .classic_window .filler  { background: url(https://i.imgur.com/2STCQgX.png); } .ironer_window_background  { background: url(https://i.imgur.com/7MpKgbt.png); } .academy .academy_image  { background: url(https://i.imgur.com/8SwufpV.jpg); } .place_window_background  { background: url(https://i.imgur.com/3PVFZb6.png); } .window_storage_wrapper .storage_window_background  { background: url(https://i.imgur.com/g4DLjxQ.png); } .popup_table_inside { background-color: #f9f9f999; } .town_infos { background-color: #f9f9f999; } .window_storage_wrapper div.storage_resbars span  { background-color: #f9f9f999; } .hide_window_wrapper .hide_window_background  { background: url(https://i.imgur.com/HgBSwLh.png); } .marketplace .marketplace_window_background  { background: url(https://i.imgur.com/jx0HCDd.png); } .wall_window_background  { background: url(https://i.imgur.com/qpts9L6.png); } .docks.window_background  { background: url(https://i.imgur.com/ARCcaoQ.png); } .barracks.window_background  { background: url(https://i.imgur.com/OYSJWX4.png) no-repeat 0 0; } .farm_window_background  { background: url(https://i.imgur.com/2zgnPpe.png); } .game_body  { background-color: #f9f9f999; } .fight_report_classic { opacity: 0.8; } div.gpwindow_content  { background: linear-gradient(0deg,rgba(255, 255, 255, 0.62),rgba(255, 255, 255, 0.64)),url(https://i.imgur.com/2STCQgX.png); } div.gpwindow_content  { background-color: #ffe2a1b3; } .main_window_background  { background: url(https://i.imgur.com/PX3tt4a.png); } #main_tasks { background-color: #aead9099; } .lumber_window_background  { background: url(https://i.imgur.com/Q0oNcbc.png); } .brown  { background: url(); } .brown  { background-color: #f9f9f999; } .questlog_index .quest.selected  { background: url(); } .questlog_index .quest.selected  { background-color: #8aa1e880; } .island_quest_details .description  { background-color: #f9f9f999; } .questlog_detail .quest_description  { background-color: #f9f9f999; } .island_quest_details .tasks .task_description  { background-color: #f9f9f999; } #joe_settings .content .content_category  { background-color: #f9f9f999; } .settings-menu  { background-color: #f9f9f999; } .settings-container  { background-color: #f9f9f999; } #temple_god_description h4, #temple_god_description p  { background-color: #f9f9f999; } #town_group_overview  { background-color: #f9f9f999; } .info_dialog.info_create_first_town_group { background-color: #f9f9f999; } legend { background-color: #f9f9f999; } #message_reply_preview { background: url(); } .game_body{ font-size: 13px; font-family: Comic Sans MS, sans-serif; font-stretch: semi-condensed; } #message_message, #message_new_message  { background-color: #b2b8cacc }; .even  { background: url(); } .game_list .even  { background: url(); } #message_reply_message { height: 107px; width: 772px; margin: 10px 0; background-color: #4f4f5480; } #pact_info_box { background-color: #f9f9f999; } .attack_support_window .troops_from_this_town { background-color: #f9f9f999; } .town_cast_spell_content .header { background-color: #f9f9f999; } .marketplace.own_offers .header { background-color: #f9f9f999; } .game_list .odd  { background: url(); } .game_list .odd { background-color: #f9f9f999; } .academy .tech_tree_box .column { background: url(); } .academy .tech_tree_box .column { background-color: #f9f9f999; } .academy .tech_tree_box .column.inactive  { background: url(); } .academy .tech_tree_box .column.inactive { background-color: #dcdb3333; } .stoner_window_background { background: url(https://i.imgur.com/xigCw6F.png); } .radiobutton { background-color: #f9f9f999; } .notes .window_content .notes_container textarea { background-color: #b2b8cacc; } .notes .window_content .notes_container .preview_box {  background: url(); } .notes .window_content .notes_container .preview_box { background-color: #959bb8e6; } #edit_profile_form textarea { background-color: #b2b8cacc; } .label_box label { background-color: #f9f9f999; } h4 { background-color: #fefefeb0; } .separate_forum_tab_link { background: #fefefeb0; } #forum_admin div.game_list_footer, #thread_list_form #forum div.game_list_footer { background: #fefefeb0; } #post_save_wrapper  { background: url(); } #post_save_wrapper { background-color: #707789cc; } #post_save_wrapper textarea { background-color: #917d7d4d; } #forum_admin .forum.odd .name .text_box  { background: url(); } #forum_admin .forum.even .name .text_box  { background: url(); } #forum div.game_list_footer  { background: #fefefeb0; } #newthread { background: url(); } #forum_post_textarea.newthread { background-color: #917d7d4d; } #newthread #bbcodes url(); } #newthread #bbcodes { background-color: #917d7d4d; } .report_booty_bonus_fight  { background: url(); } .report_units_overview  { background: url(); } .customization .content { background-color: #f7f57bcc; } .passwordRecovery { background-color: #f7f57bcc; } .passwordRecovery .control { border-bottom: solid 2px #000e80; } .passwordRecovery .control:hover { background-color: #c8cffa; } #towninfo_description { background: #f9f9f999; }.town_cast_spell_oldcontent { background: #f9f9f999 !important; } .message_post { background: url(); } .message_post { background-color: #938e8e66; } .message_post_content { background: url(); } .message_post_content { background-color: #938e8e66; } div.quote div.quote_message { background-color: #607c5966; } .message_item.even.bottom.ui-draggable { background: linear-gradient(to right,rgba(244, 249, 65, 0.67),rgba(62, 187, 17, 0.42)); } .game_table_odd { background: url(); } .color_highlight, .item_selected { background-color: #2a242466; } .game_table { background: url(); } .game_table { background-color: #f9f9f999; } #ally_flags .game_body { background-image: url(); } #ally_pact_list { background-color: #fee2a14d; } .reservation_tool .gp_tab_page { background: url(); } .reservation_tool .gp_tab_page { background-color: #4a4c5266; } .grepo_menu .gm_middle_center { background: url(); } .grepo_menu .gm_middle_center { background-color: #4a4c5266; } .odd { background: url(); } .odd { background-color: #f9f9f999; } div.island_info_towns ul { background: url(); } div.island_info_towns ul { background-color: #e5edad99; } .island_info { background-color: #f9f9f999; } .game_list .even { background-color: #f9f9f999; } #fto_town_list { background: url(); } #fto_town_list { background-color: #f9f9f999; } #fto_town_list li.fto_island { background: url(); } #fto_town_list li.fto_island { background-color: #f0788499; } #fto_town_list li.fto_town.active, div.fto_time_checkbox.active { background-color: #93f28980; } .box.middle.center { background: linear-gradient(0deg,rgba(255, 255, 255, 0.62),rgba(255, 255, 255, 0.64)),url(https://i.imgur.com/2STCQgX.png); } .box.middle.center { background-color: #ffea46; } .city_overview_building.field_3 { background: url(https://i.imgur.com/imn5ey5.png); } #ally_towns .members_list { background: url(); } #ally_towns .members_list { background-color: #f9f9f999; } #ally_profile_info #ally_pacts, #ally_profile_info #ally_profile { background: url(); } #place_container .error_msg { background-color: #eafa061a;  } .place_box {  color: #000; font-size: 12px; font-weight: 700; margin-top: 3px; background-color: #fff6; } fieldset { background-color: #fefefeb0; } #place_battle_points .points_descr, #place_start_all .bold { background-color: #fff9; } div.command_info .attacker .report_town_bg, div.command_info .attacker ul { background-color: #fcfcfcb3; } div.command_info .defender .report_town_bg, div.command_info .defender ul { background-color: #fcfcfcb3; } .arrival_time { background-color: #657af84d; } #way_duration, span.way_duration { background-color: #7af87566; } .way_duration { background-color: #ff7f7f4d; } .countdown { background-color: #1eff2e66; } .box.middle.center div.box_content { background: #f9f9f999; } #last_attacks { background-color: #f9f9f999; } div.espionage_espionage { background-color: #f9f9f999; } #building_overview td.locked.hover, #building_overview td.locked:hover { background-color: #f9515d; } #building_overview tr td.locked { background-color: #9baaff99; } .classic_window.heroes_train .heroes_train .middle_border { opacity: 0.8; } .god_mini { background: url(https://i.imgur.com/7zFoZFX.png); } .grepolis_score .score_content li.award_group:nth-child(2n) { background-color: #fedc92cc; } .grepolis_score .score_content li.award_group:nth-child(2n+1) { background-color: #ffeabbcc; } #farm_town_overview_btn { background-color: #f9f9f999; } #forum_post_textarea.newpoll { background: #4a4c5266; } .troops_arrive_at {  background-color: #435eff80; } #arrival_time { background-color: #657af84d; } .night .city_overview_building.field_3 { background: url(https://i.imgur.com/aZoTpLC.gif) no-repeat; } #townsoverview .game_list li:hover { background-color: #e9ff2d99; } div.group_list_scroll_border { background-color: #f9f9f999; } #town_group_active_towns, #town_group_all_towns  { background: url (); } .advisors_container .top_description { background: #f9f9f999; } .checkbox_description { background-color: #f9f9f999; } #premium_overview_inner { background: url(); } #premium_overview_inner { background: #8aa1e880; } #ally_announce_textarea { background: #4a4c5266; } #ally_profile_textarea { background: #4a4c5266; } .gp_link_fake { background: #f9f9f999; } #folder_menu_reports { background: url(); } #folder_menu_reports { background: #090f3499; } #thread_functions { background: url(); } #thread_functions { background: #f9f9f999; } .marketplace.all_offers tr:nth-child(2n):not(.premium_exchange), .marketplace.own_offers tr:nth-child(2n):not(.premium_exchange) { background: url(); } .marketplace.all_offers table, .marketplace.own_offers table { background: url(); } .marketplace.all_offers table, .marketplace.own_offers table { background: #f9f9f999; } #mines_values tr.even { background: url(); } #mines_values tr.even { background: #f9f9f999; } #mines_values tr.odd { background: url(); } #mines_values tr.odd { background: #f9f9f9e6; } #mines_text { background: url(); } #mines_text { background: #f9f9f999; } .advisor_hint { background: url(); } .advisor_hint { background: #f9f9f999; } .background_light { background: url(); } .background_light { background: #f9f9f999; } .message_poster.message_partner { background: #f4f58cb3; } .message_poster { background: #97aaf899; } #message_forward_body { background: url(); } .game_list_footer { background: url(); } .game_list_footer { background: #f9f9f999; } .game_inner_box .game_footer { background: url(); } .game_inner_box .game_footer { background: #f9f9f999; } #rb_wall2 { background: #f9f9f999; } #rb_wall1 { background: #f9f9f999; } #rb_fs1 { background: #f9f9f999; } #rb_fs2 { background: #f9f9f999; } #rb_fs3 { background: #f9f9f999; } #rb_fs4 { background: #f9f9f999; } .published_report .report_units_overview { background: #f9f9f999; } .attack_spots .attacking_units .curtain_box .cb_bg { background: url(); } .attack_spots .attacking_units .cb_bg, .attack_spots .defending_units .cb_bg { background: url(); } .curtain_box .cb_bg { background: #f9f9f999; } .message_item.odd.bottom.ui-draggable { background: linear-gradient(to right,rgba(107, 249, 65, 0.67),rgba(249, 248, 101, 0.42)); } .message_item.even.ui-draggable.top { background: linear-gradient(to right,rgba(223, 70, 238, 0.67),rgba(249, 101, 101, 0.42)); } </style>').appendTo("head");
+                    $('<style id="joe_Scrollbar">#trade_tab .content { background: #f9f9f999 url(https://i.imgur.com/BCUgYDS.gif);}.gods_area .gods_container.god.zeus { background: url(https://i.imgur.com/p6q3aEB.png) no-repeat -76px -154px; } .gods_area .gods_container.god.artemis { background: url(https://i.imgur.com/p6q3aEB.png) no-repeat 0 -78px; } .gods_area .gods_container.god.hera { background: url(https://i.imgur.com/p6q3aEB.png) no-repeat -156px -76px; } .gods_area .gods_container.god.poseidon { background: url(https://i.imgur.com/p6q3aEB.png) no-repeat -692px -155px; } .gods_area .gods_container.god.hades { background: url(https://i.imgur.com/p6q3aEB.png) no-repeat -156px 0; } .gods_area .gods_container.god.athena { background: url(https://i.imgur.com/p6q3aEB.png) no-repeat -76px -78px; } .god_selection .js-list .zeus_small { background: url(https://i.ibb.co/sJYsv2w/gods-temple-halloween.png) no-repeat -870px -787px; } .god_selection .js-list .poseidon_small { background: url(https://i.ibb.co/sJYsv2w/gods-temple-halloween.png) no-repeat -870px -737px; } .god_selection .js-list .hera_small { background: url(https://i.ibb.co/sJYsv2w/gods-temple-halloween.png) no-repeat -870px -687px; } .god_selection .js-list .athena_small { background: url(https://i.ibb.co/sJYsv2w/gods-temple-halloween.png) no-repeat -870px -587px; } .god_selection .js-list .hades_small { background: url(https://i.ibb.co/sJYsv2w/gods-temple-halloween.png) no-repeat -870px -637px; } .god_selection .js-list .artemis_small { background: url(https://i.ibb.co/sJYsv2w/gods-temple-halloween.png) no-repeat -870px -537px; } .god_selection #temple_gods { background: url(https://i.imgur.com/xUroKua.png) no-repeat -995px 0; } .temple_gods_large { background-image: url(https://i.imgur.com/AQAHoVM.png); } .alliance_temple_overview .content tbody tr:nth-child(2n+1) { background: url() ; } .popup_middle_middle { background: linear-gradient(0deg,rgba(255, 255, 255, 0.62),rgba(255, 255, 255, 0.64)),url(https://gppt.innogamescdn.com/images/game/overviews/group_list_bg.jpg) repeat-y; } .alliance_temple_overview .content tbody tr:nth-child(2n) { background: url() ; background-color: #ffffff69 ; } .alliance_temple_overview .expandable_list .content, .alliance_temple_overview .expandable_list .expand_text { background: url(); } .even { background: url() ; background-color: #f9f9f969; } #townsoverview .game_list li:hover { background-image: url(); }#town_group_active_towns { background: linear-gradient(0deg,rgba(255, 255, 255, 0.62),rgba(255, 255, 255, 0.64)),url(https://gppt.innogamescdn.com/images/game/overviews/group_list_bg.jpg) repeat-y; } .building_overview #building_overview td.building.hover, .building_overview #building_overview tr:hover { background: #a3fd7142; } #joe_town_popup .god_content { background-color: #f9f9f999; } #joe_town_popup .spy_content { background-color: #f9f9f999; } #joe_town_popup .resources_content { background-color: #f9f9f999; } #joe_town_popup .unit_content { background-color: #f9f9f999; } .farmtown_tooltip { background-color: #f9f9f999; } .game_list li { background-color: #f9f9f999; }  .temple_power_popup { background-color: #f9f9f999; } .popup_middle_middle { background: linear-gradient(0deg,rgba(255, 255, 255, 0.62),rgba(255, 255, 255, 0.64)),url(https://i.imgur.com/2STCQgX.png); } .god_selection .background  { background: url(https://i.imgur.com/lij0NI5.png)no-repeat 0 0; } .ng-scope { background-color: #f9f9f999; } .subsection.captain.enabled { background-color: #f9f9f999; }.subsection.curator.enabled { background-color: #f9f9f999; }.game_body { background: url(); } .table_box .table_box_content .body { background: rgba(255, 255, 255, 0.58) url("") ; } .classic_window .filler  { background: url(); } .classic_window .filler  { background: url(https://i.imgur.com/2STCQgX.png); } .ironer_window_background  { background: url(https://i.imgur.com/7MpKgbt.png); } .academy .academy_image  { background: url(https://i.imgur.com/8SwufpV.jpg); } .place_window_background  { background: url(https://i.imgur.com/3PVFZb6.png); } .window_storage_wrapper .storage_window_background  { background: url(https://i.imgur.com/g4DLjxQ.png); } .popup_table_inside { background-color: #f9f9f999; } .town_infos { background-color: #f9f9f999; } .window_storage_wrapper div.storage_resbars span  { background-color: #f9f9f999; } .hide_window_wrapper .hide_window_background  { background: url(https://i.imgur.com/HgBSwLh.png); } .marketplace .marketplace_window_background  { background: url(https://i.imgur.com/jx0HCDd.png); } .wall_window_background  { background: url(https://i.imgur.com/qpts9L6.png); } .docks.window_background  { background: url(https://i.imgur.com/ARCcaoQ.png); } .barracks.window_background  { background: url(https://i.imgur.com/OYSJWX4.png) no-repeat 0 0; } .farm_window_background  { background: url(https://i.imgur.com/2zgnPpe.png); } .game_body  { background-color: #f9f9f999; } .fight_report_classic { opacity: 0.8; } div.gpwindow_content  { background: linear-gradient(0deg,rgba(255, 255, 255, 0.62),rgba(255, 255, 255, 0.64)),url(https://i.imgur.com/2STCQgX.png); } div.gpwindow_content  { background-color: #ffe2a1b3; } .main_window_background  { background: url(https://i.imgur.com/PX3tt4a.png); } #main_tasks { background-color: #aead9099; } .lumber_window_background  { background: url(https://i.imgur.com/Q0oNcbc.png); } .brown  { background: url(); } .brown  { background-color: #f9f9f999; } .questlog_index .quest.selected  { background: url(); } .questlog_index .quest.selected  { background-color: #8aa1e880; } .island_quest_details .description  { background-color: #f9f9f999; } .questlog_detail .quest_description  { background-color: #f9f9f999; } .island_quest_details .tasks .task_description  { background-color: #f9f9f999; } #joe_settings .content .content_category  { background-color: #f9f9f999; } .settings-menu  { background-color: #f9f9f999; } .settings-container  { background-color: #f9f9f999; } #temple_god_description h4, #temple_god_description p  { background-color: #f9f9f999; } #town_group_overview  { background-color: #f9f9f999; } .info_dialog.info_create_first_town_group { background-color: #f9f9f999; } legend { background-color: #f9f9f999; } #message_reply_preview { background: url(); } .game_body{ font-size: 13px; font-family: Comic Sans MS, sans-serif; font-stretch: semi-condensed; } #message_message, #message_new_message  { background-color: #b2b8cacc }; .even  { background: url(); } .game_list .even  { background: url(); } #message_reply_message { height: 107px; width: 772px; margin: 10px 0; background-color: #4f4f5480; } #pact_info_box { background-color: #f9f9f999; } .attack_support_window .troops_from_this_town { background-color: #f9f9f999; } .town_cast_spell_content .header { background-color: #f9f9f999; } .marketplace.own_offers .header { background-color: #f9f9f999; } .game_list .odd  { background: url(); } .game_list .odd { background-color: #f9f9f999; } .academy .tech_tree_box .column { background: url(); } .academy .tech_tree_box .column { background-color: #f9f9f999; } .academy .tech_tree_box .column.inactive  { background: url(); } .academy .tech_tree_box .column.inactive { background-color: #dcdb3333; } .stoner_window_background { background: url(https://i.imgur.com/xigCw6F.png); } .radiobutton { background-color: #f9f9f999; } .notes .window_content .notes_container textarea { background-color: #b2b8cacc; } .notes .window_content .notes_container .preview_box {  background: url(); } .notes .window_content .notes_container .preview_box { background-color: #959bb8e6; } #edit_profile_form textarea { background-color: #b2b8cacc; } .label_box label { background-color: #f9f9f999; } h4 { background-color: #fefefeb0; } .separate_forum_tab_link { background: #fefefeb0; } #forum_admin div.game_list_footer, #thread_list_form #forum div.game_list_footer { background: #fefefeb0; } #post_save_wrapper  { background: url(); } #post_save_wrapper { background-color: #707789cc; } #post_save_wrapper textarea { background-color: #917d7d4d; } #forum_admin .forum.odd .name .text_box  { background: url(); } #forum_admin .forum.even .name .text_box  { background: url(); } #forum div.game_list_footer  { background: #fefefeb0; } #newthread { background: url(); } #forum_post_textarea.newthread { background-color: #917d7d4d; } #newthread #bbcodes url(); } #newthread #bbcodes { background-color: #917d7d4d; } .report_booty_bonus_fight  { background: url(); } .report_units_overview  { background: url(); } .customization .content { background-color: #f7f57bcc; } .passwordRecovery { background-color: #f7f57bcc; } .passwordRecovery .control { border-bottom: solid 2px #000e80; } .passwordRecovery .control:hover { background-color: #c8cffa; } #towninfo_description { background: #f9f9f999; }.town_cast_spell_oldcontent { background: #f9f9f999 !important; } .message_post { background: url(); } .message_post { background-color: #938e8e66; } .message_post_content { background: url(); } .message_post_content { background-color: #938e8e66; } div.quote div.quote_message { background-color: #607c5966; } .message_item.even.bottom.ui-draggable { background: linear-gradient(to right,rgba(244, 249, 65, 0.67),rgba(62, 187, 17, 0.42)); } .game_table_odd { background: url(); } .color_highlight, .item_selected { background-color: #2a242466; } .game_table { background: url(); } .game_table { background-color: #f9f9f999; } #ally_flags .game_body { background-image: url(); } #ally_pact_list { background-color: #fee2a14d; } .reservation_tool .gp_tab_page { background: url(); } .reservation_tool .gp_tab_page { background-color: #4a4c5266; } .grepo_menu .gm_middle_center { background: url(); } .grepo_menu .gm_middle_center { background-color: #4a4c5266; } .odd { background: url(); } .odd { background-color: #f9f9f999; } div.island_info_towns ul { background: url(); } div.island_info_towns ul { background-color: #e5edad99; } .island_info { background-color: #f9f9f999; } .game_list .even { background-color: #f9f9f999; } #fto_town_list { background: url(); } #fto_town_list { background-color: #f9f9f999; } #fto_town_list li.fto_island { background: url(); } #fto_town_list li.fto_island { background-color: #f0788499; } #fto_town_list li.fto_town.active, div.fto_time_checkbox.active { background-color: #93f28980; } .box.middle.center { background: linear-gradient(0deg,rgba(255, 255, 255, 0.62),rgba(255, 255, 255, 0.64)),url(https://i.imgur.com/2STCQgX.png); } .box.middle.center { background-color: #ffea46; } .city_overview_building.field_3 { background: url(https://i.imgur.com/imn5ey5.png); } #ally_towns .members_list { background: url(); } #ally_towns .members_list { background-color: #f9f9f999; } #ally_profile_info #ally_pacts, #ally_profile_info #ally_profile { background: url(); } #place_container .error_msg { background-color: #eafa061a;  } .place_box {  color: #000; font-size: 12px; font-weight: 700; margin-top: 3px; background-color: #fff6; } fieldset { background-color: #fefefeb0; } #place_battle_points .points_descr, #place_start_all .bold { background-color: #fff9; } div.command_info .attacker .report_town_bg, div.command_info .attacker ul { background-color: #fcfcfcb3; } div.command_info .defender .report_town_bg, div.command_info .defender ul { background-color: #fcfcfcb3; } .arrival_time { background-color: #657af84d; } #way_duration, span.way_duration { background-color: #7af87566; } .way_duration { background-color: #ff7f7f4d; } .countdown { background-color: #1eff2e66; } .box.middle.center div.box_content { background: #f9f9f999; } #last_attacks { background-color: #f9f9f999; } div.espionage_espionage { background-color: #f9f9f999; } #building_overview td.locked.hover, #building_overview td.locked:hover { background-color: #f9515d; } #building_overview tr td.locked { background-color: #9baaff99; } .classic_window.heroes_train .heroes_train .middle_border { opacity: 0.8; } .god_mini { background: url(https://i.imgur.com/7zFoZFX.png); } .grepolis_score .score_content li.award_group:nth-child(2n) { background-color: #fedc92cc; } .grepolis_score .score_content li.award_group:nth-child(2n+1) { background-color: #ffeabbcc; } #farm_town_overview_btn { background-color: #f9f9f999; } #forum_post_textarea.newpoll { background: #4a4c5266; } .troops_arrive_at {  background-color: #435eff80; } #arrival_time { background-color: #657af84d; } .night .city_overview_building.field_3 { background: url(https://i.imgur.com/aZoTpLC.gif) no-repeat; } #townsoverview .game_list li:hover { background-color: #e9ff2d99; } div.group_list_scroll_border { background-color: #f9f9f999; } #town_group_active_towns, #town_group_all_towns  { background: url (); } .advisors_container .top_description { background: #f9f9f999; } .checkbox_description { background-color: #f9f9f999; } #premium_overview_inner { background: url(); } #premium_overview_inner { background: #8aa1e880; } #ally_announce_textarea { background: #4a4c5266; } #ally_profile_textarea { background: #4a4c5266; } .gp_link_fake { background: #f9f9f999; } #folder_menu_reports { background: url(); } #folder_menu_reports { background: #090f3499; } #thread_functions { background: url(); } #thread_functions { background: #f9f9f999; } .marketplace.all_offers tr:nth-child(2n):not(.premium_exchange), .marketplace.own_offers tr:nth-child(2n):not(.premium_exchange) { background: url(); } .marketplace.all_offers table, .marketplace.own_offers table { background: url(); } .marketplace.all_offers table, .marketplace.own_offers table { background: #f9f9f999; } #mines_values tr.even { background: url(); } #mines_values tr.even { background: #f9f9f999; } #mines_values tr.odd { background: url(); } #mines_values tr.odd { background: #f9f9f9e6; } #mines_text { background: url(); } #mines_text { background: #f9f9f999; } .advisor_hint { background: url(); } .advisor_hint { background: #f9f9f999; } .background_light { background: url(); } .background_light { background: #f9f9f999; } .message_poster.message_partner { background: #f4f58cb3; } .message_poster { background: #97aaf899; } #message_forward_body { background: url(); } .game_list_footer { background: url(); } .game_list_footer { background: #f9f9f999; } .game_inner_box .game_footer { background: url(); } .game_inner_box .game_footer { background: #f9f9f999; } #rb_wall2 { background: #f9f9f999; } #rb_wall1 { background: #f9f9f999; } #rb_fs1 { background: #f9f9f999; } #rb_fs2 { background: #f9f9f999; } #rb_fs3 { background: #f9f9f999; } #rb_fs4 { background: #f9f9f999; } .published_report .report_units_overview { background: #f9f9f999; } .attack_spots .attacking_units .curtain_box .cb_bg { background: url(); } .attack_spots .attacking_units .cb_bg, .attack_spots .defending_units .cb_bg { background: url(); } .curtain_box .cb_bg { background: #f9f9f999; } .message_item.odd.bottom.ui-draggable { background: linear-gradient(to right,rgba(107, 249, 65, 0.67),rgba(249, 248, 101, 0.42)); } .message_item.even.ui-draggable.top { background: linear-gradient(to right,rgba(223, 70, 238, 0.67),rgba(249, 101, 101, 0.42)); } </style>').appendTo("head");
                 }
                 //Christmas
                 if (DATA.options.joe_tg) {
@@ -10522,8 +10522,8 @@ var Npui = document.getElementsByClassName( 'olao' ),
                 $('<style id="joe_plusmenustyle" type="text/css">' +
                     '.displayImp {display: block !important}' +
                     '.joe_plusmenu {margin:6px 22px 2px 5px;height:11px;display:block;position:relative}' +
-                    '.joe_plusdraghandle {width:100%;height:11px;position:absolute;background:url(https://i.ibb.co/74WtWbV/grille.png)}' +
-                    '.joe_plusback {right:-18px;margin-top:-1px;width:16px;height:12px;position:absolute;background:url(https://i.ibb.co/8mCL0TR/plusback.png)}' +
+                    '.joe_plusdraghandle {width:100%;height:11px;position:absolute;background:url(https://i.imgur.com/KlEB47j.png)}' +
+                    '.joe_plusback {right:-18px;margin-top:-1px;width:16px;height:12px;position:absolute;background:url(https://i.imgur.com/nSS5KZU.png)}' +
                     '#toolbar_activity_recruits_list {min-width: 113px;}' +
                     '</style>').appendTo('head');
                 $('#toolbar_activity_recruits_list').draggable({
@@ -11244,7 +11244,7 @@ var Npui = document.getElementsByClassName( 'olao' ),
             StatisticsJoeGatinho.addButton();
             $('<style id="flask_statistic_style">' +
                 '#flask_statistic_button { top:50px; right:113px; z-index:10; position:absolute; } ' +
-                '#flask_statistic_button .ico_statistics { margin:8px 0px 0px 7px; width:18px; height:18px; background:url(https://i.ibb.co/pZC6X6M/pngegg-12.png) no-repeat 0px 0px; background-size:100%; } ' +
+                '#flask_statistic_button .ico_statistics { margin:8px 0px 0px 7px; width:18px; height:18px; background:url(https://i.imgur.com/M4biO6U.png) no-repeat 0px 0px; background-size:100%; } ' +
                 '#flask_statistic_button .ico_statistics.checked { margin-top:8px; } ' +
                 '</style>').appendTo('head');
         },
@@ -11437,11 +11437,11 @@ var Npui = document.getElementsByClassName( 'olao' ),
                 var DateYear = Year - 2020;
                 $('<a href="http://www.greensmilies.com/smilie-album/" target="_blank"><div id="joe_newYear">' +
                     '<img src="https://wiki.en.grepolis.com/images/b/bf/New_Years_Forum_Banner.png" style="width:400px; opacity: 0.70; max-width: 70%; height: auto; left: -50px;">' +
-                    '<img src="https://mycitygre.000webhostapp.com/Gatinho/Smiley/smiley_emoticons_fred_wand_maler.gif" style="position:absolute; top: 10px; left: 120px;">' +
-                    '<img src="https://mycitygre.000webhostapp.com/Gatinho/Smiley/sign2_2.gif" style="position:absolute; top: 10px; filter: hue-rotate(80deg); left: 250px;">' + //(2) ano 2022
-                    '<img src="https://mycitygre.000webhostapp.com/Gatinho/Smiley/sign2_0.gif" style="position:absolute; top: 10px; filter: hue-rotate(300deg); left: 270px;">' + //(0)
-                    '<img src="https://mycitygre.000webhostapp.com/Gatinho/Smiley/sign2_2.gif" style="position:absolute; top: 10px; filter: hue-rotate(10deg); left: 290px;">' + //(2)
-                    '<img src="https://mycitygre.000webhostapp.com/Gatinho/Smiley/sign2_'+ DateYear + '.gif" style="position:absolute; top: 10px; filter: hue-rotate(230deg); left: 310px;">' + //(de 00 a 09 automatiquement, les images 00/09 doivent etre online )
+                    '<img src="https://joeman.i234.me/Num/smiley-emoticons-fred-wand-maler.gif" style="position:absolute; top: 10px; left: 120px;">' +
+                    '<img src="https://joeman.i234.me/Num/sign2-2.gif" style="position:absolute; top: 10px; filter: hue-rotate(80deg); left: 250px;">' + //(2) ano 2022
+                    '<img src="https://joeman.i234.me/Num/sign2-0.gif" style="position:absolute; top: 10px; filter: hue-rotate(300deg); left: 270px;">' + //(0)
+                    '<img src="https://joeman.i234.me/Num/sign2-2.gif" style="position:absolute; top: 10px; filter: hue-rotate(10deg); left: 290px;">' + //(2)
+                    '<img src="https://joeman.i234.me/Num/sign2_'+ DateYear + '.gif" style="position:absolute; top: 10px; filter: hue-rotate(230deg); left: 310px;">' + //(de 00 a 09 automatiquement, les images 00/09 doivent etre online )
                     '</div></a>').appendTo('#ui_box');
                 var joeNewYear = $('#joe_newYear');
                 joeNewYear.css({
