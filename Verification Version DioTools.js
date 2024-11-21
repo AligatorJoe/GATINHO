@@ -1,1 +1,1 @@
-var latest_version = '4.57.17';
+var latest_version = '4.57.18';
