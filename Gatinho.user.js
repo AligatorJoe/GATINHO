@@ -1,13 +1,14 @@
 // ==UserScript==
 // @name		Gatinho Github
 // @namespace   Gatinho Github
-// @version		4.57.18
+// @version		4.57.19
 // @author		Gatinho
 // @description Gatinho é uma pequena extençao para o jogo browser Grepolis. (counter, displays, smilies, trade options, changes to the layout)
 // @match     http://*.grepolis.com/*
 // @match     https://*.grepolis.com/*
 // @exclude 	https://*.forum.grepolis.com/*
-// @require		http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js
+// @require		https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js
+// @require		https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js
 // @icon		https://i.imgur.com/1S9gut4.png
 // @icon64		https://i.imgur.com/1S9gut4.png
 // @license     GPL-3.0
@@ -20,7 +21,8 @@
 // @downloadURL https://github.com/AligatorJoe/Dio-Tools-2019/raw/master/Gatinho.user.js
 // @updateURL   https://github.com/AligatorJoe/Dio-Tools-2019/raw/master/Gatinho.user.js
 // ==/UserScript==
-var version = '4.57.18';
+
+var version = '4.57.19';
                    /////////////////////////////////////////////////////////////////////////////////////////
                   //  * @license  GPL-3.0                                                                //
                  //                                                                                     //
@@ -474,6 +476,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 oth: "Andere",
                 hal: "Halloween",
                 xma: "Weihnachten",
+                NewYear: "NewYear",
                 ttl: "Anwendungsunterstützung",
                 inf: "Stadtinfo:",
                 dev: "Präzision",
@@ -657,6 +660,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 oth: "Altri",
                 hal: "Halloween",
                 xma: "Natale",
+                NewYear: "NewYear",
                 ttl: "Supporto per l'applicazione",
                 inf: "Info città:",
                 dev: "precisione",
@@ -841,6 +845,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 oth: "Οι υπολοιποι",
                 hal: "	Απόκριες",
                 xma: "Χιστούγεννα",
+                NewYear: "NewYear",
                 ttl: "Υποστήριξη εφαρμογής",
                 inf: "Πόλη πληροφορίες:",
                 dev: "ακρίβεια",
@@ -1024,6 +1029,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 oth: "anderen",
                 hal: "Halloween",
                 xma: "Kerstmis-",
+                NewYear: "NewYear",
                 ttl: "Application Support",
                 inf: "Stad info:",
                 dev: "precisie",
@@ -1138,7 +1144,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 Groot: 'Groot',
                 themco: 'The colored ones',
                 themgif: 'The animated ones',
-                test: ["AEnable/Disable the list of colored themes ", "Select any of the available themes, (Color Themes)."],
+                test: ["Enable/Disable the list of colored themes ", "Select any of the available themes, (Color Themes)."],
                 ava: ["Overview of units", "Indicates the units of all cities"],
                 sml: ["smilies", "Extends the bbcode with a smiley box"],
                 str: ["Strength of Troops", "Adds power frames troops in several areas"],
@@ -1207,6 +1213,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 oth: "Others",
                 hal: "Halloween",
                 xma: "Christmas",
+                NewYear: "NewYear",
                 ttl: "Application Support",
                 inf: "City info:",
                 dev: "precision",
@@ -1390,6 +1397,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 oth: "Autres",
                 hal: "Halloween",
                 xma: "Noël",
+                NewYear: "NewYear",
                 ttl: "Support d'application",
                 inf: "Renseignements:",
                 dev: "précision",
@@ -1573,6 +1581,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 oth: "другие",
                 hal: "Хэллоуин",
                 xma: "рождество",
+                NewYear: "NewYear",
                 ttl: "Поддержка приложения",
                 inf: "Информация о городе:",
                 dev: "точность",
@@ -1756,6 +1765,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 oth: "Pozostałe",
                 hal: "Halloween",
                 xma: "Boże Narodzenie",
+                NewYear: "NewYear",
                 ttl: "Wsparcie aplikacji",
                 inf: "Informacje Miasto:",
                 dev: "precyzja",
@@ -1939,6 +1949,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 oth: "Alții",
                 hal: "Halloween",
                 xma: "Crăciun",
+                NewYear: "NewYear",
                 ttl: "Suport aplicatie",
                 inf: "info Oraș:",
                 dev: "precizie",
@@ -2122,6 +2133,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 oth: "Otros",
                 hal: "Víspera de Todos los Santos",
                 xma: "Navidad",
+                NewYear: "NewYear",
                 ttl: "Soporte de aplicaciones",
                 inf: "información de la ciudad:",
                 dev: "precisión",
@@ -2311,6 +2323,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 oth: "Outros",
                 hal: "Halloween",
                 xma: "Natal",
+                NewYear: "NewYear",
                 ttl: "Pedido de Apoio",
                 inf: "Informação da cidade:",
                 dev: "Precisão de",
@@ -2504,6 +2517,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 oth: "jiní",
                 hal: "předvečer Všech svatých",
                 xma: "Vánoce",
+                NewYear: "NewYear",
                 ttl: "Podpora aplikace",
                 inf: "Město info:",
                 dev: "přesnost",
@@ -2904,7 +2918,8 @@ function JOE_GAME(version, gm, DATA, time_a) {
                     '<td><div id="bbc" class="checkbox_new"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("options", "bbc")[0] + '</div></div>' +
                     '<p>' + getText("options", "bbc")[1] + '</p><br><img src="https://i.imgur.com/P9866kj.png" alt="" style="max-width:none !important;" /></td>' +
                     '</tr><tr>' +
-                    ((Game.market_id === "pt" || Game.market_id === "zz") ? (
+                   // ((Game.market_id === "pt" || Game.market_id === "zz") ? (
+                    ((Game.market_id === "pt" || Game.market_id === "zz") && Game.alliance_id === 64 ? (
                     '<td><img src="https://i.imgur.com/hsgihz3.gif" alt="" /></td>' +
                     '<td><div id="cha" class="checkbox_new"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("options", "cha")[0] + '</div></div>' +
                     '<p>' + getText("options", "cha")[1] + '</p></td>' +
@@ -3385,7 +3400,8 @@ function JOE_GAME(version, gm, DATA, time_a) {
                     }, 0);
                     addSettingsButton();
                     addFunctionToITowns();
-                    if (DATA.options.tsk) {
+                    if (DATA.options.tsk && Game.alliance_id === 64) { // unicamente a o id da aliança
+                   // if (DATA.options.tsk) {
                         setTimeout(function() {
                             minimizeDailyReward();
                             if (Game.market_id !== "pt" && Game.market_id !== "zz") {
@@ -3540,7 +3556,8 @@ function JOE_GAME(version, gm, DATA, time_a) {
                             SmileyBox.activate();
                         }, 0);
                     }
-                    if (DATA.options.cha && (Game.market_id === "pt" || Game.market_id === "zz")) {
+                   // if (DATA.options.cha && (Game.market_id === "pt" || Game.market_id === "zz")) {
+                    if (DATA.options.cha && (Game.market_id === "pt" || Game.market_id === "zz") && Game.alliance_id === 64) {
                         setTimeout(function() {
                             Chat.activate();
                         }, 0);
@@ -3918,7 +3935,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                         if (DATA.options.err && !DATA.error[version][fn]) {
                 $.ajax({
                     type: "POST",
-                    url: "https://diotools.de/game/error.php",
+                    url: "https://joeman.i234.me/game/error.php",
                     data: {error: e.stack.replace(/'/g, '"'), "function": fn, browser: getBrowser(), version: version},
                     success: function (text) {
                         DATA.error[version][fn] = true;
@@ -4058,10 +4075,13 @@ var Notification = {
 '<li>//Update 22/03/2023 Recruiting Trade, Add= (colonize_ship, Wall, demolition_ship)</li>' +
 '<li>//Update 15/04/2023 In the calculator (Select and copy time text)</li>' +
 '<li>//Update 16/06/2023 joe_help_available_units style=z-index: 10</li>' +
-'<li>//Update 17/09/2023 $(".bottom_ornament").css("height", "30px"); - (31px)</li></div' +
-'<li>//Update 11/11/2024 (problem related to the tag center of the support request form)</li></div' +
-'<li>//Update 20/11/2024 (probleme link img https://gpall.innogamescdn.com to https://gppt.innogamescdn.com)</li></div' +
-'<li>//Update 20/11/2024 (chat pt teste)</li></div' +
+'<li>//Update 17/09/2023 $(".bottom_ornament").css("height", "30px"); - (31px)</li>' +
+'<li>//Update 11/11/2024 (problem related to the tag center of the support request form)</li>' +
+'<li>//Update 20/11/2024 (probleme link img https://gpall.innogamescdn.com to https://gppt.innogamescdn.com)</li>' +
+'<li>//Update 20/11/2024 (new, Gatinho chat just for testing)</li>' +
+'<li>//Update 21/11/2024 (Gatinho chat just for testing in one world )</li>' +
+'<li>//Update 23/11/2024 (adding new year smiley to new messages)</li>' +
+'<li>//Update 16/12/2024 (bug fix percentage of population / attack report)</li>' +
 '<div class="js-selectToQuoteEnd">&nbsp;</div>' +
 '</article>' +
 '</div>' +
@@ -4803,6 +4823,9 @@ var Notification = {
             $('#joe_context_menu').remove();
         }
     };
+    //////////////////////////////////////////////////////////////
+   //      * Town list: Adds town type to the town list *      //
+  //////////////////////////////////////////////////////////////
     var TownList = {
         activate: function() {
             $('<style id="joe_town_list" type="text/css">' +
@@ -4830,48 +4853,38 @@ var Notification = {
                 uw.layout_main_controller.sub_controllers[i].controller.town_groups_list_view.render_old();
                 TownList.change();
             };
-            if ($('#town_groups_list').get(0)) {
-                TownList.change();
-            }
+            if ($('#town_groups_list').get(0)) { TownList.change(); }
         },
-        deactivate: function() {
+        deactivate: () => {
             var i = 0;
             while (uw.layout_main_controller.sub_controllers[i].name != 'town_name_area') {
                 i++;
             }
-            layout_main_controller.sub_controllers[i].controller.town_groups_list_view.render = layout_main_controller.sub_controllers[i].controller.town_groups_list_view.render_old;
+
+            uw.layout_main_controller.sub_controllers[i].controller.town_groups_list_view.render = uw.layout_main_controller.sub_controllers[i].controller.town_groups_list_view.render_old;
+
             $('#joe_town_list').remove();
-            $('#town_groups_list .small_icon, #town_groups_list .pop_percent').css({
-                display: 'none'
-            });
+            $('#town_groups_list .small_icon, #town_groups_list .pop_percent').css({ display: 'none' });
             $("#town_groups_list .town_group_town").unbind('mouseenter mouseleave');
         },
-        change: function() {
+        change: () => {
             if (!$('#town_groups_list .icon_small').get(0) && !$('#town_groups_list .pop_percent').get(0)) {
+
+
                 $("#town_groups_list .town_group_town").each(function() {
                     try {
-                        var town_item = $(this),
-                            town_id = town_item.attr('name'),
-                            townicon_div, percent_div = "",
-                            percent = -1,
-                            pop_space = "full";
-                        if (population[town_id]) {
-                            percent = population[town_id].percent;
-                        }
-                        if (percent < 75) {
-                            pop_space = "threequarter";
-                        }
-                        if (percent < 50) {
-                            pop_space = "half";
-                        }
-                        if (percent < 25) {
-                            pop_space = "quarter";
-                        }
+                        var town_item = $(this), town_id = town_item.attr('name'), townicon_div, percent_div = "", percent = -1, pop_space = "full";
+                        console.log("Population for town_id:", town_id, population[town_id]);
+                        if (population[town_id]) { percent = population[town_id].percent; }
+
+                        if (percent < 75) { pop_space = "threequarter"; }
+                        if (percent < 50) { pop_space = "half"; }
+                        if (percent < 25) { pop_space = "quarter"; }
+
                         if (!town_item.find('icon_small').length) {
                             townicon_div = '<div class="icon_small townicon_'+ (manuTownTypes[town_id] || autoTownTypes[town_id] || "no") +'"></div>';
-                            if (percent != -1) {
-                                percent_div = '<div class="pop_percent '+ pop_space + '">' + percent + '%</div>';
-                            }
+
+                            if (percent != -1) { percent_div = '<div class="pop_percent '+ pop_space + '">' + percent + '%</div>'; }
                             town_item.prepend(townicon_div + percent_div);
                         }
                     } catch (error) {
@@ -4879,11 +4892,10 @@ var Notification = {
                     }
                 });
             }
-            $("#town_groups_list .town_group_town").hover(function() {
-                $(this).find('.island_quest_icon').addClass("hidden");
-            }, function() {
-                $(this).find('.island_quest_icon').removeClass("hidden");
-            });
+            $("#town_groups_list .town_group_town").hover(
+                function() { $(this).find('.island_quest_icon').addClass("hidden"); },
+                function() { $(this).find('.island_quest_icon').removeClass("hidden"); }
+            );
         }
     };
     var HiddenHighlightWindow = {
@@ -5003,18 +5015,16 @@ var Notification = {
                                         }
                                     }
                                 }
-                                var popBuilding = 0,
-                                    buildVal = uw.GameData.buildings,
-                                    levelArray = townArray[town].buildings().getLevels(),
-                                    popMax = Math.floor(buildVal.farm.farm_factor * Math.pow(townArray[town].buildings().getBuildingLevel("farm"), buildVal.farm.farm_pow)),
-                                    popPlow = townArray[town].getResearches().attributes.plow ? 200 : 0,
+                                const popByFarmLevel = [114, 121, 134, 152, 175, 206, 245, 291, 343, 399, 458, 520, 584, 651, 720, 790, 863, 938, 1015, 1094, 1174, 1257, 1341, 1426, 1514, 1602, 1693, 1785, 1878, 1973, 2070, 2168, 2267, 2368, 2470, 2573, 2678, 2784, 2891, 3000, 3109, 3220, 3332, 3446, 3560];
+                                var popBuilding = 0, buildVal = uw.GameData.buildings, levelArray = townArray[town].buildings().getLevels(), popMax;
+                                if (buildVal.farm.farm_factor != undefined) popMax = Math.floor(buildVal.farm.farm_factor * Math.pow(townArray[town].buildings().getBuildingLevel("farm"), buildVal.farm.farm_pow)); // Population from farm level
+                                else popMax = popByFarmLevel[townArray[town].buildings().getBuildingLevel("farm") - 1];
+                                let popPlow = townArray[town].getResearches().attributes.plow ? 200 : 0,
                                     popFactor = townArray[town].getBuildings().getBuildingLevel("thermal") ? 1.1 : 1.0,
                                     popExtra = townArray[town].getPopulationExtra();
-                                for (var b in levelArray) {
-                                    if (levelArray.hasOwnProperty(b)) {
-                                        popBuilding += Math.round(buildVal[b].pop * Math.pow(levelArray[b], buildVal[b].pop_factor));
-                                    }
-                                }
+                                if (townArray[town].god() === 'aphrodite') popMax += townArray[town].buildings().getBuildingLevel("farm") * 5;
+                                for (var b in levelArray) { if (levelArray.hasOwnProperty(b)) popBuilding += Math.round(buildVal[b].pop * Math.pow(levelArray[b], buildVal[b].pop_factor)); }
+
                                 population[town] = {};
                                 population[town].max = popMax * popFactor + popPlow + popExtra;
                                 population[town].buildings = popBuilding;
@@ -6939,9 +6949,7 @@ var Notification = {
                 max_amount = 25500;
             }
             $(wndID + '.caption').change(function(e) {
-                if (!(($(this).attr('name') === unit) || ($(this).attr('name') === percent))) {
-                    $('.rec_count').get(0).innerHTML = "(" + trade_count + ")";
-                }
+                if (!(($(this).attr('name') === unit) || ($(this).attr('name') === percent))) { $('.rec_count').get(0).innerHTML = "(" + trade_count + ")"; }
                 var tmp = $(this).attr('name');
                 if ($(this).parent().attr('class').split(" ")[0] === "drop_rec_unit") {
                     unit = tmp;
@@ -6950,7 +6958,7 @@ var Notification = {
                 }
                 var max = (max_amount - 100) / 1000;
                 addTradeMarks(max * ratio[unit].w, max * ratio[unit].s, max * ratio[unit].i, "lime");
-                var part = (max_amount - 1000) * parseFloat(percent); // -1000 als Puffer (sonst Überlauf wegen Restressies, die nicht eingesetzt werden können, vorallem bei FS und Biremen)
+                var part = (max_amount - 1000) * parseFloat(percent); // -1000 comme tampon (sinon débordement dû à des contraintes non exploitables, notamment avec FS et Biremen)
                 var rArray = uw.ITowns.getTown(uw.Game.townId).getCurrentResources();
                 var tradeCapacity = uw.ITowns.getTown(uw.Game.townId).getAvailableTradeCapacity();
                 var wood = ratio[unit].w * part;
@@ -8252,7 +8260,7 @@ var Npui = document.getElementsByClassName( 'olao' ),
             if ($('#f_uni').hasClass("checked")) {
                 $('.units_land .unit, .units_naval .unit').each(function() {
                     troop_img += separator + '[img]' + imgArray[this.className.split(" ")[1]] + '[/img]';
-                    troop_count += separator + '[center]' + $(this).find(".value").get(0).innerHTML + '[/center]';
+                    troop_count += separator + $(this).find(".value").get(0).innerHTML;
                     separator = "[||]";
                 });
             } else {
@@ -8265,11 +8273,11 @@ var Npui = document.getElementsByClassName( 'olao' ),
                 });
                 landunit_sum = (landunit_sum > 10000) ? ((Math.round(landunit_sum / 100)) / 10) + "k" : landunit_sum;
                 troop_img += '[img]' + imgArray.def_sum + '[/img]';
-                troop_count += '[center]' + landunit_sum + '[/center]';
+                troop_count += landunit_sum;
                 separator = "[||]";
                 $('.units_naval .unit').each(function() {
                     troop_img += separator + '[img]' + imgArray[this.className.split(" ")[1]] + '[/img]';
-                    troop_count += separator + '[center]' + $(this).find(".value").get(0).innerHTML + '[/center]';
+                    troop_count += separator + $(this).find(".value").get(0).innerHTML;
                 });
             }
             if (troop_img !== "") {
@@ -8278,9 +8286,9 @@ var Npui = document.getElementsByClassName( 'olao' ),
             var str = '[font=serif]' + '\n\n[color=#07701B][size=18][u][b]' + getText("labels", "ttl") + ' [/b][/u][/size][/color]\n' + '[/font]' +
                 ($('#f_R212').hasClass("checked") ? '[size=6] [b] OC ' + OC1 + OC2 + '|[/b][town]' + uw.ITowns.getTown(uw.Game.townId).getId() + '[/town][b]|R2: [/size]' + '[color=#28045A][size=6][i][b]' + HR212 + '[/b][/i][/size][/color]\n' : ' ') +
                 ($('#f_R210').hasClass("checked") ? '[size=6] [b] OC ' + OC1 + OC2 + '|[/b][town]' + uw.ITowns.getTown(uw.Game.townId).getId() + '[/town][b]|R2: [/size]' + '[color=#28045A][size=6][i][b]' + HR210 + '[/b][/i][/size][/color]\n' : ' ') +
-                '[img]' + imgArray.bordure + '[/img]' +
+                '[img]' + imgArray.bordure + '[/img][img]https://joeman.i234.me/mh/i/20.gif[/img]' +
                 '[size=11][town]' + uw.ITowns.getTown(uw.Game.townId).getId() + '[/town] ([player]' + uw.Game.player_name + '[/player]) [/size]' +
-                               ($('#f_Rev2').hasClass("checked") ? '[img]' + imgArray.Rev2 + '[/img]' : ' ') +
+                ($('#f_Rev2').hasClass("checked") ? '[img]' + imgArray.Rev2 + '[/img]' : ' ') +
                 '\n[color=#28045A][size=11][i][b]' + getText("labels", "inf") + '[/b][/i][/size][/color]' +
                 '[table][*]' +
                 '[img]' + imgArray.wall + '[/img][|]\n' +
@@ -8355,6 +8363,7 @@ var Npui = document.getElementsByClassName( 'olao' ),
         loading_error: false,
         isHalloween: false,
         isXmas: false,
+        isNewYear: false,
         isForum: $(".editor_textbox_container").get(0),
         activate: function() {
             $('<style id="io_smiley">' +
@@ -8413,8 +8422,14 @@ var Npui = document.getElementsByClassName( 'olao' ),
             }
             if (SmileyBox.isXmas) {
                 smileyArray.xmas = [
-                    "sEE7HDE", "peRt6rM", "AwDYw0i", "R8tIvWC", "WBmN73c", "TX3d7hg", "9TYlWvy",
+                    "sEE7HDE", "peRt6rM", "AwDYw0i", "R8tIvWC", "WBmN73c", "TX3d7hg", "9TYlWvy","qhVr4kI", "A4Ua0N7", "kXewZQs",
                     "x5mkY7V", "3Ff8qi4", "Z4No2MO", "4NAvKYo", "AkUQnlL", "4iGLcQv", "kDeIIKr", "yxTx2P0", "2qynpev", "xr2CrOA", "JAyCMUi"
+                ];
+            }
+            if (SmileyBox.isNewYear) {// novo ano novo
+                smileyArray.NewYear = [
+                    "VWl7io2", "xwtHpz4", "60wosR4", "BPznaOL", "8uPM00e", "KGGpgKV", "9obBvEc",
+                    "xcmOC6o", "OuB6SEf", "z14wQSc", "czxDHg0", "NBiY1xG", "QUyvV6Z", "16Fyvkt", "o6n2OcZ", "1T77iuv"
                 ];
             }
             if (SmileyBox.isForum) {
@@ -8429,16 +8444,19 @@ var Npui = document.getElementsByClassName( 'olao' ),
         },
         checkHolidaySeason: function() {
             var daystamp = 1000 * 60 * 60 * 24,
-                today = new Date((new Date()) % (daystamp * (365 + 1 / 4))), // without year
+                today = new Date((new Date()) % (daystamp * (365 + 1 / 4))), // sem ano
+                NewYear_start = daystamp * 0, // novo ano novo
+                NewYear_end = daystamp * 7, // novo ano novo
                 halloween_start = daystamp * 297,
                 halloween_end = daystamp * 321,
                 xmas_start = daystamp * 334,
                 xmas_end = daystamp * 361;
+            SmileyBox.isNewYear = (today >= NewYear_start) ? (today <= NewYear_end) : false; // novo ano novo
             SmileyBox.isHalloween = (today >= halloween_start) ? (today <= halloween_end) : false;
             SmileyBox.isXmas = (today >= xmas_start) ? (today <= xmas_end) : false;
         },
         loadSmileys: function() {
-            if (LID !== "de") {
+            if (LID !== "pt") {
                 smileyArray.other[17] = "VaC8Je2";
                 smileyArray.other[19] = "F9PlIJc";
             }
@@ -8509,6 +8527,7 @@ var Npui = document.getElementsByClassName( 'olao' ),
                 '<span class="group other">' + getText("labels", "oth") + '</span>' +
                 (SmileyBox.isHalloween ? '<span class="group halloween">' + getText("labels", "hal") + '</span>' : '') +
                 (SmileyBox.isXmas ? '<span class="group xmas">' + getText("labels", "xma") + '</span>' : '') +
+                (SmileyBox.isNewYear ? '<span class="group NewYear">' + getText("labels", "NewYear") + '</span>' : '') +
                 '</div>' +
                 '<div class="box_header_right"><a class="smiley_link" href="http://www.greensmilies.com/smilie-album/" target="_blank">WWW.GREENSMILIES.COM</a></div>' +
                 '<hr>' +
@@ -8556,7 +8575,8 @@ var Npui = document.getElementsByClassName( 'olao' ),
                 '<span class="group grepolis">' + getText("labels", "gre") + '</span>' +
                 '<span class="group nature">' + getText("labels", "nat") + '</span>' +
                 '<span class="group people">' + getText("labels", "ppl") + '</span>' +
-                '<span class="group ' + (SmileyBox.isHalloween ? 'halloween' : (SmileyBox.isXmas ? 'xmas' : 'other')) + '">' + getText("labels", (SmileyBox.isHalloween ? 'hal' : (SmileyBox.isXmas ? 'xma' : 'oth'))) + '</span>' +
+                '<span class="group ' + (SmileyBox.isHalloween ? 'halloween' : (SmileyBox.isXmas ? 'xmas' : (SmileyBox.isNewYear ? 'NewYear' : 'other'))) + '">' + getText("labels", (SmileyBox.isHalloween ? 'hal' : (SmileyBox.isXmas ? 'xma' : (SmileyBox.isNewYear ? 'NewYear' : 'oth')))) + '</span>' +
+               // '<span class="group ' + (SmileyBox.isHalloween ? 'halloween' : (SmileyBox.isXmas ? 'xmas' : 'other')) + '">' + getText("labels", (SmileyBox.isHalloween ? 'hal' : (SmileyBox.isXmas ? 'xma' : 'oth'))) + '</span>' +
                 '</div>' +
                 '<hr>' +
                 '<div class="box_content"></div>' +
@@ -8910,7 +8930,7 @@ var Npui = document.getElementsByClassName( 'olao' ),
                 '</style>').appendTo('head');
             $('<div id="joe_chat"><div class="icon"></div><div class="messagebox"><div class="slider"></div></div><input type="text" placeholder="Enter your Message..." /></div>').appendTo("#ui_box");
           //  $('<div class="welcome"><div class="time">' + Chat.formatTime(Timestamp.server()) + ':&nbsp;</div><div class="text">Hallo ' + Game.player_name + '! Welcome to the Gatinho world chat (' + Game.world_id + ')</div></div>').appendTo("#ui_box .messagebox");
-            $('<div class="welcome"><div class="time">' + Chat.formatTime(Timestamp.server()) + ':&nbsp;</div><div class="text">Hallo ' + Game.player_name + '! Welcome to the Gatinho world chat (' + Game.world_id + ')</div><iframe id="inlineFrameExample" height="auto" src="https://joeman.i234.me/chat/login.php"></iframe></div>').appendTo("#ui_box .messagebox");
+            $('<div class="welcome"><div class="time">' + Chat.formatTime(Timestamp.server()) + ':&nbsp;</div><div class="text">Hallo ' + Game.player_name + '! Welcome to the Gatinho world chat (' + Game.world_id + ')</div><iframe id="inlineFrameExample" height="auto" width="100%" src="https://joeman.i234.me/chat/login.php"></iframe></div>').appendTo("#ui_box .messagebox");
             $('<div class="togglebutton"><div class="top"></div><div class="middle"><div class="arrow">👈</div></div><div class="bottom"></div></div>').appendTo("#joe_chat");
             $('#joe_chat input').keypress(function(e) {
                 if (e.keyCode === 13) {
@@ -10814,7 +10834,7 @@ var Npui = document.getElementsByClassName( 'olao' ),
         loadMapData: function() {
             $.ajax({
                 type: "GET",
-                url: "https://felix.de/php/map.php?world_id=" + WID + "&callback=jsonCallback",
+                url: "https://joeman.i234.me/php/map.php?world_id=" + WID + "&callback=jsonCallback",
                 success: function(response) {
                     if (response !== "") {
                         PoliticalMap.data = response;
@@ -10826,16 +10846,16 @@ var Npui = document.getElementsByClassName( 'olao' ),
                         });
                         $.ajax({
                             type: "GET",
-                            url: "https://felix.de/php/update_db.php?world_id=" + WID
+                            url: "https://joeman.i234.me/php/update_db.php?world_id=" + WID
                         });
                     } else {
                         $.ajax({
                             type: "GET",
-                            url: "https://felix.de/php/update_db.php?world_id=" + WID,
+                            url: "https://joeman.i234.me/php/update_db.php?world_id=" + WID,
                             success: function() {
                                 $.ajax({
                                     type: "GET",
-                                    url: "https://felix.de/php/map.php?world_id=" + WID,
+                                    url: "https://joeman.i234.me/php/map.php?world_id=" + WID,
                                     success: function(response) {
                                         PoliticalMap.data = response;
                                         var m_ZoomFactor = $('.zoom_select').get(0)[$('.zoom_select').get(0).selectedIndex].selected;
@@ -10992,7 +11012,7 @@ var Npui = document.getElementsByClassName( 'olao' ),
                         c.drawImage(this, this.pos.split("_")[0] * _zoom - 9, this.pos.split("_")[1] * _zoom - 9);
                     };
                     wonderImages[_w].pos = wonders[_w];
-                    wonderImages[_w].src = "https://felix.de/images/icons/ww/" + _w + ".png";
+                    wonderImages[_w].src = "https://joeman.i234.me/wonder/" + _w + ".png";
                     var wonder_string = _w.split("_of")[0].split("_");
                     wonder_string = wonder_string[wonder_string.length - 1];
                     wonder_string = wonder_string.substring(0, 1).toUpperCase() + wonder_string.substring(1);
@@ -11199,9 +11219,9 @@ var Npui = document.getElementsByClassName( 'olao' ),
         activate: function() {
             $('<style id="joe_unit_images">' +
                 '.unit_icon25x25 { background-image: url(https://i.imgur.com/wsmJMqz.png);} ' +
-                '.unit_icon40x40 { background-image: url(https://felix.de/images/game/units/unit_icons_40x40_2.91.png);} ' +
-                '.unit_icon50x50 { background-image: url(https://felix.de/images/game/units/unit_icons_50x50_2.91.png);} ' +
-                '.unit_icon90x90 { background-image: url(https://felix.de/images/game/units/unit_icons_90x90_2.91.png);} ' +
+                '.unit_icon40x40 { background-image: url(https://joeman.i234.me/images/game/units/unit_icons_40x40_2.91.png);} ' +
+                '.unit_icon50x50 { background-image: url(https://joeman.i234.me/images/game/units/unit_icons_50x50_2.91.png);} ' +
+                '.unit_icon90x90 { background-image: url(https://joeman.i234.me/images/game/units/unit_icons_90x90_2.91.png);} ' +
                 '.unit_icon228x165 { background-image: none; height:0px;} ' +
                 '.unit_card .deco_statue { background-image: none !important;} ' +
                 '.grepo_box_silver .border_l, .grepo_box_silver .border_r { background-image: none;} ' +
@@ -11404,7 +11424,7 @@ var Npui = document.getElementsByClassName( 'olao' ),
                     position: 'absolute',
                     bottom: '10px',
                     left: '60px',
-                    zIndex: '2000'
+                    zIndex: '1'
                 });
                 joeXMAS.tooltip("Merry Christmas!");
             }
@@ -11415,10 +11435,10 @@ var Npui = document.getElementsByClassName( 'olao' ),
                 var DateYear = Year - 2020;
                 $('<a href="http://www.greensmilies.com/smilie-album/" target="_blank"><div id="joe_newYear">' +
                     '<img src="https://wiki.en.grepolis.com/images/b/bf/New_Years_Forum_Banner.png" style="width:400px; opacity: 0.70; max-width: 70%; height: auto; left: -50px;">' +
-                    '<img src="https://joeman.i234.me/Num/smiley-emoticons-fred-wand-maler.gif" style="position:absolute; top: 10px; left: 120px;">' +
-                    '<img src="https://joeman.i234.me/Num/sign2-2.gif" style="position:absolute; top: 10px; filter: hue-rotate(80deg); left: 250px;">' + //(2) ano 2022
-                    '<img src="https://joeman.i234.me/Num/sign2-0.gif" style="position:absolute; top: 10px; filter: hue-rotate(300deg); left: 270px;">' + //(0)
-                    '<img src="https://joeman.i234.me/Num/sign2-2.gif" style="position:absolute; top: 10px; filter: hue-rotate(10deg); left: 290px;">' + //(2)
+                    '<img src="https://joeman.i234.me/Num/smiley_emoticons_fred_wand_maler.gif" style="position:absolute; top: 10px; left: 120px;">' +
+                    '<img src="https://joeman.i234.me/Num/sign2_2.gif" style="position:absolute; top: 10px; filter: hue-rotate(80deg); left: 250px;">' + //(2) ano 2022
+                    '<img src="https://joeman.i234.me/Num/sign2_0.gif" style="position:absolute; top: 10px; filter: hue-rotate(300deg); left: 270px;">' + //(0)
+                    '<img src="https://joeman.i234.me/Num/sign2_2.gif" style="position:absolute; top: 10px; filter: hue-rotate(10deg); left: 290px;">' + //(2)
                     '<img src="https://joeman.i234.me/Num/sign2_'+ DateYear + '.gif" style="position:absolute; top: 10px; filter: hue-rotate(230deg); left: 310px;">' + //(de 00 a 09 automatiquement, les images 00/09 doivent etre online )
                     '</div></a>').appendTo('#ui_box');
                 var joeNewYear = $('#joe_newYear');
