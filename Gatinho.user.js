@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name		Gatinho Github
 // @namespace   Gatinho Github
-// @version		4.57.19
+// @version		4.57.20
 // @author		Gatinho
 // @description Gatinho é uma pequena extençao para o jogo browser Grepolis. (counter, displays, smilies, trade options, changes to the layout)
 // @match     http://*.grepolis.com/*
@@ -22,7 +22,7 @@
 // @updateURL   https://github.com/AligatorJoe/Dio-Tools-2019/raw/master/Gatinho.user.js
 // ==/UserScript==
 
-var version = '4.57.19';
+var version = '4.57.20';
                    /////////////////////////////////////////////////////////////////////////////////////////
                   //  * @license  GPL-3.0                                                                //
                  //                                                                                     //
@@ -8182,8 +8182,8 @@ $('head').append('<link rel="stylesheet" type="text/css" href="https://joeman.i2
             '<div id="f_prm" class="checkbox_new checked"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("labels", "prm") + '</div></div><br><br>' +
             '<div id="f_sil" class="checkbox_new checked"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("labels", "sil") + '</div></div><br><br>' +
             '<div id="f_OC" class="checkbox_new checked"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("labels", "OC") + '</div></div><br><br>' +
-            '<div id="f_R212" class="checkbox_new"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("labels", "f_R212") + '</div></div><br><br>' +
-            '<div id="f_R210" class="checkbox_new"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("labels", "f_R210") + '</div></div><br><br>' +
+           // '<div id="f_R212" class="checkbox_new"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("labels", "f_R212") + '</div></div><br><br>' +
+         //   '<div id="f_R210" class="checkbox_new"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("labels", "f_R210") + '</div></div><br><br>' +
        //     '<div id="T_R1" class="checkbox_new"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("labels", "R1") + '<input onkeyup="mySpan.innerHTML=this.value"><span  class"olao" id="mySpan"></span></div></div><br><br>' +//test recupere les heures ds la boite input ds nouveau message
             '<div><a class="button" id="joe_insert" href="#"><span class="left"><span class="right"><span class="middle"><small>' + joe_icon + '' + getText("buttons", "ins") + '</small></span></span></span><span></span></a></div>' +
             '</div></div></div>').appendTo(bbcodeBarId + ' .bb_button_wrapper');
@@ -11424,7 +11424,7 @@ var Npui = document.getElementsByClassName( 'olao' ),
                     position: 'absolute',
                     bottom: '10px',
                     left: '60px',
-                    zIndex: '1'
+                    zIndex: '2'
                 });
                 joeXMAS.tooltip("Merry Christmas!");
             }
