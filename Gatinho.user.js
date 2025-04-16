@@ -1,13 +1,12 @@
 // ==UserScript==
-// @name		Gatinho Github
+// @name		Gatinho Github joeman
 // @namespace   Gatinho Github
-// @version		4.57.20
+// @version		4.57.22
 // @author		Gatinho
 // @description Gatinho é uma pequena extençao para o jogo browser Grepolis. (counter, displays, smilies, trade options, changes to the layout)
 // @match     http://*.grepolis.com/*
 // @match     https://*.grepolis.com/*
 // @exclude 	https://*.forum.grepolis.com/*
-// @require		https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js
 // @require		https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js
 // @icon		https://i.imgur.com/1S9gut4.png
 // @icon64		https://i.imgur.com/1S9gut4.png
@@ -21,8 +20,8 @@
 // @downloadURL https://github.com/AligatorJoe/Dio-Tools-2019/raw/master/Gatinho.user.js
 // @updateURL   https://github.com/AligatorJoe/Dio-Tools-2019/raw/master/Gatinho.user.js
 // ==/UserScript==
-
-var version = '4.57.20';
+// * units off the island * a repare
+var version = '4.57.22';
                    /////////////////////////////////////////////////////////////////////////////////////////
                   //  * @license  GPL-3.0                                                                //
                  //                                                                                     //
@@ -39,6 +38,7 @@ var version = '4.57.20';
       //            You should have received a copy of the GNU General Public License        //
      //             along with this program.  If not, see <https://www.gnu.org/licenses/>.  //
     /////////////////////////////////////////////////////////////////////////////////////////
+//Activity box alterada
 var style = document.createElement('style');
 style.type = 'text/css';
 style.innerHTML =
@@ -125,33 +125,19 @@ uw.deleteValueGM = function(name) {
 };
 uw.getImageDataFromCanvas = function(x, y) {};
 uw.calculateConcaveHull = function() {
-    var contour = [
-        new poly2tri.Point(100, 100),
-        new poly2tri.Point(100, 300),
-        new poly2tri.Point(300, 300),
-        new poly2tri.Point(300, 100)
-    ];
+    var contour = [ new poly2tri.Point(100, 100), new poly2tri.Point(100, 300), new poly2tri.Point(300, 300), new poly2tri.Point(300, 100) ];
     var swctx = new poly2tri.SweepContext(contour);
     swctx.triangulate();
     var triangles = swctx.getTriangles();
     return triangles;
 };
 if (typeof exportFunction == 'function') {
-    exportFunction(uw.saveValueGM, unsafeWindow, {
-        defineAs: "saveValueGM"
-    });
-    exportFunction(uw.deleteValueGM, unsafeWindow, {
-        defineAs: "deleteValueGM"
-    });
-    exportFunction(uw.calculateConcaveHull, unsafeWindow, {
-        defineAs: "calculateConcaveHull"
-    });
-    exportFunction(uw.getImageDataFromCanvas, unsafeWindow, {
-        defineAs: "getImageDataFromCanvas"
-    });
+    exportFunction(uw.saveValueGM, unsafeWindow, { defineAs: "saveValueGM" });
+    exportFunction(uw.deleteValueGM, unsafeWindow, { defineAs: "deleteValueGM" });
+    exportFunction(uw.calculateConcaveHull, unsafeWindow, { defineAs: "calculateConcaveHull" });
+    exportFunction(uw.getImageDataFromCanvas, unsafeWindow, { defineAs: "getImageDataFromCanvas" });
 } else {}
 var time_a, time_b;
-
 function appendScript() {
     if (document.getElementsByTagName('body')[0]) {
         var joescript = document.createElement('script');
@@ -289,9 +275,6 @@ function JOE_GAME(version, gm, DATA, time_a) {
         AID = uw.Game.alliance_id;
         PID = uw.Game.player_id;
         LID = uw.Game.locale_lang.split("_")[0];
-    //            Points = uw.Game.player_points; //novo tentar fazer foncionar lista jogadores na ilha
-    //    pName = uw.Game.player_name; //novo tentar fazer foncionar lista jogadores na ilha
-    //    tName = uw.Game.townName; //novo tentar fazer foncionar lista jogadores na ilha
         Game.hasArtemis = true;
     }
     $.prototype.reverseList = [].reverse;
@@ -319,6 +302,8 @@ function JOE_GAME(version, gm, DATA, time_a) {
             localStorage.removeItem(name);
         }
     }
+    //chat world Ally id https://www.base64encode.org/
+    const IDW = "NTE3"; //NTE3 est ID de l aliance 517 du monde pt111
     /////////////////////////////////////////
    //         * Graphic filters *         //
   /////////////////////////////////////////
@@ -384,7 +369,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 author: "Autor",
                 Feature: "Neue Funktion",
                 cat_units: "Einheiten",
-                cat_icons: "Icons in den Städten",
+                cat_icons: "Icons Städten",
                 cat_forum: "Forum",
                 cat_trade: "Handel",
                 cat_wonders: "WW",
@@ -463,6 +448,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
             },
             labels: {
                 stt: "statistiques Grepodata",
+                BAC: "Schließen Sie die Box",
                 uni: "Übersicht der Einheiten",
                 total: "weltweit",
                 available: "Verfügbar",
@@ -476,7 +462,11 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 oth: "Andere",
                 hal: "Halloween",
                 xma: "Weihnachten",
-                NewYear: "NewYear",
+                NewYear: "Neujahr",
+                Happy: "Frohes Neues Jahr",
+                Xmas: "Frohe Weihnachten!",
+                East: "Frohe Ostern!",
+                Easter: "Ostern",
                 ttl: "Anwendungsunterstützung",
                 inf: "Stadtinfo:",
                 dev: "Präzision",
@@ -568,7 +558,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 author: "Autore",
                 Feature: "Nuova caratteristica",
                 cat_units: "unità",
-                cat_icons: "Le icone nelle città",
+                cat_icons: "Icone città",
                 cat_forum: "Forum",
                 cat_trade: "Commercio",
                 cat_wonders: "WW",
@@ -647,6 +637,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
             },
             labels: {
                 stt: "statistiques Grepodata",
+                BAC: "Chiudi la scatola",
                 uni: "Panoramica delle unità",
                 total: "Globale",
                 available: "A disposizione",
@@ -660,7 +651,11 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 oth: "Altri",
                 hal: "Halloween",
                 xma: "Natale",
-                NewYear: "NewYear",
+                NewYear: "Capodanno",
+                Happy: "Buon Anno",
+                Xmas: "Buon Natale!",
+                East: "Buona Pasqua!",
+                Easter: "Pasqua",
                 ttl: "Supporto per l'applicazione",
                 inf: "Info città:",
                 dev: "precisione",
@@ -753,7 +748,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 author: "Συγγραφέας",
                 Feature: "νέο χαρακτηριστικό",
                 cat_units: "μονάδες",
-                cat_icons: "Εικόνες στις πόλεις",
+                cat_icons: "Εικόνες πόλεις",
                 cat_forum: "Δικαστήριο",
                 cat_trade: "Εμπορικές συναλλαγές",
                 cat_wonders: "WW",
@@ -832,6 +827,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
             },
             labels: {
                 stt: "statistiques Grepodata",
+                BAC: "Kleíste to koutí",
                 uni: "Επισκόπηση των μονάδων",
                 total: "Παγκόσμια",
                 available: "Διαθέσιμος",
@@ -845,7 +841,11 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 oth: "Οι υπολοιποι",
                 hal: "	Απόκριες",
                 xma: "Χιστούγεννα",
-                NewYear: "NewYear",
+                NewYear: "NéoÉtos",
+                Happy: "Καλή χρονιά",
+                Xmas: "Kalá Christoúgenna!",
+                East: "Kaló Páscha!",
+                Easter: "Páscha",
                 ttl: "Υποστήριξη εφαρμογής",
                 inf: "Πόλη πληροφορίες:",
                 dev: "ακρίβεια",
@@ -937,7 +937,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 author: "Schrijver",
                 Feature: "Nieuwe functie",
                 cat_units: "eenheden",
-                cat_icons: "Iconen in de steden",
+                cat_icons: "Iconen steden",
                 cat_forum: "Forum",
                 cat_trade: "Handel",
                 cat_wonders: "WW",
@@ -1016,6 +1016,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
             },
             labels: {
                 stt: "statistiques Grepodata",
+                BAC: "Sluit de doos",
                 uni: "Overzicht van de eenheden",
                 total: "Globaal",
                 available: "Beschikbaar",
@@ -1029,7 +1030,11 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 oth: "anderen",
                 hal: "Halloween",
                 xma: "Kerstmis-",
-                NewYear: "NewYear",
+                NewYear: "Nieuwjaar",
+                Happy: "Gelukkig Nieuwjaar",
+                Xmas: "Vrolijk Kerstfeest!",
+                East: "Fijne Pasen!",
+                Easter: "Pasen",
                 ttl: "Application Support",
                 inf: "Stad info:",
                 dev: "precisie",
@@ -1121,7 +1126,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 author: "Author",
                 Feature: "New Feature",
                 cat_units: "Units",
-                cat_icons: "Icons in the Cities",
+                cat_icons: "Icons Cities",
                 cat_forum: "Forum",
                 cat_trade: "Trade",
                 cat_wonders: "WW",
@@ -1200,6 +1205,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
             },
             labels: {
                 stt: "statistiques Grepodata",
+                BAC: "Close the box",
                 uni: "Overview of units",
                 total: "Global",
                 available: "Available",
@@ -1214,6 +1220,10 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 hal: "Halloween",
                 xma: "Christmas",
                 NewYear: "NewYear",
+                Happy: "Happy New Year",
+                Xmas: "Merry Christmas!",
+                East: "Happy Easter!",
+                Easter: "Easter",
                 ttl: "Application Support",
                 inf: "City info:",
                 dev: "precision",
@@ -1305,14 +1315,14 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 author: "Auteur",
                 Feature: "Nouvelle fonctionnalité",
                 cat_units: "Unités",
-                cat_icons: "Icônes dans les villes",
+                cat_icons: "Icônes villes",
                 cat_forum: "Forum",
                 cat_trade: "Commerce",
                 cat_wonders: "WW",
                 cat_layout: "disposition",
                 cat_other: "Autres",
                 cat_moi: "Additionnel",
-                cat_nova: "Prime",
+                cat_nova: "Prém.",
                 cat_them: "🎨"
             },
             options: {
@@ -1384,6 +1394,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
             },
             labels: {
                 stt: "Grepodata Statistiques",
+                BAC: "Fermez la boîte",
                 uni: "Vue d'ensemble des unités",
                 total: "Global",
                 available: "Disponible",
@@ -1397,7 +1408,11 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 oth: "Autres",
                 hal: "Halloween",
                 xma: "Noël",
-                NewYear: "NewYear",
+                NewYear: "N.Année",
+                Happy: "Joyeuse nouvelle année",
+                Xmas: "Joyeux noël!",
+                East: "Joyeuses Pâques !",
+                Easter: "Pâques",
                 ttl: "Support d'application",
                 inf: "Renseignements:",
                 dev: "précision",
@@ -1489,7 +1504,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 author: "автор",
                 Feature: "Новая особенность",
                 cat_units: "Единицы",
-                cat_icons: "Иконки в городах",
+                cat_icons: "Иконки городах",
                 cat_forum: "Форум",
                 cat_trade: "Сделка",
                 cat_wonders: "WW",
@@ -1568,6 +1583,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
             },
             labels: {
                 stt: "Statistiques Grepodata",
+                BAC: "Zakroyte korobku",
                 uni: "Обзор блоков",
                 total: "Глобальный",
                 available: "Имеется в наличии",
@@ -1581,7 +1597,11 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 oth: "другие",
                 hal: "Хэллоуин",
                 xma: "рождество",
-                NewYear: "NewYear",
+                NewYear: "NovyyGod",
+                Happy: "С Новым Годом",
+                Xmas: "S Rozhdestvom!",
+                East: "Khristos voskres!",
+                Easter: "Paskha",
                 ttl: "Поддержка приложения",
                 inf: "Информация о городе:",
                 dev: "точность",
@@ -1673,7 +1693,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 author: "Autor",
                 Feature: "Nowa cecha",
                 cat_units: "jednostki",
-                cat_icons: "Ikony w miastach",
+                cat_icons: "Ikony miastach",
                 cat_forum: "Forum",
                 cat_trade: "Handel",
                 cat_wonders: "W W",
@@ -1752,6 +1772,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
             },
             labels: {
                 stt: "Statistiques Grepodata",
+                BAC: "Zamknij pudełko",
                 uni: "Przegląd jednostek",
                 total: "Światowy",
                 available: "Dostępny",
@@ -1765,7 +1786,11 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 oth: "Pozostałe",
                 hal: "Halloween",
                 xma: "Boże Narodzenie",
-                NewYear: "NewYear",
+                NewYear: "NowyRok",
+                Happy: "Szczęśliwego Nowego Roku",
+                Xmas: "Wesołych Świąt!",
+                East: "Wesołych Świąt!",
+                Easter: "Wielkanoc",
                 ttl: "Wsparcie aplikacji",
                 inf: "Informacje Miasto:",
                 dev: "precyzja",
@@ -1857,7 +1882,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 author: "Autor",
                 Feature: "Optiune noua",
                 cat_units: "Unități",
-                cat_icons: "Icoane în orașe",
+                cat_icons: "Icoane orașe",
                 cat_forum: "forum",
                 cat_trade: "comerț",
                 cat_wonders: "WW",
@@ -1936,6 +1961,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
             },
             labels: {
                 stt: "Grepodata Statistici",
+                BAC: "Phande e kutija",
                 uni: "Privire de ansamblu asupra unităților",
                 total: "Global",
                 available: "Disponibil",
@@ -1949,7 +1975,11 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 oth: "Alții",
                 hal: "Halloween",
                 xma: "Crăciun",
-                NewYear: "NewYear",
+                NewYear: "NevoBerś",
+                Happy: "An nou fericit",
+                Xmas: "Crăciun fericit!",
+                East: "Paște fericit!",
+                Easter: "Patradǎ",
                 ttl: "Suport aplicatie",
                 inf: "info Oraș:",
                 dev: "precizie",
@@ -2041,7 +2071,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 author: "Autor",
                 Feature: "Nueva caracteristica",
                 cat_units: "Unidades",
-                cat_icons: "Los iconos en las ciudades",
+                cat_icons: "Iconos ciudades",
                 cat_forum: "Foro",
                 cat_trade: "Comercio",
                 cat_wonders: "WW",
@@ -2120,6 +2150,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
             },
             labels: {
                 stt: "Estadísticas utilizadas Grepodata",
+                BAC: "Cerrar la caja",
                 uni: "Descripción general de las unidades",
                 total: "Global",
                 available: "Disponible",
@@ -2133,7 +2164,11 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 oth: "Otros",
                 hal: "Víspera de Todos los Santos",
                 xma: "Navidad",
-                NewYear: "NewYear",
+                NewYear: "AñoNuevo",
+                Happy: "Feliz año nuevo",
+                Xmas: "Feliz navidad!",
+                East: "Felices Pascuas!",
+                Easter: "Pascuas",
                 ttl: "Soporte de aplicaciones",
                 inf: "información de la ciudad:",
                 dev: "precisión",
@@ -2226,7 +2261,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 author: "Autor",
                 Feature: "Novo Recurso",
                 cat_units: "Unidades",
-                cat_icons: "Ícones nas Cidades",
+                cat_icons: "Ícones Cidades",
                 cat_forum: "Fórum",
                 cat_trade: "Comércio",
                 cat_wonders: "WW",
@@ -2310,6 +2345,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 Pop_Carg: "População no exterior / Capacidade total dos navios",
                 coucou: "testeee",
                 stt: "Estáticas Grepodata",
+                BAC: "Fechar a caixa",
                 uni: "Visão Geral das unidades",
                 total: "Global",
                 available: "Disponível",
@@ -2320,10 +2356,14 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 gre: "Grepolis",
                 nat: "Natural",
                 ppl: "Popular",
+                Easter: "Pascoa",
                 oth: "Outros",
                 hal: "Halloween",
                 xma: "Natal",
-                NewYear: "NewYear",
+                NewYear: "AnoNovo",
+                Happy: "Feliz ano novo",
+                Xmas: "Feliz Natal!",
+                East: "Feliz Páscoa!",
                 ttl: "Pedido de Apoio",
                 inf: "Informação da cidade:",
                 dev: "Precisão de",
@@ -2425,7 +2465,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 author: "Autor",
                 Feature: "Nová vlastnost",
                 cat_units: "Jednotky",
-                cat_icons: "Ikony ve městech",
+                cat_icons: "Ikony městech",
                 cat_forum: "Fórum",
                 cat_trade: "Obchod",
                 cat_wonders: "WW",
@@ -2504,6 +2544,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
             },
             labels: {
                 stt: "Statistiques Grepodata",
+                BAC: "Zavřete krabici",
                 uni: "Přehled jednotek",
                 total: "Globální",
                 available: "K dispozici",
@@ -2517,7 +2558,11 @@ function JOE_GAME(version, gm, DATA, time_a) {
                 oth: "jiní",
                 hal: "předvečer Všech svatých",
                 xma: "Vánoce",
-                NewYear: "NewYear",
+                NewYear: "NovýRok",
+                Happy: "Šťastný nový rok",
+                Xmas: "Veselé Vánoce!",
+                East: "Veselé Velikonoce!",
+                Easter: "velikonoční",
                 ttl: "Podpora aplikace",
                 inf: "Město info:",
                 dev: "přesnost",
@@ -2918,8 +2963,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                     '<td><div id="bbc" class="checkbox_new"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("options", "bbc")[0] + '</div></div>' +
                     '<p>' + getText("options", "bbc")[1] + '</p><br><img src="https://i.imgur.com/P9866kj.png" alt="" style="max-width:none !important;" /></td>' +
                     '</tr><tr>' +
-                   // ((Game.market_id === "pt" || Game.market_id === "zz") ? (
-                    ((Game.market_id === "pt" || Game.market_id === "zz") && Game.alliance_id === 64 ? (
+                    ((Game.market_id === "pt" || Game.market_id === "zz") && Game.alliance_id === parseInt(atob("MTM=")) ? (
                     '<td><img src="https://i.imgur.com/hsgihz3.gif" alt="" /></td>' +
                     '<td><div id="cha" class="checkbox_new"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("options", "cha")[0] + '</div></div>' +
                     '<p>' + getText("options", "cha")[1] + '</p></td>' +
@@ -3160,6 +3204,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                     saveValue("options", JSON.stringify(DATA.options));
                 });
             }
+
             $('.section').each(function() {
                 this.style.display = "none";
             });
@@ -3400,7 +3445,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                     }, 0);
                     addSettingsButton();
                     addFunctionToITowns();
-                    if (DATA.options.tsk && Game.alliance_id === 64) { // unicamente a o id da aliança
+                    if (DATA.options.tsk && Game.alliance_id === 13) { // unicamente a o id da aliança
                    // if (DATA.options.tsk) {
                         setTimeout(function() {
                             minimizeDailyReward();
@@ -3529,7 +3574,6 @@ function JOE_GAME(version, gm, DATA, time_a) {
                             ContextMenu.activate();
                         }, 0);
                     }
-
                     if (DATA.options.act) {
                         setTimeout(function() {
                             ActivityBoxes.activate();
@@ -3556,8 +3600,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                             SmileyBox.activate();
                         }, 0);
                     }
-                   // if (DATA.options.cha && (Game.market_id === "pt" || Game.market_id === "zz")) {
-                    if (DATA.options.cha && (Game.market_id === "pt" || Game.market_id === "zz") && Game.alliance_id === 64) {
+                    if (DATA.options.cha && (Game.market_id === "pt" || Game.market_id === "zz") && btoa(String(Game.alliance_id)) === IDW) {
                         setTimeout(function() {
                             Chat.activate();
                         }, 0);
@@ -4051,7 +4094,7 @@ var Notification = {
 '<header class="message-attribution message-attribution--split">' +
 '<ul class="message-attribution-main listInline ">' +
 '<li class="u-concealed">' +
-'<time class="u-dt" style="font-size: 10px;font-weight: bold;color: #6b2323;"  >10/11/2024, 19h43</time>' +
+'<time class="u-dt" style="font-size: 10px;font-weight: bold;color: #6b2323;"  >04/01/2025, 12h37</time>' +
 '</li>' +
 '</ul>' +
 '<ul class="message-attribution-opposite message-attribution-opposite--list " style="display: flex;align-items: flex-end;flex-wrap: wrap;color: #57402f;font-size: 12px;padding-bottom: 3px;border-bottom: 1px solid #f6c879;box-sizing: border-box;list-style: none;width: 630px;">' +
@@ -4065,23 +4108,20 @@ var Notification = {
 '<div class="bbWrapper" style="margin-left: 10px;">Good morning,<br>' +
 '<p>From today onwards, all updates will be published through this means in order to inform all changes made to this Gatinho script.</p>' +
 '<p>All update messages will be activated automatically once a month and whenever the version is not updated on the client side.</p>' +
-'<img class="BFix" src="https://joeman.i234.me/BlogBeug/Version.png"/></center>' +
+'<img class="BFix" src="https://joeman.i234.me/BlogBeug/Version.png" width="500px"/></center>' +
 '<p>last update</p>' +
-'<div style="font-size: 9px;"><li>//update 11/03/2023 popup #joe_town_popup .god_mini.null change position top: 136px;</li>' +
-'<li>//update 12/03/2023 Recruiting Trade modification of caption box positions</li>' +
-'<li>//Update 03/03/2023 link help any problems (forum explication) Problem!? Click here!</li>' +
-'<li>//Update 17/03/2023 #btn_available_units .ico_available_units (Icon resize units overview)</li>' +
-'<li>//Update 29/07/2022 link https://i.imgur.com/8lFunS2.png remplace https://gppt.innogamescdn.com/images/game/res/favor.png</li>' +
-'<li>//Update 22/03/2023 Recruiting Trade, Add= (colonize_ship, Wall, demolition_ship)</li>' +
-'<li>//Update 15/04/2023 In the calculator (Select and copy time text)</li>' +
-'<li>//Update 16/06/2023 joe_help_available_units style=z-index: 10</li>' +
-'<li>//Update 17/09/2023 $(".bottom_ornament").css("height", "30px"); - (31px)</li>' +
-'<li>//Update 11/11/2024 (problem related to the tag center of the support request form)</li>' +
-'<li>//Update 20/11/2024 (probleme link img https://gpall.innogamescdn.com to https://gppt.innogamescdn.com)</li>' +
-'<li>//Update 20/11/2024 (new, Gatinho chat just for testing)</li>' +
-'<li>//Update 21/11/2024 (Gatinho chat just for testing in one world )</li>' +
-'<li>//Update 23/11/2024 (adding new year smiley to new messages)</li>' +
-'<li>//Update 16/12/2024 (bug fix percentage of population / attack report)</li>' +
+'<div style="font-size: 12px;">' +
+
+'<li><b><u>//update 01/01/2025</b></u><br><p> In new messages incorporation of a new tab for Easter with new smileys, new Easter icon for the desktop.</p></li>' +
+                '<img src="https://joeman.i234.me/UpdateImg/texte.png" alt="Caixa pascoa" width="40%">' +
+'<img src="https://joeman.i234.me/GreSmileyMes/smileyMes.png" alt="Caixa pascoa" width="400px">' +
+                '<li><b><u>//update 02/01/2025</b></u><br><p> Possibility to freeze the windows of troop movements, resources and troop training.</p></li>' +
+'<img src="https://joeman.i234.me/UpdateImg/caixas.png" alt="Caixa de envios recursos e outras" width="400px">' +
+                '<li><b><u>//update 03/01/2025</b></u><br><p> Delete the WIKI button from the BBCode Messages window.</p></li>' +
+'<img src="https://joeman.i234.me/UpdateImg/BBCode.png" alt="Botao WIKI removido em copiar texto messagens" width="30%">' +
+                '<li><b><u>//update 04/01/2025</b></u><br><p> Chat Gatinho, Be the only alliance to have a live in-game chat where you can interact instantly with your members without needing WhatsApp or other external tools.</p></li>' +
+                '<p>Increased Chat security, this resource can only be valid for 1 pays, 1 world and 1 alliance, you can use this resource via email for an amount of 10Euros per month or free for trial.</p>' +
+                '<img src="https://joeman.i234.me/UpdateImg/Chat.png" alt="Reforço de segurança Chat" width="400px">' +
 '<div class="js-selectToQuoteEnd">&nbsp;</div>' +
 '</article>' +
 '</div>' +
@@ -6397,8 +6437,8 @@ var Notification = {
                 '.joe_speed_booster { border:1px solid #724B08; border-spacing: 0px;} ' +
                 '.joe_speed_booster td { border:0; padding:2px; } ' +
                 '.joe_speed_booster .checkbox_new { margin: 4px 0px 1px 3px; } ' +
-                '.joe_speed_booster .odd { background: url("https://gppt.innogamescdn.com/images/game/border/brown.png") repeat scroll 0% 0% transparent; } ' +
-                '.joe_speed_booster .even { background: url("https://gppt.innogamescdn.com/images/game/border/odd.png") repeat scroll 0% 0% transparent; } ' +
+                '.joe_speed_booster .odd { background: url("https://gpall.innogamescdn.com/images/game/border/brown.png") repeat scroll 0% 0% transparent; } ' +
+                '.joe_speed_booster .even { background: url("https://gpall.innogamescdn.com/images/game/border/odd.png") repeat scroll 0% 0% transparent; } ' +
                 '.booster_icon { width:20px; height:20px; background-image:url(' + speedBoosterSprite + ');} ' +
                 '.booster_icon.improved_speed { background-position:0 0; } ' +
                 '.booster_icon.cartography { background-position:-20px 0; } ' +
@@ -6430,8 +6470,8 @@ var Notification = {
                 '.attack_support_window .joe_duration { border-spacing:0px; margin-bottom:2px; text-align:right; } ' +
                 '.attack_support_window .way_duration, ' +
                 '.attack_support_window .arrival_time { padding:0px 0px 0px 0px; background:none; } ' +
-                '.attack_support_window .way_icon { padding:30px 0px 0px 30px; background:transparent url(https://gppt.innogamescdn.com/images/game/towninfo/traveltime.png) no-repeat 0 0; } ' +
-                '.attack_support_window .arrival_icon { padding:30px 0px 0px 30px; background:transparent url(https://gppt.innogamescdn.com/images/game/towninfo/arrival.png) no-repeat 0 0; } ' +
+                '.attack_support_window .way_icon { padding:30px 0px 0px 30px; background:transparent url(https://gpall.innogamescdn.com/images/game/towninfo/traveltime.png) no-repeat 0 0; } ' +
+                '.attack_support_window .arrival_icon { padding:30px 0px 0px 30px; background:transparent url(https://gpall.innogamescdn.com/images/game/towninfo/arrival.png) no-repeat 0 0; } ' +
                 '.attack_support_window .short_icon { padding:20px 0px 0px 30px; background:url(https://i.imgur.com/SJLg8nm.png) 11px -1px / 21px no-repeat; filter: hue-rotate(50deg); -webkit-filter: hue-rotate(50deg); } ' +
                 '.attack_support_window .hades_icon { padding:20px 0px 0px 30px; background:url(https://flasktools.altervista.org/images/hades_arrival.png) 11px -1px / 18px no-repeat; } ' +
                 '.attack_support_window .max_booty { padding:0px 0px 0px 30px; margin:3px 4px 4px 4px; width:auto; } ' +
@@ -6511,22 +6551,18 @@ var Notification = {
                 h = Math.floor(duration_time_2 / 3600);
                 m = Math.floor((duration_time_2 - h * 3600) / 60);
                 s = Math.floor(duration_time_2 - h * 3600 - m * 60);
-                if (m < 10) {
-                    m = "0" + m;
-                }
-                if (s < 10) {
-                    s = "0" + s;
-                }
+                h %= 24;
+                if (h < 10) { h = "0" + h; }
+                if (m < 10) { m = "0" + m; }
+                if (s < 10) { s = "0" + s; }
                 $(wndID + '.short_duration').get(0).innerHTML = "~" + h + ":" + m + ":" + s;
                 h = Math.floor(duration_time_3 / 3600);
                 m = Math.floor((duration_time_3 - h * 3600) / 60);
                 s = Math.floor(duration_time_3 - h * 3600 - m * 60);
-                if (m < 10) {
-                    m = "0" + m;
-                }
-                if (s < 10) {
-                    s = "0" + s;
-                }
+                 h %= 24;
+                if (h < 10) { h = "0" + h; }
+                if (m < 10) { m = "0" + m; }
+                if (s < 10) { s = "0" + s; }
                 $(wndID + '.hades_duration').get(0).innerHTML = "~" + h + ":" + m + ":" + s;
                 arrival_time = Math.round((Timestamp.server() + Game.server_gmt_offset)) + duration_time_2;
                 visibility_time = Math.round((Timestamp.server() + Game.server_gmt_offset)) + duration_time_3;
@@ -6534,12 +6570,9 @@ var Notification = {
                 m = Math.floor((arrival_time - h * 3600) / 60);
                 s = Math.floor(arrival_time - h * 3600 - m * 60);
                 h %= 24;
-                if (m < 10) {
-                    m = "0" + m;
-                }
-                if (s < 10) {
-                    s = "0" + s;
-                }
+                if (h < 10) { h = "0" + h; }
+                if (m < 10) { m = "0" + m; }
+                if (s < 10) { s = "0" + s; }
                 $(wndID + '.short_arrival').get(0).innerHTML = "~" + h + ":" + m + ":" + s;
                 clearInterval(arrival_interval[wndID]);
                 arrival_interval[wndID] = setInterval(function() {
@@ -6548,12 +6581,8 @@ var Notification = {
                     m = Math.floor((arrival_time - h * 3600) / 60);
                     s = Math.floor(arrival_time - h * 3600 - m * 60);
                     h %= 24;
-                    if (m < 10) {
-                        m = "0" + m;
-                    }
-                    if (s < 10) {
-                        s = "0" + s;
-                    }
+                    if (m < 10) { m = "0" + m; }
+                    if (s < 10) { s = "0" + s; }
                     if ($(wndID + '.short_arrival').get(0)) {
                         $(wndID + '.short_arrival').get(0).innerHTML = "~" + h + ":" + m + ":" + s;
                     } else {
@@ -6564,12 +6593,9 @@ var Notification = {
                 m = Math.floor((visibility_time - h * 3600) / 60);
                 s = Math.floor(visibility_time - h * 3600 - m * 60);
                 h %= 24;
-                if (m < 10) {
-                    m = "0" + m;
-                }
-                if (s < 10) {
-                    s = "0" + s;
-                }
+                if (h < 10) { h = "0" + h; }
+                if (m < 10) { m = "0" + m; }
+                if (s < 10) { s = "0" + s; }
                 $(wndID + '.hades_visibility').get(0).innerHTML = "~" + h + ":" + m + ":" + s;
                 clearInterval(hades_interval[wndID]);
                 hades_interval[wndID] = setInterval(function() {
@@ -6578,12 +6604,9 @@ var Notification = {
                     m = Math.floor((visibility_time - h * 3600) / 60);
                     s = Math.floor(visibility_time - h * 3600 - m * 60);
                     h %= 24;
-                    if (m < 10) {
-                        m = "0" + m;
-                    }
-                    if (s < 10) {
-                        s = "0" + s;
-                    }
+                    if (h < 10) { h = "0" + h; }
+                    if (m < 10) { m = "0" + m; }
+                    if (s < 10) { s = "0" + s; }
                     if ($(wndID + '.hades_visibility').get(0)) {
                         $(wndID + '.hades_visibility').get(0).innerHTML = "~" + h + ":" + m + ":" + s;
                     } else {
@@ -8182,8 +8205,8 @@ $('head').append('<link rel="stylesheet" type="text/css" href="https://joeman.i2
             '<div id="f_prm" class="checkbox_new checked"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("labels", "prm") + '</div></div><br><br>' +
             '<div id="f_sil" class="checkbox_new checked"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("labels", "sil") + '</div></div><br><br>' +
             '<div id="f_OC" class="checkbox_new checked"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("labels", "OC") + '</div></div><br><br>' +
-           // '<div id="f_R212" class="checkbox_new"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("labels", "f_R212") + '</div></div><br><br>' +
-         //   '<div id="f_R210" class="checkbox_new"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("labels", "f_R210") + '</div></div><br><br>' +
+        //    '<div id="f_R212" class="checkbox_new"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("labels", "f_R212") + '</div></div><br><br>' +
+        //    '<div id="f_R210" class="checkbox_new"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("labels", "f_R210") + '</div></div><br><br>' +
        //     '<div id="T_R1" class="checkbox_new"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("labels", "R1") + '<input onkeyup="mySpan.innerHTML=this.value"><span  class"olao" id="mySpan"></span></div></div><br><br>' +//test recupere les heures ds la boite input ds nouveau message
             '<div><a class="button" id="joe_insert" href="#"><span class="left"><span class="right"><span class="middle"><small>' + joe_icon + '' + getText("buttons", "ins") + '</small></span></span></span><span></span></a></div>' +
             '</div></div></div>').appendTo(bbcodeBarId + ' .bb_button_wrapper');
@@ -8201,8 +8224,8 @@ $('head').append('<link rel="stylesheet" type="text/css" href="https://joeman.i2
         $('#NTS').css("box-shadow", "0px 0px 3px 1px #ff00006b");
         $('.bb_def_chooser').css({
             display: 'none',
-            top: '-110px',
-            left: '660px',
+            top: '-120px',
+            left: '570px',
             position: 'absolute',
             width: '190px',
             zIndex: 10000
@@ -8359,11 +8382,13 @@ var Npui = document.getElementsByClassName( 'olao' ),
    //         * Smiley box *        //
   ///////////////////////////////////
     var smileyArray = {};
+    var Home_url = "https://joeman.i234.me";
     var SmileyBox = {
         loading_error: false,
         isHalloween: false,
         isXmas: false,
         isNewYear: false,
+        isEaster: false,
         isForum: $(".editor_textbox_container").get(0),
         activate: function() {
             $('<style id="io_smiley">' +
@@ -8374,7 +8399,9 @@ var Npui = document.getElementsByClassName( 'olao' ),
                 '.smiley_box .group.active { color: #089421; text-decoration:underline;} ' +
                 '.smiley_box .group:hover { color: #14999E; } ' +
                 '.smiley_box .halloween { color: #E25E00; } ' +
-                '.smiley_box .xmas { color: darkred; } ' +
+                '.smiley_box .xmas { color: Fuchsia; } ' +
+                '.smiley_box .NewYear { color: Fuchsia; } ' +
+                '.smiley_box .Easter { color: Fuchsia; } ' +
                 '.smiley_box hr { margin:3px 0px 0px 0px; color:#086b18; border:1px solid; } ' +
                 '.smiley_box .box_content { overflow: hidden; } ' +
                 '.smiley_box .box_content .smiley { border: 1px solid rgba(0,0,0,0); border-radius: 5px;} ' +
@@ -8432,6 +8459,14 @@ var Npui = document.getElementsByClassName( 'olao' ),
                     "xcmOC6o", "OuB6SEf", "z14wQSc", "czxDHg0", "NBiY1xG", "QUyvV6Z", "16Fyvkt", "o6n2OcZ", "1T77iuv"
                 ];
             }
+            if (SmileyBox.isEaster) {
+                smileyArray.Easter = [
+                    "VmUq8YQ", "BTBrwML", "dNCP0wM", "B5oN849", "TLiAEFi", "UJnqc0G", "VaC8Je2", "5Xcy172", "JzGjJ4p",
+                    "bdE0Yxo", "PpwcMd9", "z94jDSX", "sCP77Lz", "RwFTzrA", "6pvxCNu",
+                    "wKdEtyR", "pZN4ES7", "71PYXFd", "io9pHR8", "LIUOceU", "vD3WcoB",
+                    "NKk2nZn", "L7ui742", "6TFMFF8", "1UjYUEz", "U4rAv8q", "F9PlIJc"
+                ];
+            }
             if (SmileyBox.isForum) {
                 smileyArray.grepolis.push("pVAK8KH");
                 smileyArray.grepolis.push("2w3xZnz");
@@ -8447,10 +8482,13 @@ var Npui = document.getElementsByClassName( 'olao' ),
                 today = new Date((new Date()) % (daystamp * (365 + 1 / 4))), // sem ano
                 NewYear_start = daystamp * 0, // novo ano novo
                 NewYear_end = daystamp * 7, // novo ano novo
+                easter_start = daystamp * 88,
+                easter_end = daystamp * 110,
                 halloween_start = daystamp * 297,
                 halloween_end = daystamp * 321,
                 xmas_start = daystamp * 334,
                 xmas_end = daystamp * 361;
+            SmileyBox.isEaster = (today >= easter_start) ? (today <= easter_end) : false; // easter
             SmileyBox.isNewYear = (today >= NewYear_start) ? (today <= NewYear_end) : false; // novo ano novo
             SmileyBox.isHalloween = (today >= halloween_start) ? (today <= halloween_end) : false;
             SmileyBox.isXmas = (today >= xmas_start) ? (today <= xmas_end) : false;
@@ -8528,6 +8566,7 @@ var Npui = document.getElementsByClassName( 'olao' ),
                 (SmileyBox.isHalloween ? '<span class="group halloween">' + getText("labels", "hal") + '</span>' : '') +
                 (SmileyBox.isXmas ? '<span class="group xmas">' + getText("labels", "xma") + '</span>' : '') +
                 (SmileyBox.isNewYear ? '<span class="group NewYear">' + getText("labels", "NewYear") + '</span>' : '') +
+                (SmileyBox.isEaster ? '<span class="group Easter">' + getText("labels", "Easter") + '</span>' : '') +
                 '</div>' +
                 '<div class="box_header_right"><a class="smiley_link" href="http://www.greensmilies.com/smilie-album/" target="_blank">WWW.GREENSMILIES.COM</a></div>' +
                 '<hr>' +
@@ -8575,8 +8614,9 @@ var Npui = document.getElementsByClassName( 'olao' ),
                 '<span class="group grepolis">' + getText("labels", "gre") + '</span>' +
                 '<span class="group nature">' + getText("labels", "nat") + '</span>' +
                 '<span class="group people">' + getText("labels", "ppl") + '</span>' +
-                '<span class="group ' + (SmileyBox.isHalloween ? 'halloween' : (SmileyBox.isXmas ? 'xmas' : (SmileyBox.isNewYear ? 'NewYear' : 'other'))) + '">' + getText("labels", (SmileyBox.isHalloween ? 'hal' : (SmileyBox.isXmas ? 'xma' : (SmileyBox.isNewYear ? 'NewYear' : 'oth')))) + '</span>' +
-               // '<span class="group ' + (SmileyBox.isHalloween ? 'halloween' : (SmileyBox.isXmas ? 'xmas' : 'other')) + '">' + getText("labels", (SmileyBox.isHalloween ? 'hal' : (SmileyBox.isXmas ? 'xma' : 'oth'))) + '</span>' +
+              //  '<span class="group ' + (SmileyBox.isHalloween ? 'halloween' : (SmileyBox.isXmas ? 'xmas' : (SmileyBox.isNewYear ? 'NewYear' : 'other'))) + '">' + getText("labels", (SmileyBox.isHalloween ? 'hal' : (SmileyBox.isXmas ? 'xma' : (SmileyBox.isNewYear ? 'NewYear' : 'oth')))) + '</span>' +
+             '<span class="group ' + (SmileyBox.isHalloween ? 'halloween' : (SmileyBox.isEaster ? 'Easter' : (SmileyBox.isXmas ? 'xmas' : (SmileyBox.isNewYear ? 'NewYear' : 'other')))) + '">' + getText("labels", (SmileyBox.isHalloween ? 'hal' : (SmileyBox.isEaster ? 'Easter' : (SmileyBox.isXmas ? 'xma' : (SmileyBox.isNewYear ? 'NewYear' : 'oth'))))) + '</span>' +
+              //   '<span class="group ' + (SmileyBox.isHalloween ? 'halloween' : (SmileyBox.isXmas ? 'xmas' : 'other')) + '">' + getText("labels", (SmileyBox.isHalloween ? 'hal' : (SmileyBox.isXmas ? 'xma' : 'oth'))) + '</span>' +
                 '</div>' +
                 '<hr>' +
                 '<div class="box_content"></div>' +
@@ -8868,14 +8908,15 @@ var Npui = document.getElementsByClassName( 'olao' ),
             }, 3000);
         }
     }
-    var Taskbar = {
-        activate: function() {
-            $('.minimized_windows_area').get(0).style.width = "200% !important";
-            $('.minimized_windows_area').get(0).style.left = "-125% !important";
+    // Largura da taskbar
+var Taskbar = {
+        activate: () => {
+            $('.minimized_windows_area').get(0).style.width = "150%";
+            $('.minimized_windows_area').get(0).style.left = "-25%";
         },
-        deactivate: function() {
-            $('.minimized_windows_area').get(0).style.width = "1550% !important";
-            $('.minimized_windows_area').get(0).style.left = "912% !important"; //cote gauche 10px=62.5% -- 912%
+        deactivate: () => {
+            $('.minimized_windows_area').get(0).style.width = "100%";
+            $('.minimized_windows_area').get(0).style.left = "0%";
         }
     };
     function hideNavElements() {
@@ -8899,7 +8940,7 @@ var Npui = document.getElementsByClassName( 'olao' ),
             Chat.isActivated = true;
             Chat.isOpened = true;
             $('<style id="joe_chat_style">' +
-                '#joe_chat { position: absolute; bottom: 0px; z-index: 4; width: 25%; transition: left 1.3s; left:0; -moz-user-select: text; -webkit-user-select: text; user-select: text; }' +
+                '#joe_chat { position: absolute; bottom: 0px; z-index: 4; width: 35%; transition: left 1.3s; left:0; -moz-user-select: text; -webkit-user-select: text; user-select: text; }' +
                 '#joe_chat.resize { transition: left 0s; }' +
                 '#joe_chat .slider { width:100%; height: 6px; top:0; right:1px;  position:absolute; margin-left:-8px; cursor: row-resize; }' +
                 '#joe_chat .messagebox { text-shadow: 1px 1px 4px black; overflow-y:hidden; overflow-x:auto; max-height:200px; min-height:30px; width:100%; background: rgba(0, 0, 0, 0.6); color: #aaa; padding: 8px; text-align:left; font-size:11px; border: 1px solid darkgreen; border-left:none; border-bottom:1px solid #575; box-shadow: -3px 2px 3px black; }' +
@@ -8908,11 +8949,11 @@ var Npui = document.getElementsByClassName( 'olao' ),
                 '#joe_chat .messagebox .text { word-break: break-word; color: #797; }' +
                 '#joe_chat .messagebox .welcome .text { color: rgb(200,220,200); }' +
                 '#joe_chat .togglebutton { background: rgba(0,0,0,0.5); width: 24px; height: 100%; position: absolute; top: 0; right: -40px; color: #fc6; opacity:0.75; cursor: pointer; }' +
-                '#joe_chat .togglebutton .top { height:4px; width:24px; background: url(https://felix.de/images/game/button_sprite_vertical.png) 0px -1px; position:absolute;}' +
+                '#joe_chat .togglebutton .top { height:4px; width:24px; background: url() 0px -1px; position:absolute;}' +
                 '#joe_chat .togglebutton:hover .top { background-position: -25px -1px; }' +
-                '#joe_chat .togglebutton .bottom { height:4px; width:24px; background: url(https://felix.de/images/game/button_sprite_vertical.png) 0px 4px; position:absolute; bottom:0px; }' +
+                '#joe_chat .togglebutton .bottom { height:4px; width:24px; background: url() 0px 4px; position:absolute; bottom:0px; }' +
                 '#joe_chat .togglebutton:hover .bottom { background-position: -25px 4px; }' +
-                '#joe_chat .togglebutton .middle { height:100%; width:24px; background: url(https://felix.de/images/game/button_sprite_vertical.png) -50px 0px; }' +
+                '#joe_chat .togglebutton .middle { height:100%; width:24px; background: url() -50px 0px; }' +
                 '#joe_chat .togglebutton:hover .middle { background-position: -75px 0px; }' +
                 '#joe_chat .togglebutton .arrow { position:absolute; left:6px; top:42.5%; }' +
                 '#joe_chat .icon { position:absolute; right:10px; top:10px; opacity:0.15; width: 31px; height:31px; filter: sepia(0.5); background: url(https://i.imgur.com/cILbyDs.png) -50px -76px no-repeat; }' +
@@ -8944,7 +8985,7 @@ var Npui = document.getElementsByClassName( 'olao' ),
             });
             $('#joe_chat .togglebutton').toggleClick(
                 function() {
-                    var x = -($(window).width() * 0.25 + 16);
+                    var x = -($(window).width() * 0.35 + 16);
                     $('#joe_chat').css("left", x);
                     setTimeout(function() {
                         $('#joe_chat .togglebutton .arrow').get(0).innerHTML = "👉";
@@ -9050,7 +9091,7 @@ var Npui = document.getElementsByClassName( 'olao' ),
         getMessages: function() {
             if (Chat.isActivated === true) {
                 var _currentTimestamp = Timestamp.server();
-                var _url = "https://joeman.i234.me/chat/getMessages.php?world=" + Game.world_id;
+                var _url = "https://jstrieb.github.io/link-lock/#eyJ2IjoiMC4wLjEiLCJlIjoiVWxHZ3NzOFo1cnRNQnkrNElzVnZjUTZKTnFlZDJ2cG5YZytEbzZqWFFpYTdVVE9pM2pQSXhBL2dkU1AvWUJZS0VtUjFCNTg1djQrQXhGQT0iLCJzIjoiaWNTdHhFRUxHOUdIb3VBSVpqaXhpZz09IiwiaSI6IllqaWJ5Z2cwMW5JenBQT3kifQ==?world=" + Game.world_id;
                 if (typeof(Chat.lastID) !== "undefined") {
                     _url += "&id=" + Chat.lastID;
                 } else {
@@ -9121,221 +9162,6 @@ var Npui = document.getElementsByClassName( 'olao' ),
             return hours.substr(-2) + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
         }
     };
-
-    ///////////////////////////////////
-   //      * Activity boxes *       //
-  ///////////////////////////////////
-    var mut_toolbar, mut_command, mut_trade;
-    var save_command_mouseout,
-        save_commandlist_mouseout,
-        save_trade_mouseout,
-        save_tradelist_mouseout,
-        save_command_mouseover,
-        save_trade_mouseover;
-    var ActivityBoxes = {
-        activate: function() {
-            ActivityBoxes.checkToolbarAtStart();
-            $('#toolbar_activity_commands_list').css({
-                left: commandbox.left + "px",
-                top: commandbox.top + "px"
-            });
-            $('<style id="Freese_movements_style">' +
-                '.gp_town_link { visibility: visible; }' +
-                '#toolbar_activity_commands_list.fast { visibility: visible; display: block !important; }' +
-                '.item.no_results { font-size: 12px; }' +
-                '.button_new.square.remove { background-position: 0px 0; }' +
-                '.sandy-box .item.command { visibility: visible; display: block !important; }' +
-                '#toolbar_activity_commands_list.fast .remove { visibility: visible; }' +
-                '.button_new.square.remove { background-position: -66px 0; }' +
-                '</style>').appendTo('head');
-            $('<style id="fix_lists" type="text/css">' +
-                '#toolbar_activity_commands_list, #toolbar_activity_trades_list { width: auto}' +
-                '.dropdown-list .content { max-height: 329px}' +
-                '</style>' +
-                '<style id="joe_fix_trade" type="text/css">' +
-                '#toolbar_activity_trades_list {' +
-                'left:' + tradebox.left + 'px !important;' +
-                'top: ' + tradebox.top + 'px !important}' +
-                '</style>').appendTo('head');
-            ActivityBoxes.draggableTradeBox();
-            ActivityBoxes.draggableCommandBox();
-            ActivityBoxes.catchToolbarEvents();
-        },
-        deactivate: function() {
-            ActivityBoxes.hideTradeList();
-            ActivityBoxes.hideCommandList();
-            mut_toolbar.disconnect();
-            mut_command.disconnect();
-            mut_trade.disconnect();
-        },
-        showTradeList: function() {
-            if (!$('#joe_trades_activity_style').get(0)) {
-                $('#toolbar_activity_trades').mouseover();
-                $('<style id="joe_trades_activity_style"> #toolbar_activity_trades_list { display: block !important; } </style>').appendTo("head");
-            }
-        },
-        showCommandList: function() {
-            if (!$('#joe_commands_activity_style').get(0)) {
-                $('#toolbar_activity_commands').mouseover();
-                $('<style id="joe_commands_activity_style"> #toolbar_activity_commands_list { ' +
-                    'display:block !important; left:' + commandbox.left + 'px; top:' + commandbox.top + 'px; }' +
-                    '</style>').appendTo("head");
-            }
-        },
-        hideTradeList: function() {
-            if ($('#joe_trades_activity_style').get(0)) {
-                $('#joe_trades_activity_style').remove();
-                $('#toolbar_activity_trades').mouseout();
-            }
-        },
-        hideCommandList: function() {
-            if ($('#joe_commands_activity_style').get(0)) {
-                $('#joe_commands_activity_style').remove();
-                $('#toolbar_activity_commands').mouseout();
-            }
-        },
-        activate2: function() {
-            var observe_options = {
-                attributes: false,
-                childList: true,
-                characterData: false
-            };
-            ActivityBoxes.catchToolbarEvents();
-            mut_command.observe($('.toolbar_activities .commands .count').get(0), observe_options);
-            mut_trade.observe($('.toolbar_activities .trades .count').get(0), observe_options);
-            $('<style id="joe_activity_style"> ' +
-                '#toolbar_activity_commands_list.active { display: block !important; } ' +
-                '#toolbar_activity_trades_list.active { display: block !important; } ' +
-                '</style>').appendTo("head");
-            $('#toolbar_activity_commands').mouseover();
-            $('#toolbar_activity_trades').mouseover();
-            $('#toolbar_activity_commands, #toolbar_activity_trades').off("mouseover");
-            $('#toolbar_activity_commands, #toolbar_activity_commands_list, #toolbar_activity_trades, #toolbar_activity_trades_list').off("mouseout");
-            $('#toolbar_activity_trades_list').unbind("click");
-            ActivityBoxes.checkToolbarAtStart();
-            $('#toolbar_activity_commands_list').css({
-                left: commandbox.left + "px",
-                top: commandbox.top + "px"
-            });
-            $('<style id="fix_lists" type="text/css">' +
-                '#toolbar_activity_commands_list, #toolbar_activity_trades_list { width: 160px}' +
-                '.dropdown-list .content { max-height: 329px}' +
-                '</style>' +
-                '<style id="joe_fix_trade" type="text/css">' +
-                '#toolbar_activity_trades_list {' +
-                'left:' + tradebox.left + 'px !important;' +
-                'top: ' + tradebox.top + 'px !important}' +
-                '</style>').appendTo('head');
-            ActivityBoxes.draggableCommandBox();
-            ActivityBoxes.draggableTradeBox();
-        },
-        deactivate2: function() {
-            mut_toolbar.disconnect();
-            mut_command.disconnect();
-            mut_trade.disconnect();
-            $('#toolbar_activity_commands').mouseover = save_command_mouseover;
-            $('#toolbar_activity_trades').mouseover = save_trade_mouseover;
-            $('#toolbar_activity_commands').mouseout = save_command_mouseout;
-            $('#toolbar_activity_commands_list').mouseout = save_commandlist_mouseout;
-            $('#toolbar_activity_trades').mouseout = save_trade_mouseout;
-            $('#toolbar_activity_trades_list').mouseout = save_tradelist_mouseout;
-            $('#toolbar_activity_trades_list').removeClass("active");
-            $('#toolbar_activity_commands_list').removeClass("active");
-            $('#joe_activity_style').remove();
-        },
-        deactivate: function() {
-            $('#Freese_movements_style').remove();
-        },
-        checkToolbarAtStart: function() {
-            if (parseInt($('.toolbar_activities .commands .count').get(0).innerHTML, 10) > 0) {
-                ActivityBoxes.showCommandList();
-            } else {
-                ActivityBoxes.hideCommandList();
-            }
-            if (parseInt($('.toolbar_activities .trades .count').get(0).innerHTML, 10) > 0) {
-                ActivityBoxes.showTradeList();
-            } else {
-                ActivityBoxes.hideTradeList();
-            }
-        },
-        catchToolbarEvents: function() {
-            var observe_options = {
-                attributes: false,
-                childList: true,
-                characterData: false
-            };
-            mut_toolbar = new MutationObserver(function(mutations) {
-                mutations.forEach(function(mutation) {
-                    if (mutation.addedNodes[0]) {
-                        if (mutation.target.id === "toolbar_activity_trades_list") {
-                            ActivityBoxes.draggableTradeBox();
-                        } else {
-                            ActivityBoxes.draggableCommandBox();
-                        }
-                        mutation.addedNodes[0].remove();
-                    }
-                });
-            });
-            mut_command = new MutationObserver(function(mutations) {
-                mutations.forEach(function(mutation) {
-                    if (mutation.addedNodes[0]) {
-                        if (mutation.addedNodes[0].nodeValue > 0) {
-                            ActivityBoxes.showCommandList();
-                        } else {
-                            ActivityBoxes.hideCommandList();
-                        }
-                    }
-                });
-            });
-            mut_trade = new MutationObserver(function(mutations) {
-                mutations.forEach(function(mutation) {
-                    if (mutation.addedNodes[0]) {
-                        if (mutation.addedNodes[0].nodeValue > 0) {
-                            ActivityBoxes.showTradeList();
-                        } else {
-                            ActivityBoxes.hideTradeList();
-                        }
-                    }
-                });
-            });
-            mut_command.observe($('.toolbar_activities .commands .count').get(0), observe_options);
-            mut_trade.observe($('.toolbar_activities .trades .count').get(0), observe_options);
-        },
-        draggableTradeBox: function() {
-            $("#toolbar_activity_trades_list").draggable({
-                containment: "body",
-                distance: 20,
-                snap: "body, .gods_area, .nui_units_box, .ui_quickbar, .nui_main_menu, .minimized_windows_area, .nui_left_box",
-                opacity: 0.7,
-                start: function() {
-                    $("#joe_fix_trade").remove();
-                },
-                stop: function() {
-                    var pos = $('#toolbar_activity_trades_list').position();
-                    tradebox.left = pos.left;
-                    tradebox.top = pos.top;
-                    saveValue("tradebox", JSON.stringify(tradebox));
-                    $('<style id="joe_fix_trade" type="text/css">' +
-                        '#toolbar_activity_trades_list { left:' + tradebox.left + 'px !important; top:' + tradebox.top + 'px !important; } ' +
-                        '</style>').appendTo('head');
-                }
-            });
-        },
-        draggableCommandBox: function() {
-            $("#toolbar_activity_commands_list").draggable({
-                containment: "body",
-                distance: 20,
-                snap: "body, .gods_area, .nui_units_box, .ui_quickbar, .nui_main_menu, .minimized_windows_area, .nui_left_box",
-                opacity: 0.7,
-                stop: function() {
-                    var pos = $('#toolbar_activity_commands_list').position();
-                    commandbox.left = pos.left;
-                    commandbox.top = pos.top;
-                    saveValue("commandbox", JSON.stringify(commandbox));
-                }
-            });
-        }
-    };
     ///////////////////////////////////
    //   * Scrollbar Style color *   //
   ///////////////////////////////////
@@ -9400,7 +9226,135 @@ var Npui = document.getElementsByClassName( 'olao' ),
     //////////////////////////////////////
    //     * units off the island *     //
   //////////////////////////////////////
-   var UnitsJGView = {
+/*
+
+    var UnitsJGView = {
+
+   activate: function() {
+       {
+           setTimeout(function() {
+               UnitsJGView.activate();
+           }, 0);
+       }
+       //console.log("UnitsJGView activated");
+       var selected_town = ITowns.getTown(Game.townId);
+       //console.log("Selected town: ", selected_town);
+       var GD_units = GameData.units;
+       var GD_heroes = GameData.heroes;
+       var Transporter_Offset = selected_town.researches().hasBerth() ? GameDataResearches.getBonusBerth() : 0;
+       var tr_small_cap = GameData.units.small_transporter.capacity + Transporter_Offset;
+       var tr_big_cap = GameData.units.big_transporter.capacity + Transporter_Offset;
+       //console.log("Transporter offset: ", Transporter_Offset);
+
+       function calculate(tr_type_cap, Transport_Capacity, Ground_Units_BHP) {
+           //console.log("Calculating transport capacity...");
+           var diff = Transport_Capacity - Ground_Units_BHP;
+           var tr_empty = Math.floor(diff / tr_type_cap);
+           var rest = tr_type_cap - (diff - (tr_empty * tr_type_cap));
+           if (rest != tr_type_cap) {
+               tr_empty++;
+           } else {
+               rest = 0;
+           }
+           //console.log("Calculation result: tr_empty=", tr_empty, " rest=", rest);
+           return [tr_empty, rest];
+       }
+
+       $("#units_beyond_list > li, .support_row").each(function(i, e) {
+           //console.log("Processing row: ", i);
+           var Ground_Units_BHP = 0;
+           var Transport_Capacity = 0;
+           var a = $(this).find(".unit_icon40x40");
+
+           a.each(function(index) {
+               var className = this.className.split(' ');
+               var unit = className[className.length - 1];
+               var number = parseInt($(this).text().trim());
+               if (!GD_units[unit]) {
+                   //console.log("Unknown unit: ", unit);
+                   return;
+               }
+
+               if (!(unit in GD_heroes) && !GD_units[unit].flying && GD_units[unit].capacity === undefined) {
+                   Ground_Units_BHP += number * GD_units[unit].population;
+                   //console.log("Ground unit BHP updated: ", Ground_Units_BHP);
+               } else if (!(unit in GD_heroes) && !GD_units[unit].flying && GD_units[unit].capacity !== 0) {
+                   Transport_Capacity += number * (GD_units[unit].capacity + Transporter_Offset);
+                   //console.log("Transport capacity updated: ", Transport_Capacity);
+               }
+           });
+
+           $(this).find(".place_sendback_container").css({
+               "margin-top": "4px"
+           });
+
+           if (Transport_Capacity >= 0) {
+               var tr_small = calculate(tr_small_cap, Transport_Capacity, Ground_Units_BHP);
+               var tr_big = calculate(tr_big_cap, Transport_Capacity, Ground_Units_BHP);
+
+               var tooltip = '<div class="flask_sendback" style="position: absolute; margin-left: 40px; margin-top: 5px">' +
+                   '<div class="flask_sendback_big">' +
+                   '<div class="flask_sendback_img" style="background-position: -405px -150px;"><span class="flask_sendback_img_span big_naval">' + tr_big[0] + '</span></div>' +
+                   '<div class="flask_sendback_img_helmet" style="background-position: -290px -365px; margin-left: 25px"><span class="flask_sendback_img_span big_land">' + tr_big[1] + '</span></div>' +
+                   '</div>' +
+                   '<div class="flask_sendback_small">' +
+                   '<div class="flask_sendback_img" style="background-position: -405px -175px;"><span class="flask_sendback_img_span small_naval">' + tr_small[0] + '</span></div>' +
+                   '<div class="flask_sendback_img_helmet" style="background-position: -290px -365px; margin-left: 25px"><span class="flask_sendback_img_span small_land">' + tr_small[1] + '</span></div>' +
+                   '</div></div>';
+
+               if ($(this).find(".flask_sendback_header_span").length === 0) {
+                   $(this).children("h4").append('<span class="flask_sendback_header_span"> (' + Ground_Units_BHP + '/' + Transport_Capacity + ')</span>');
+                   $(this).find(".place_sendback_container").append(tooltip);
+               } else {
+                   $(this).find(".flask_sendback_header_span").text(' (' + Ground_Units_BHP + '/' + Transport_Capacity + ')');
+                   $(this).find(".flask_sendback_big .big_naval").text(tr_big[0]);
+                   $(this).find(".flask_sendback_big .big_land").text(tr_big[1]);
+                   $(this).find(".flask_sendback_small .small_naval").text(tr_small[0]);
+                   $(this).find(".flask_sendback_small .small_land").text(tr_small[1]);
+               }
+           }
+       });
+
+       $('.flask_sendback_img').tooltip(LANG.hasOwnProperty(LID) ? joe_icon + getText("labels", "Nav_Exce") : default_title);
+       $('.flask_sendback_header_span').tooltip(LANG.hasOwnProperty(LID) ? joe_icon + getText("labels", "Pop_Carg") : default_title);
+
+       //console.log("Applying styles...");
+       $(".flask_sendback_img").css({
+           "width": "19px",
+           "height": "19px",
+           "background-image": "url(https://gpit.innogamescdn.com/images/game/layout/alpha_sprite_2.69.png)",
+           "background-repeat": "no-repeat",
+           "display": "block",
+           "float": "left"
+       });
+       $(".flask_sendback_img_helmet").css({
+           "width": "18px",
+           "height": "16px",
+           "background-image": "url(https://gpit.innogamescdn.com/images/game/layout/alpha_sprite_2.69.png)",
+           "background-repeat": "no-repeat",
+           "display": "block",
+           "float": "left"
+       });
+       $(".flask_sendback_img_span").css({
+           "margin-left": "25px"
+       });
+       $(".flask_sendback_small").css({
+           "float": "left",
+           "margin-top": "1px"
+       });
+       //console.log("UnitsJGView activation complete");
+   },
+
+   deactivate: function() {
+       //console.log("Deactivating UnitsJGView");
+       $('.flask_sendback').remove();
+   },
+};
+*/
+
+
+
+       var UnitsJGView = {
 
        activate: function() {
            {
@@ -9473,7 +9427,7 @@ var Npui = document.getElementsByClassName( 'olao' ),
            });
 
            $('.flask_sendback_img').tooltip(LANG.hasOwnProperty(LID) ? joe_icon + getText("labels", "Nav_Exce") : default_title);//novo
-      //     $('.flask_sendback_img_helmet').tooltip(LANG.hasOwnProperty(LID) ? joe_icon + getText("labels", "Pop_Inf") : default_title);//novo
+           $('.flask_sendback_img_helmet').tooltip(LANG.hasOwnProperty(LID) ? joe_icon + getText("labels", "Pop_Inf") : default_title);//novo
            $('.flask_sendback_header_span').tooltip(LANG.hasOwnProperty(LID) ? joe_icon + getText("labels", "Pop_Carg") : default_title);//novo
 
            $(".flask_sendback_img").css({
@@ -10319,7 +10273,7 @@ var Npui = document.getElementsByClassName( 'olao' ),
                     var expRahmen_b = "</div><textarea id='expTextarea' style=\"height: 225px; width: 685px;\">";
                     var expRahmen_c = "</textarea></div><center>" + joe.createButton(getText("messages", "copy"), "joe-copy-message-quote", null, 'data-clipboard-target="#expTextarea"') + "</center>";
                     var expRahmen_d = "<div style='overflow-x: hidden; padding-left: 5px; position: relative;'></div></div></div>";
-                    var expRahmen_e = '<div id="joe_help_MessageExport" style="top: -37px;position: absolute; right: 33px;"><a class="ui-dialog-titlebar-help ui-corner-all" href=' + getText("link", "MessageExport") + ' target="_blank"></a></div>';
+                    var expRahmen_e = '<div id="joe_help_MessageExport" style="top: -37px;position: absolute; right: 33px;"></div>';
                     var expTitel = getText("messages", "Tol");
                     var BBwnd = GPWindowMgr.Create(GPWindowMgr.TYPE_JOE_BBCODEE) || GPWindowMgr.getOpenFirst(GPWindowMgr.TYPE_JOE_BBCODEE).close();
                     BBwnd.setContent(expRahmen_a + expTitel + expRahmen_b + bb_content + expRahmen_c + expRahmen_d + expRahmen_e);
@@ -10479,71 +10433,121 @@ var Npui = document.getElementsByClassName( 'olao' ),
    //      * Activity boxes *       //
   ///////////////////////////////////
     var ActivityBoxes = {
-        activate: function() {
+        observer_commands_list: null,
+        activate: () => {
             try {
+
+                $('<style id="joe_plusmenustyle" type="text/css">' +
+                    '.displayImp {display: block !important; z-index: 1000 !important;}' +
+                    '.joe_commands { height: 0px; overflow: visible!important; }' +
+                    '.joe_plusmenu {margin:6px 22px 2px 5px;height:11px;display:block;position:relative;}' +
+                    '.joe_plusdraghandle {cursor:-webkit-grab; width:100%;height:11px;position:absolute;background:url(https://i.imgur.com/KlEB47j.png)}' +
+                    '.joe_plusback {right:-18px;margin-top:-1px;width:16px;height:12px;position:absolute;background:url(https://i.imgur.com/nSS5KZU.png)}' +
+                    '#toolbar_activity_commands_list .joe_plusmenu {/*opacity: 0;*/ visibility: hidden; display: none;}' +
+                    '#toolbar_activity_recruits_list {min-width: 113px;}' +
+                    '.dropdown-list .item_no_results, .dropdown-list.ui-draggable>div {cursor:text!important;}' +
+                    '#toolbar_activity_commands_list .unit_movements .details_wrapper, #toolbar_activity_commands_list .unit_movements .icon { visibility: visible }' +
+                    '#toolbar_activity_commands_list .cancel { display: none !important; }' +
+                    '#toolbar_activity_commands_list .js-dropdown-list:hover>.joe_plusmenu { display: block !important; visibility: visible; /*opacity: 0.5;*/ }' +
+                    '</style>').appendTo('head');
+
+                const toolbarCommand = document.querySelector('#toolbar_activity_commands_list');
+                if (typeof uw.observer_commands_list !== 'object') {
+                    uw.observer_commands_list = new MutationObserver(function (mutations) {
+                        mutations.forEach(function (mutation) {
+                            if (toolbarCommand.style.display !== "none" || !toolbarCommand.classList.contains('joe_commands')) return;
+                            $('#toolbar_activity_commands').trigger('mouseenter');
+                        });
+                    });
+                    uw.observer_commands_list.observe(
+                        toolbarCommand,
+                        { attributes: true, childList: true, subtree: true }
+                    );
+
+                    $.Observer(uw.GameEvents.command.send_unit).subscribe('joe_COMMANDS_TOOLBAR', function () {
+                        if (!toolbarCommand.classList.contains('joe_commands')) return;
+                        $('#toolbar_activity_commands').trigger('mouseenter');
+                    });
+                }
+
+                if ($("#joe_plusmenuCommands").length == 0) {
+                    $("#toolbar_activity_commands_list .sandy-box").append('<div id="joe_plusmenuCommands" class="joe_plusmenu"><div id="joe_plusdraghandleCommands" class="joe_plusdraghandle"></div><a class="joe_plusback"></a></div>');
+                    $('#joe_plusmenuCommands .joe_plusback').click(() => { joe_plus_destroy("joe_plusmenuCommands"); });
+                    $('#joe_plusmenuCommands .joe_plusback').tooltip(joe_icon + getText("labels", "BAC"));
+                }
+
+                $('#toolbar_activity_commands_list .sandy-box').draggable({
+                    cursor: "move",
+                    handle: ".joe_plusdraghandle",
+                    start: function () {
+                        $("#joe_plusmenuCommandsSTYLE").remove();
+                        $('#toolbar_activity_commands_list').addClass("displayImp");
+                        $('#toolbar_activity_commands_list').addClass("joe_commands");
+                        var joe_position = $('#toolbar_activity_commands_list .sandy-box').position();
+                        if (joe_position.left === 0 && joe_position.top === 0) $("#toolbar_activity_commands_list .sandy-box").css({ "top": "+40px !important" });
+                        $(".joe_plusdraghandle").css({ cursor: "grabbing" });
+                    },
+                    stop: function () {
+                        $(".joe_plusdraghandle").css({ cursor: "grab" });
+                        var joe_position = $('#toolbar_activity_commands_list .sandy-box').position();
+                        $('<style id="joe_plusmenuCommandsSTYLE" type="text/css">#toolbar_activity_commands_list .sandy-box {left: ' + joe_position.left + 'px !important; top: ' + joe_position.top + 'px !important;}</style>').appendTo('head');
+                    }
+                });
+
                 $("#toolbar_activity_recruits_list").hover(
-                    function() {
+                    function () {
                         if ($("#joe_plusmenuRecruits").length == 0) {
                             $("#toolbar_activity_recruits_list").append('<div id="joe_plusmenuRecruits" class="joe_plusmenu"><div id="joe_plusdraghandleRecruits" class="joe_plusdraghandle"></div><a class="joe_plusback"></a></div>');
-                            $('#joe_plusmenuRecruits .joe_plusback').click(function() {
-                                joe_plus_destroy("joe_plusmenuRecruits");
-                            });
+                            $('#joe_plusmenuRecruits .joe_plusback').click(() => { joe_plus_destroy("joe_plusmenuRecruits"); });
+                            $('#joe_plusmenuRecruits .joe_plusback').tooltip(joe_icon + getText("labels", "BAC"));
                         }
-                    },
-                    function() {
-                        $('#joe_plusmenuRecruits').remove();
-                    });
+                    }, function () { $('#joe_plusmenuRecruits').remove(); }
+                );
+
                 $("#toolbar_activity_trades_list").hover(
-                    function() {
+                    function () {
                         if ($("#joe_plusmenuTrades").length == 0) {
                             $("#toolbar_activity_trades_list").append('<div id="joe_plusmenuTrades" class="joe_plusmenu"><div id="joe_plusdraghandleTrades" class="joe_plusdraghandle"></div><a class="joe_plusback"></a></div>');
-                            $('#joe_plusmenuTrades .joe_plusback').click(function() {
-                                joe_plus_destroy("joe_plusmenuTrades");
-                            });
+                            $('#joe_plusmenuTrades .joe_plusback').click(() => { joe_plus_destroy("joe_plusmenuTrades"); });
+                            $('#joe_plusmenuTrades .joe_plusback').tooltip(joe_icon + getText("labels", "BAC"));
                         }
-                    },
-                    function() {
-                        $('#joe_plusmenuTrades').remove();
-                    });
+                    }, function () { $('#joe_plusmenuTrades').remove(); }
+                );
                 $("#toolbar_activity_temple_commands_list").hover(
-                    function() {
+                    function () {
                         if ($("#joe_plusmenuTemple_commands").length == 0) {
                             $("#toolbar_activity_temple_commands_list").append('<div id="joe_plusmenuTemple_commands" class="joe_plusmenu"><div id="joe_plusdraghandleTemple_commands" class="joe_plusdraghandle"></div><a class="joe_plusback"></a></div>');
-                            $('#joe_plusmenuTemple_commands .joe_plusback').click(function() {
-                                joe_plus_destroy("joe_plusmenuTemple_commands");
-                            });
+                            $('#joe_plusmenuTemple_commands .joe_plusback').click(() => { joe_plus_destroy("joe_plusmenuTemple_commands"); });
+                            $('#joe_plusmenuTemple_commands .joe_plusback').tooltip(joe_icon + getText("labels", "BAC"));
                         }
-                    },
-                    function() {
-                        $('#joe_plusmenuTemple_commands').remove();
-                    });
-                $('<style id="joe_plusmenustyle" type="text/css">' +
-                    '.displayImp {display: block !important}' +
-                    '.joe_plusmenu {margin:6px 22px 2px 5px;height:11px;display:block;position:relative}' +
-                    '.joe_plusdraghandle {width:100%;height:11px;position:absolute;background:url(https://i.imgur.com/KlEB47j.png)}' +
-                    '.joe_plusback {right:-18px;margin-top:-1px;width:16px;height:12px;position:absolute;background:url(https://i.imgur.com/nSS5KZU.png)}' +
-                    '#toolbar_activity_recruits_list {min-width: 113px;}' +
-                    '</style>').appendTo('head');
+                    }, function () { $('#joe_plusmenuTemple_commands').remove(); }
+                );
+
                 $('#toolbar_activity_recruits_list').draggable({
                     cursor: "move",
                     handle: ".joe_plusdraghandle",
-                    start: function() {
+                    start: function () {
                         $("#joe_plusmenuRecruitsSTYLE").remove();
                         $('#toolbar_activity_recruits_list').addClass("displayImp");
+                        $(".joe_plusdraghandle").css({ cursor: "grabbing" });
                     },
-                    stop: function() {
+                    stop: function () {
+                        $(".joe_plusdraghandle").css({ cursor: "grab" });
                         var joe_position = $('#toolbar_activity_recruits_list').position();
                         $('<style id="joe_plusmenuRecruitsSTYLE" type="text/css">#toolbar_activity_recruits_list {left: ' + joe_position.left + 'px !important;top: ' + joe_position.top + 'px !important}</style>').appendTo('head');
                     }
                 });
+
                 $('#toolbar_activity_trades_list').draggable({
                     cursor: "move",
                     handle: ".joe_plusdraghandle",
-                    start: function() {
+                    start: function () {
                         $("#joe_plusmenuTradesSTYLE").remove();
                         $('#toolbar_activity_trades_list').addClass("displayImp");
+                        $(".joe_plusdraghandle").css({ cursor: "grabbing" });
                     },
-                    stop: function() {
+                    stop: function () {
+                        $(".joe_plusdraghandle").css({ cursor: "grab" });
                         var joe_position = $('#toolbar_activity_trades_list').position();
                         $('<style id="joe_plusmenuTradesSTYLE" type="text/css">#toolbar_activity_trades_list {left: ' + joe_position.left + 'px !important;top: ' + joe_position.top + 'px !important}</style>').appendTo('head');
                     }
@@ -10551,44 +10555,50 @@ var Npui = document.getElementsByClassName( 'olao' ),
                 $('#toolbar_activity_temple_commands_list').draggable({
                     cursor: "move",
                     handle: ".joe_plusdraghandle",
-                    start: function() {
+                    start: function () {
                         $("#joe_plusmenuTemple_commandsSTYLE").remove();
                         $('#toolbar_activity_temple_commands_list').addClass("displayImp");
+                        $(".joe_plusdraghandle").css({ cursor: "grabbing" });
                     },
-                    stop: function() {
+                    stop: function () {
+                        $(".joe_plusdraghandle").css({ cursor: "grab" });
                         var joe_position = $('#toolbar_activity_temple_commands_list').position();
                         $('<style id="joe_plusmenuTemple_commandsSTYLE" type="text/css">#toolbar_activity_temple_commands_list {left: ' + joe_position.left + 'px !important;top: ' + joe_position.top + 'px !important}</style>').appendTo('head');
                     }
                 });
+
                 function joe_plus_destroy(joeJQselector) {
-                    $("#" + joeJQselector).parent().removeClass("displayImp");
+                    if (joeJQselector == "joe_plusmenuCommands") {
+                        $("#" + joeJQselector).parent().parent().removeClass("displayImp");
+                        $('#toolbar_activity_commands_list').removeClass("joe_commands");
+                        document.getElementById("toolbar_activity_commands_list").style.diplay = "none";
+                        $('<style id="joe_plusmenuCommandsSTYLE" type="text/css">#toolbar_activity_commands_list .sandy-box {left:initial !important; top:initial !important; }</style>').appendTo('head');
+                        $('#toolbar_activity_commands_list .cancel').click();
+                    }
+                    else $("#" + joeJQselector).parent().removeClass("displayImp");
                     $("#" + joeJQselector + "STYLE").remove();
                 }
-            } catch (error) {
-                errorHandling(error, "ForumDeleteMultiple");
-            }
+
+                $('#toolbar_activity_recruits').dblclick(() => { joe_plus_destroy("joe_plusmenuRecruits"); });
+                $('#toolbar_activity_commands').dblclick(() => { joe_plus_destroy("joe_plusmenuCommands"); });
+                $('#toolbar_activity_trades').dblclick(() => { joe_plus_destroy("joe_plusmenuTrades"); });
+                $('#toolbar_activity_temple_commands').dblclick(() => { joe_plus_destroy("joe_plusmenuTemple_commands"); });
+
+            } catch (error) { errorHandling(error, "ActivityBoxes"); }
         },
-        deactivate: function() {
+        deactivate: () => {
             $('#joe_plusmenustyle').remove();
             $('#joe_plusmenuRecruits').remove();
             $("#joe_plusmenuRecruitsSTYLE").remove();
+            $('#joe_plusmenuCommands').remove();
+            $("#joe_plusmenuCommandsSTYLE").remove();
             $('#joe_plusmenuTrades').remove();
             $('#joe_plusmenuTradesSTYLE').remove();
             $('#joe_plusmenuTemple_commands').remove();
             $("#joe_plusmenuTemple_commandsSTYLE").remove();
-            $('#toolbar_activity_recruits_list').click(function() {
-                joe_plus_destroy("joe_plusmenuRecruits");
-            });
-            $('#toolbar_activity_trades_list').click(function() {
-                joe_plus_destroy("joe_plusmenuTrades");
-            });
-            $('#toolbar_activity_temple_commands_list').click(function() {
-                joe_plus_destroy("joe_plusmenuTemple_commands");
-            });
-            function joe_plus_destroy(joeJQselector) {
-                $("#" + joeJQselector).parent().removeClass("displayImp");
-                $("#" + joeJQselector + "STYLE").remove();
-            }
+
+            uw.observer_commands_list.disconnect();
+            $.Observer(uw.GameEvents.command.send_unit).unsubscribe('joe_COMMANDS_TOOLBAR')
         },
     };
     ///////////////////////////////////
@@ -11241,7 +11251,7 @@ var Npui = document.getElementsByClassName( 'olao' ),
         activate: function() {
             StatisticsJoeGatinho.addButton();
             $('<style id="flask_statistic_style">' +
-                '#flask_statistic_button { top:50px; right:113px; z-index:10; position:absolute; } ' +
+                '#flask_statistic_button { top:86px; right:-10px; z-index:10; position:absolute; } ' +
                 '#flask_statistic_button .ico_statistics { margin:8px 0px 0px 7px; width:18px; height:18px; background:url(https://i.imgur.com/M4biO6U.png) no-repeat 0px 0px; background-size:100%; } ' +
                 '#flask_statistic_button .ico_statistics.checked { margin-top:8px; } ' +
                 '</style>').appendTo('head');
@@ -11385,21 +11395,27 @@ var Npui = document.getElementsByClassName( 'olao' ),
         isEaster: false,
         activate: function() {
             var daystamp = 1000 * 60 * 60 * 24,
-                today = new Date((new Date()) % (daystamp * (365 + 1 / 4))), // without year
+                today = new Date((new Date()) % (daystamp * (365 + 1 / 4))), // sem ano
                 halloween_start = daystamp * 297,
                 halloween_end = daystamp * 321,
                 xmas_start = daystamp * 334,
                 xmas_end = daystamp * 361,
+                easter_start = daystamp * 88,
+                easter_end = daystamp * 110,
                 newYear_start = daystamp * 0,
                 newYear_end = daystamp * 7;
             HolidaySpecial.isHalloween = (today >= halloween_start) ? (today <= halloween_end) : false;
             HolidaySpecial.isXmas = (today >= xmas_start) ? (today <= xmas_end) : false;
             HolidaySpecial.isNewYear = (today >= newYear_start) ? (today <= newYear_end) : false;
+            HolidaySpecial.isEaster = (today >= easter_start) ? (today <= easter_end) : false;
             if (HolidaySpecial.isXmas) {
                 HolidaySpecial.XMas.add();
             }
             if (HolidaySpecial.isNewYear) {
                 HolidaySpecial.NewYear.add();
+            }
+            if (HolidaySpecial.isEaster) {
+                HolidaySpecial.Easter.add();
             }
             var X = 2016;
             var K = parseInt(X / 100, 10);
@@ -11412,8 +11428,28 @@ var Npui = document.getElementsByClassName( 'olao' ),
             var SZ = 7 - ((2016 + parseInt(2016 / 4, 10) + S) % 7);
             var OE = 7 - ((OG - SZ) % 7);
             var OS = OG + OE;
+         //   console.log('isHalloween:', SmileyBox.isHalloween);
+         //   console.log('isEaster:', SmileyBox.isEaster);
+         //   console.log('isXmas:', SmileyBox.isXmas);
+          //  console.log('isNewYear:', SmileyBox.isNewYear);
         },
-        XMas: {
+        Easter: {
+            add: function() {
+                $('<a href="http://www.greensmilies.com/smilie-album/weihnachten-smilies/" target="_blank"><div id="joeEaster"></div></a>').appendTo('#ui_box');
+                var joeEaster = $('#joeEaster');
+                joeEaster.css({
+                    background: 'url("https://joeman.i234.me/Smiley/Easter/osterei_hase05.gif") no-repeat',
+                    height: '51px',
+                    width: '61px',
+                    position: 'absolute',
+                    bottom: '10px',
+                    left: '60px',
+                    zIndex: '2'
+                });
+                joeEaster.tooltip('<img src="' + Home_url + '/Smiley/Easter/osterei_hase05.gif">' + getText("labels", "East"));
+            }
+        },
+                XMas: {
             add: function() {
                 $('<a href="http://www.greensmilies.com/smilie-album/weihnachten-smilies/" target="_blank"><div id="joe_xmas"></div></a>').appendTo('#ui_box');
                 var joeXMAS = $('#joe_xmas');
@@ -11426,7 +11462,7 @@ var Npui = document.getElementsByClassName( 'olao' ),
                     left: '60px',
                     zIndex: '2'
                 });
-                joeXMAS.tooltip("Merry Christmas!");
+                joeXMAS.tooltip('<img src="' + Home_url + '/Smiley/Smiley2/cristmas/ded_snegurochka2.gif">' + getText("labels", "Xmas"));
             }
         },
         NewYear: {
@@ -11434,7 +11470,7 @@ var Npui = document.getElementsByClassName( 'olao' ),
                 var Year = new Date().getFullYear();
                 var DateYear = Year - 2020;
                 $('<a href="http://www.greensmilies.com/smilie-album/" target="_blank"><div id="joe_newYear">' +
-                    '<img src="https://wiki.en.grepolis.com/images/b/bf/New_Years_Forum_Banner.png" style="width:400px; opacity: 0.70; max-width: 70%; height: auto; left: -50px;">' +
+                    '<img src="https://wiki.en.grepolis.com/images/b/bf/New_Years_Forum_Banner.png" style="width:400px; opacity: 1.00; max-width: 70%; height: auto; left: -50px;">' +
                     '<img src="https://joeman.i234.me/Num/smiley_emoticons_fred_wand_maler.gif" style="position:absolute; top: 10px; left: 120px;">' +
                     '<img src="https://joeman.i234.me/Num/sign2_2.gif" style="position:absolute; top: 10px; filter: hue-rotate(80deg); left: 250px;">' + //(2) ano 2022
                     '<img src="https://joeman.i234.me/Num/sign2_0.gif" style="position:absolute; top: 10px; filter: hue-rotate(300deg); left: 270px;">' + //(0)
@@ -11446,9 +11482,9 @@ var Npui = document.getElementsByClassName( 'olao' ),
                     position: 'absolute',
                     bottom: '10px',
                     left: '-50px',
-                    zIndex: '10'
+                    zIndex: '2'
                 });
-                joeNewYear.tooltip("Happy new year!");
+                joeNewYear.tooltip('<img src="' + Home_url + '/Smiley/Party/smiley_emoticons_kolobok-party-dancers.gif">' + getText("labels", "Happy"));
             }
         }
     };
@@ -11478,59 +11514,54 @@ var Npui = document.getElementsByClassName( 'olao' ),
         });
     }
     function waitForKeyElements (
-        selectorTxt,    /* Required: The jQuery selector string that
+        selectorTxt, /* Required: The jQuery selector string that
                             specifies the desired element(s).
                         */
         actionFunction, /* Required: The code to run when elements are
                             found. It is passed a jNode to the matched
                             element.
                         */
-        bWaitOnce,      /* Optional: If false, will continue to scan for
+        bWaitOnce, /* Optional: If false, will continue to scan for
                             new elements even after the first match is
                             found.
                         */
-        iframeSelector  /* Optional: If set, identifies the iframe to
+        iframeSelector /* Optional: If set, identifies the iframe to
                             search.
                         */
     ) {
         var targetNodes, btargetsFound;
 
-        if (typeof iframeSelector == "undefined")
-            targetNodes     = $(selectorTxt);
-        else
-            targetNodes     = $(iframeSelector).contents ()
-                                               .find (selectorTxt);
+        if (typeof iframeSelector == "undefined") targetNodes = $(selectorTxt);
+        else targetNodes = $(iframeSelector).contents () .find (selectorTxt);
 
-        if (targetNodes  &&  targetNodes.length > 0) {
-            btargetsFound   = true;
+        if (targetNodes && targetNodes.length > 0) {
+            btargetsFound = true;
             /*--- Found target node(s).  Go through each and act if they
                 are new.
             */
             targetNodes.each ( function () {
-                var jThis        = $(this);
-                var alreadyFound = jThis.data ('alreadyFound')  ||  false;
+                var jThis = $(this);
+                var alreadyFound = jThis.data ('alreadyFound') || false;
 
                 if (!alreadyFound) {
                     //--- Call the payload function.
-                    var cancelFound     = actionFunction (jThis);
-                    if (cancelFound)
-                        btargetsFound   = false;
-                    else
-                        jThis.data ('alreadyFound', true);
+                    var cancelFound = actionFunction (jThis);
+                    if (cancelFound) btargetsFound = false;
+                    else jThis.data ('alreadyFound', true);
                 }
             } );
         }
         else {
-            btargetsFound   = false;
+            btargetsFound = false;
         }
 
         //--- Get the timer-control variable for this selector.
-        var controlObj = waitForKeyElements.controlObj  ||  {};
+        var controlObj = waitForKeyElements.controlObj || {};
         var controlKey = selectorTxt.replace (/[^\w]/g, "_");
         var timeControl = controlObj [controlKey];
 
         //--- Now set or clear the timer as appropriate.
-        if (btargetsFound  &&  bWaitOnce  &&  timeControl) {
+        if (btargetsFound && bWaitOnce && timeControl) {
             //--- The only condition where we need to clear the timer.
             clearInterval (timeControl);
             delete controlObj [controlKey]
@@ -11539,7 +11570,7 @@ var Npui = document.getElementsByClassName( 'olao' ),
             //--- Set a timer, if needed.
             if ( ! timeControl) {
                 timeControl = setInterval ( function () {
-                        waitForKeyElements (    selectorTxt,
+                        waitForKeyElements ( selectorTxt,
                                                 actionFunction,
                                                 bWaitOnce,
                                                 iframeSelector
@@ -11550,7 +11581,7 @@ var Npui = document.getElementsByClassName( 'olao' ),
                 controlObj [controlKey] = timeControl;
             }
         }
-        waitForKeyElements.controlObj   = controlObj;
+        waitForKeyElements.controlObj = controlObj;
     }
 
     waitForKeyElements (
@@ -11566,8 +11597,7 @@ var w = window,
     $ = w.$;
 new function() {
     Function.prototype.curry = function() {
-        if (arguments.length < 1)
-            return this;
+        if (arguments.length < 1) return this;
         var Funktion = this;
         var Argumente = Array.prototype.slice.call(arguments);
         return function() {
@@ -11576,16 +11606,13 @@ new function() {
     };
 }();
 function Analysieren(Objekt, Text, Erbe, auch_versteckte, kein_alert, kein_log, Stapel_ausgeben) {
-    if (typeof Text != "string")
-        Text = "<unbekannt>";
+    if (typeof Text != "string") Text = "<unbekannt>";
     Text = "Analysiere " + Text + " (Typ: ";
     var Typ;
     Text += Typ = typeof Objekt;
     Text += ")\n";
-    if (Typ == "string" || Typ == "number" || Typ == "boolean" || Typ == "date")
-        Text += "Wert: " + Objekt + "\n";
-    else if (Typ == "function")
-        Text += "Definition:\n" + Objekt.toString() + "\n";
+    if (Typ == "string" || Typ == "number" || Typ == "boolean" || Typ == "date") Text += "Wert: " + Objekt + "\n";
+    else if (Typ == "function") Text += "Definition:\n" + Objekt.toString() + "\n";
     var str = "";
     var str2;
     var Elemente;
