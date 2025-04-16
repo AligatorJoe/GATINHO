@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name		Gatinho Github joeman
+// @name		Gatinho Github
 // @namespace   Gatinho Github
 // @version		4.57.22
 // @author		Gatinho
