@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name		Gatinho Github
 // @namespace   Gatinho Github
-// @version		4.57.22
+// @version		4.57.23
 // @author		Gatinho
 // @description Gatinho é uma pequena extençao para o jogo browser Grepolis. (counter, displays, smilies, trade options, changes to the layout)
 // @match     http://*.grepolis.com/*
@@ -21,7 +21,7 @@
 // @updateURL   https://github.com/AligatorJoe/Dio-Tools-2019/raw/master/Gatinho.user.js
 // ==/UserScript==
 // * units off the island * a repare
-var version = '4.57.22';
+var version = '4.57.23';
                    /////////////////////////////////////////////////////////////////////////////////////////
                   //  * @license  GPL-3.0                                                                //
                  //                                                                                     //
@@ -302,8 +302,8 @@ function JOE_GAME(version, gm, DATA, time_a) {
             localStorage.removeItem(name);
         }
     }
-    //chat world Ally id https://www.base64encode.org/
-    const IDW = "NTE3"; //NTE3 est ID de l aliance 517 du monde pt111
+    //chat
+    const IDW = "MTMK"; // ID de l aliance 13
     /////////////////////////////////////////
    //         * Graphic filters *         //
   /////////////////////////////////////////
@@ -2963,7 +2963,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                     '<td><div id="bbc" class="checkbox_new"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("options", "bbc")[0] + '</div></div>' +
                     '<p>' + getText("options", "bbc")[1] + '</p><br><img src="https://i.imgur.com/P9866kj.png" alt="" style="max-width:none !important;" /></td>' +
                     '</tr><tr>' +
-                    ((Game.market_id === "pt" || Game.market_id === "zz") && Game.alliance_id === parseInt(atob("MTM=")) ? (
+                    ((Game.market_id === "pt" || Game.market_id === "zz") && Game.alliance_id === parseInt(atob("MTMK")) ? (
                     '<td><img src="https://i.imgur.com/hsgihz3.gif" alt="" /></td>' +
                     '<td><div id="cha" class="checkbox_new"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("options", "cha")[0] + '</div></div>' +
                     '<p>' + getText("options", "cha")[1] + '</p></td>' +
