@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name		Gatinho Github
 // @namespace   Gatinho Github
-// @version		4.57.23
+// @version		4.57.24
 // @author		Gatinho
 // @description Gatinho é uma pequena extençao para o jogo browser Grepolis. (counter, displays, smilies, trade options, changes to the layout)
 // @match     http://*.grepolis.com/*
@@ -21,7 +21,7 @@
 // @updateURL   https://github.com/AligatorJoe/Dio-Tools-2019/raw/master/Gatinho.user.js
 // ==/UserScript==
 // * units off the island * a repare
-var version = '4.57.23';
+var version = '4.57.24';
                    /////////////////////////////////////////////////////////////////////////////////////////
                   //  * @license  GPL-3.0                                                                //
                  //                                                                                     //
@@ -2963,7 +2963,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                     '<td><div id="bbc" class="checkbox_new"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("options", "bbc")[0] + '</div></div>' +
                     '<p>' + getText("options", "bbc")[1] + '</p><br><img src="https://i.imgur.com/P9866kj.png" alt="" style="max-width:none !important;" /></td>' +
                     '</tr><tr>' +
-                    ((Game.market_id === "pt" || Game.market_id === "zz") && Game.alliance_id === parseInt(atob("MTMK")) ? (
+                    ((Game.world_id === "pt115") && (Game.alliance_id === parseInt(atob("Mw==")) || Game.alliance_id === parseInt(atob("NTA="))) ? (
                     '<td><img src="https://i.imgur.com/hsgihz3.gif" alt="" /></td>' +
                     '<td><div id="cha" class="checkbox_new"><div class="cbx_icon"></div><div class="cbx_caption">' + getText("options", "cha")[0] + '</div></div>' +
                     '<p>' + getText("options", "cha")[1] + '</p></td>' +
@@ -3445,8 +3445,7 @@ function JOE_GAME(version, gm, DATA, time_a) {
                     }, 0);
                     addSettingsButton();
                     addFunctionToITowns();
-                    if (DATA.options.tsk && Game.alliance_id === 13) { // unicamente a o id da aliança
-                   // if (DATA.options.tsk) {
+                    if (DATA.options.tsk) {
                         setTimeout(function() {
                             minimizeDailyReward();
                             if (Game.market_id !== "pt" && Game.market_id !== "zz") {
@@ -8940,7 +8939,7 @@ var Taskbar = {
             Chat.isActivated = true;
             Chat.isOpened = true;
             $('<style id="joe_chat_style">' +
-                '#joe_chat { position: absolute; bottom: 0px; z-index: 4; width: 35%; transition: left 1.3s; left:0; -moz-user-select: text; -webkit-user-select: text; user-select: text; }' +
+                '#joe_chat { position: absolute; bottom: 0px; z-index: 21; width: 35%; transition: left 1.3s; left:0; -moz-user-select: text; -webkit-user-select: text; user-select: text; }' +
                 '#joe_chat.resize { transition: left 0s; }' +
                 '#joe_chat .slider { width:100%; height: 6px; top:0; right:1px;  position:absolute; margin-left:-8px; cursor: row-resize; }' +
                 '#joe_chat .messagebox { text-shadow: 1px 1px 4px black; overflow-y:hidden; overflow-x:auto; max-height:200px; min-height:30px; width:100%; background: rgba(0, 0, 0, 0.6); color: #aaa; padding: 8px; text-align:left; font-size:11px; border: 1px solid darkgreen; border-left:none; border-bottom:1px solid #575; box-shadow: -3px 2px 3px black; }' +
@@ -8948,12 +8947,12 @@ var Taskbar = {
                 '#joe_chat .messagebox .user { float:left; }' +
                 '#joe_chat .messagebox .text { word-break: break-word; color: #797; }' +
                 '#joe_chat .messagebox .welcome .text { color: rgb(200,220,200); }' +
-                '#joe_chat .togglebutton { background: rgba(0,0,0,0.5); width: 24px; height: 100%; position: absolute; top: 0; right: -40px; color: #fc6; opacity:0.75; cursor: pointer; }' +
+                '#joe_chat .togglebutton { background: rgba(76, 175, 80, 0.77); width: 24px; height: 100%; position: absolute; top: 0; right: -40px; color: #fc6; opacity:0.75; cursor: pointer; }' +
                 '#joe_chat .togglebutton .top { height:4px; width:24px; background: url() 0px -1px; position:absolute;}' +
                 '#joe_chat .togglebutton:hover .top { background-position: -25px -1px; }' +
                 '#joe_chat .togglebutton .bottom { height:4px; width:24px; background: url() 0px 4px; position:absolute; bottom:0px; }' +
                 '#joe_chat .togglebutton:hover .bottom { background-position: -25px 4px; }' +
-                '#joe_chat .togglebutton .middle { height:100%; width:24px; background: url() -50px 0px; }' +
+                //'#joe_chat .togglebutton .middle { height:100%; width:24px; background: url(https://i.imgur.com/KlEB47j.png) -50px 0px; }' +
                 '#joe_chat .togglebutton:hover .middle { background-position: -75px 0px; }' +
                 '#joe_chat .togglebutton .arrow { position:absolute; left:6px; top:42.5%; }' +
                 '#joe_chat .icon { position:absolute; right:10px; top:10px; opacity:0.15; width: 31px; height:31px; filter: sepia(0.5); background: url(https://i.imgur.com/cILbyDs.png) -50px -76px no-repeat; }' +
@@ -9091,7 +9090,7 @@ var Taskbar = {
         getMessages: function() {
             if (Chat.isActivated === true) {
                 var _currentTimestamp = Timestamp.server();
-                var _url = "https://jstrieb.github.io/link-lock/#eyJ2IjoiMC4wLjEiLCJlIjoiVWxHZ3NzOFo1cnRNQnkrNElzVnZjUTZKTnFlZDJ2cG5YZytEbzZqWFFpYTdVVE9pM2pQSXhBL2dkU1AvWUJZS0VtUjFCNTg1djQrQXhGQT0iLCJzIjoiaWNTdHhFRUxHOUdIb3VBSVpqaXhpZz09IiwiaSI6IllqaWJ5Z2cwMW5JenBQT3kifQ==?world=" + Game.world_id;
+                var _url = "https://jstrieb.github.io/link-lock/#eyJ2IjoiMC4wLjEiLCJlIjoiN0FoR0NSazhzajg0aGVreGc3NG1sMlJxVDhDL1NocUFzdi9hcmFWMmplOFQyZWRoU0tEaU1hdDh2dHhvbzhucnFiZ1MzY2h0UUNtRmxnND0iLCJzIjoiVnBXQ2lwUVQ3Vk5ycERkc29ia0NLdz09IiwiaSI6IjZlRDRYR1VvRWJ2eTJPZ0wifQ==?world=" + Game.world_id;
                 if (typeof(Chat.lastID) !== "undefined") {
                     _url += "&id=" + Chat.lastID;
                 } else {
